@@ -1,0 +1,44 @@
+:host {
+    --eway-color: #FDBA12;
+    --eway-border-color: #D1DAE1;
+    --ezidebit-color: #58B947;
+    --eway-button-color: #25262B;
+}
+
+.ezidebit-brand {
+    --slds-c-input-color-border: var(--ezidebit-color);
+    --slds-g-color-border-base-1: var(--ezidebit-color);
+}
+.eway-brand {
+    --slds-c-input-color-border: var(--eway-border-color);
+    --slds-g-color-border-base-1: var(--eway-color);
+}
+
+.slds-form-element {
+    --slds-g-color-neutral-base-30: #000;
+    --lwc-colorTextLabel:#000;
+    --lwc-heightInput: 3rem;
+}
+
+.ewaySelected {
+    border: 2px solid #FDBA12;
+}
+
+.ezidebitSelected {
+    border: 2px solid #58B947;
+}
+
+.title {
+    font-family: 'Montserrat',sans-serif;
+}
+
+.title h1{
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.title p {
+    margin: .5rem auto;
+    font-size: .875rem;
+    font-weight: 400;
+}

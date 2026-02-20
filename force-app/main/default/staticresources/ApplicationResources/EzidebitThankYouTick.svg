@@ -1,0 +1,11 @@
+<svg width="36" height="36" xmlns="http://www.w3.org/2000/svg" id="tick">
+    <g>
+        <title>Layer 1</title>
+        <path id="svg_4" stroke-linejoin="undefined" stroke-linecap="undefined" fill="none" d="m751.87008,93.3843l-0.80994,0" stroke="#000"/>
+        <g id="svg_1" stroke="null">
+            <circle id="svg_2" r="17.85502" fill="#58b947" cy="18.0181" cx="18.00526" stroke="null"/>
+            <path id="svg_3" stroke-width="1" stroke-linejoin="undefined" stroke-linecap="undefined" opacity="undefined" fill="none" d="m30.68538,10.97347l-16.12944,16.06084" stroke="#fff"/>
+            <path id="svg_5" stroke-width="1" opacity="undefined" fill="none" d="m14.56288,26.79067l-6.69737,-6.68448" stroke="#fff"/>
+        </g>
+    </g>
+</svg>

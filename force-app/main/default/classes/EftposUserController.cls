@@ -339,10 +339,6 @@ public without sharing class EftposUserController {
             t.Priority = 'Low';
             t.Status = 'Completed';
             t.WhoId = lead.Id;
-            Schema.RecordTypeInfo rtInfo = Schema.SObjectType.Task.getRecordTypeInfosByName().get('Task');
-            if (rtInfo != null) {
-                t.RecordTypeId = rtInfo.getRecordTypeId();
-            }
             tasksToInsert.add(t);
         }
 

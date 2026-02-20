@@ -1,0 +1,24 @@
+<template>
+    <lightning-layout class="slds-size_8-of-12" style="margin: 0 auto;">
+        <!-- Left aligned button (Previous) -->
+        <template lwc:if={showPreviousButton}>
+            <!--<lightning-layout-item size="4" small-device-size="6" medium-device-size="4" large-device-size="4">-->
+                <lightning-layout-item size="2" small-device-size="4" medium-device-size="2" large-device-size="2">
+                <button class={btnBrandPrev} onclick={handlePrevious}>{previousButtonLabel}</button>
+            </lightning-layout-item>
+        </template>
+
+        <!-- Right aligned button (Add another Biller) -->
+        <template if:true={showAddAnotherBiller}>
+            <lightning-layout-item size="2" small-device-size="4" medium-device-size="2" large-device-size="2"
+                alignment-bump="left" style="text-align: right;">
+                <a class={linkStyle} onclick={handleAddBillerLink}>{addBillerLinkLabel}</a>
+            </lightning-layout-item>
+        </template>    
+        <!-- Right aligned button (Next/Submit) -->
+        <lightning-layout-item size="2" small-device-size="4" medium-device-size="2" large-device-size="2"
+            alignment-bump="left" style="text-align: right;">
+            <button disabled={isNextButtonDisabled} class={btnBrandNext} onclick={handleNext}>{nextButtonLabel}</button>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

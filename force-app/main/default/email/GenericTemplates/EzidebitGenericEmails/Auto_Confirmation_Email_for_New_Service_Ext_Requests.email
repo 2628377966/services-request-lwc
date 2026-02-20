@@ -1,0 +1,187 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">
+<table border="0" cellpadding="0" cellspacing="0" class="nl-container" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ffffff;" width="100%">
+	
+		<tr>
+			<td>
+			<table align="center" border="0" cellpadding="0" cellspacing="0" class="row row-2" style="width: 100%;" width="100%">
+				
+					<tr>
+						<td style="width: 100%;">
+						<table align="center" border="0" cellpadding="0" cellspacing="0" class="row-content stack" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #000000; width: 600px;" width="600">
+							
+								<tr>
+									<td class="column column-1" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; padding-top: 0px; padding-bottom: 0px; border: 0px;" width="100%">&nbsp;
+									<table align="center" border="0" cellpadding="0" cellspacing="0" class="row row-2" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
+										
+											<tr>
+												<td>
+												<table align="center" border="0" cellpadding="0" cellspacing="0" class="row-content" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-radius: 0; color: #000; width: 600px; margin: 0 auto;" width="600">
+													
+														<tr>
+															<td class="column column-1" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 0px; padding-top: 0px; vertical-align: top; border: 0px;" width="100%">
+															<table border="0" cellpadding="20" cellspacing="0" class="paragraph_block block-1" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;" width="100%">
+																
+																	<tr>
+																		<td class="pad">
+																		<div style="color: #393d47; direction: ltr; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 14px; font-weight: 400; letter-spacing: 0px; line-height: 120%; text-align: left; mso-line-height-alt: 16.8px;">
+																		<p style="margin: 0; margin-bottom: 16px;">Hi {{{Recipient.FirstName}}},</p>
+
+																		<p style="margin: 0;">Here's where you're at:</p>
+																		</div>
+																		</td>
+																	</tr>
+																
+															</table>
+															</td>
+														</tr>
+													
+												</table>
+												</td>
+											</tr>
+										
+									</table>
+
+									<table align="center" border="0" cellpadding="0" cellspacing="0" class="row row-3" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
+										
+											<tr>
+												<td>
+												<table align="center" border="0" cellpadding="0" cellspacing="0" class="row-content" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-radius: 0; color: #000; width: 600px; margin: 0 auto;" width="600">
+													
+														<tr>
+															<td class="column column-1" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-left: 15px; padding-right: 10px; vertical-align: top; border: 0px;" width="25%">
+															<table border="0" cellpadding="0" cellspacing="0" class="icons_block block-1" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
+																
+																	<tr>
+																		<td class="pad" style="vertical-align: middle; color: #000000; font-family: inherit; font-size: 14px; font-weight: 400; padding-top: 10px; text-align: center;">
+																		<table align="center" cellpadding="0" cellspacing="0" class="alignment" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+																			
+																				<tr>
+																					<td style="vertical-align: middle; text-align: center; padding: 0px;"><img align="center" class="icon" height="40" src="https://ezidebit.file.force.com/servlet/servlet.ImageServer?id=015Mn000004SkaH&amp;oid=00D20000000KMtU" style="display: block; height: auto; margin: 0 auto; border: 0;" width="40" /></td>
+																				</tr>
+																			
+																		</table>
+																		</td>
+																	</tr>
+																
+															</table>
+															</td>
+															<td class="column column-2" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-right: 15px; vertical-align: top; border: 0px;" width="75%">
+															<table border="0" cellpadding="0" cellspacing="0" class="paragraph_block block-1" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;" width="100%">
+																
+																	<tr>
+																		<td class="pad">
+																		<div style="color: #101112; direction: ltr; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 14px; font-weight: 400; letter-spacing: 0px; line-height: 150%; text-align: left; mso-line-height-alt: 21px;">
+																		<p style="margin: 0;"><strong>Application submitted</strong><br />
+																		Thanks for submitting your Ezidebit application for&nbsp;<span style="font-variant: normal; white-space: pre-wrap;"><span style="font-family:Arial,sans-serif"><span style="color:#101112"><span style="background-color:#ffffff"><span style="font-weight:400"><span style="font-style:normal"><span>{{{Case.Category__c}}}-{{{Case.Sub_Category__c}}}!</span></span></span></span></span></span></span></p>
+																		</div>
+																		</td>
+																	</tr>
+																
+															</table>
+															</td>
+														</tr>
+													
+												</table>
+												</td>
+											</tr>
+										
+									</table>
+
+									<table align="center" border="0" cellpadding="0" cellspacing="0" class="row row-4" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
+										
+											<tr>
+												<td>
+												<table align="center" border="0" cellpadding="0" cellspacing="0" class="row-content" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-radius: 0; color: #000; width: 600px; margin: 0 auto;" width="600">
+													
+														<tr>
+															<td class="column column-1" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; border: 0px; padding: 15px 10px 15px 15px;" width="25%">
+															<table border="0" cellpadding="0" cellspacing="0" class="icons_block block-1" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
+																
+																	<tr>
+																		<td class="pad" style="vertical-align: middle; color: #000000; font-family: inherit; font-size: 14px; font-weight: 400; padding-top: 10px; text-align: center;">
+																		<table align="center" cellpadding="0" cellspacing="0" class="alignment" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+																			
+																				<tr>
+																					<td style="vertical-align: middle; text-align: center; padding: 0px;"><img align="center" class="icon" height="32" src="https://ezidebit.file.force.com/servlet/servlet.ImageServer?id=015Mn000004Skon&amp;oid=00D20000000KMtU" style="display: block; height: auto; margin: 0 auto; border: 0;" width="34" /></td>
+																				</tr>
+																			
+																		</table>
+																		</td>
+																	</tr>
+																
+															</table>
+															</td>
+															<td class="column column-2" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 15px; padding-right: 15px; padding-top: 15px; vertical-align: top; border: 0px;" width="75%">
+															<table border="0" cellpadding="0" cellspacing="0" class="paragraph_block block-1" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;" width="100%">
+																
+																	<tr>
+																		<td class="pad">
+																		<div style="color: #101112; direction: ltr; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 14px; font-weight: 400; letter-spacing: 0px; line-height: 150%; text-align: left; mso-line-height-alt: 21px;">
+																		<p style="margin: 0;"><strong>Application review</strong><br />
+																		Our team will review <span style="font-variant: normal; white-space: pre-wrap;"><span style="font-family:Arial,sans-serif"><span style="color:#101112"><span style="background-color:#ffffff"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">your request and notify you once it is processed</span></span></span></span></span></span></span>.</p>
+																		</div>
+																		</td>
+																	</tr>
+																
+															</table>
+															</td>
+														</tr>
+													
+												</table>
+												</td>
+											</tr>
+										
+									</table>
+
+									<table align="center" border="0" cellpadding="0" cellspacing="0" class="row row-6" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
+										
+											<tr>
+												<td>
+												<table align="center" border="0" cellpadding="0" cellspacing="0" class="row-content" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-radius: 0; color: #000; width: 600px; margin: 0 auto;" width="600">
+													
+														<tr style="height: 211px;">
+															<td class="column column-1" style="font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border: 0px; height: 211px; width: 598px;">
+															<table border="0" cellpadding="20" cellspacing="0" class="paragraph_block block-1" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;" width="100%">
+																
+																	<tr>
+																		<td class="pad">
+																		<div style="color: #393d47; direction: ltr; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 14px; font-weight: 400; letter-spacing: 0px; line-height: 120%; text-align: left; mso-line-height-alt: 16.8px;">
+																		<p style="margin: 0;"><strong>We’re here to help</strong><br />
+																		Our team is here to help make you more successful through using our tools and services.<br />
+																		<br />
+																		Please don't hesitate to contact us on <a href="{{{Recipient.Support_Phone_Account__c}}}" rel="noopener" style="text-decoration: underline; color: #000;" target="_blank" title="tel:{{{Recipient.Support_Phone_Account__c}}}">{{{Recipient.Support_Phone_Account__c}}}</a> should you have any questions.<br />
+																		<br />
+																		Thanks for choosing us.<br />
+																		<br />
+																		The Ezidebit Team</p>
+																		</div>
+																		</td>
+																	</tr>
+																
+															</table>
+															</td>
+														</tr>
+													
+												</table>
+												</td>
+											</tr>
+										
+									</table>
+									</td>
+								</tr>
+							
+						</table>
+						</td>
+					</tr>
+				
+			</table>
+			</td>
+		</tr>
+	
+</table>
+</body>
+</html>

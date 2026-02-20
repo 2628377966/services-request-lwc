@@ -1,0 +1,179 @@
+/* @import 'c/applicationCSSLibrary'; */
+
+
+.eway-screen-nav-button-text{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.eway-screen-nav-button-next{
+    color: #FAFAFA;
+    width: 12rem;
+    height: 5rem;
+    border-radius: 25px;
+    flex-shrink: 0;
+    border: 1px solid var(--eway-button-color);
+    background: var(--eway-button-color);
+}
+
+.eway-screen-nav-button-next:hover{
+    color: #25262B;
+    width: 12rem;
+    height: 5rem;
+    border-radius: 25px;
+    flex-shrink: 0;
+    border: 1px solid var(--eway-color);
+    background: var(--eway-color);
+    --sds-c-button-brand-color-background: var(--eway-color);
+}
+
+.eway-screen-nav-button-next:disabled {
+    background: #ccc; /* Grey background */
+    border-color: #ccc; /* Grey border */
+    color: #666; /* Darker grey text for contrast */
+    cursor: not-allowed; /* Indicate disabled state */
+}
+
+.eway-screen-nav-button-prev{
+    color: #FAFAFA;
+    width: 12rem;
+    height: 5rem;
+    border-radius: 25px;
+    flex-shrink: 0;
+    border: 1px solid  var(--eway-button-color);
+    background: var(--eway-button-color);
+}
+
+.eway-screen-nav-button-prev:hover{
+    color: #25262B;
+    width: 12rem;
+    height: 5rem;
+    border-radius: 25px;
+    flex-shrink: 0;
+    border: 1px solid  var(--eway-color);
+    background: var(--eway-color);
+    --sds-c-button-brand-color-background: var(--eway-color);
+}
+
+.ezidebit-screen-nav-button-text{
+   
+    text-align: center;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.ezidebit-screen-nav-button-next {
+    color: #FAFAFA;
+    width: 12rem;
+    height: 5rem;
+    border-radius: 6px;
+    flex-shrink: 0;    
+    border: 1px solid var(--ezidebit-color);
+    background: var(--ezidebit-color);
+
+}
+
+.ezidebit-screen-nav-button-next:hover {
+    color: #FAFAFA;
+    width: 12rem;
+    height: 5rem;
+    border-radius: 6px;
+    flex-shrink: 0;    
+    border: 1px solid #9CEB44;
+    background: #9CEB44;
+    --sds-c-button-brand-color-background: #9CEB44;
+}
+
+.ezidebit-screen-nav-button-next:disabled {
+    background: #ccc; /* Grey background */
+    border-color: #ccc; /* Grey border */
+    color: #666; /* Darker grey text for contrast */
+    cursor: not-allowed; /* Indicate disabled state */
+}
+
+.ezidebit-screen-nav-button-prev {
+    color: #FAFAFA;
+    width: 12rem;
+    height: 5rem;
+    border-radius: 6px;
+    flex-shrink: 0;    
+    border: 1px solid var(--ezidebit-color);
+    background: var(--ezidebit-color)
+}
+
+.ezidebit-screen-nav-button-prev:hover {
+    color: #FAFAFA;
+    width: 12rem;
+    height: 5rem;
+    border-radius: 6px;
+    flex-shrink: 0;    
+    border: 1px solid #9CEB44;
+    background: #9CEB44;
+    --sds-c-button-brand-color-background: #9CEB44;
+}
+
+.ezidebit-nav-link {
+    color: #000;
+    text-align: center;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    border-bottom: 1px;
+    text-decoration : underline ;
+    text-decoration-color : var(--ezidebit-color);
+    vertical-align: bottom;
+}
+
+.ezidebit-nav-link:hover {
+    color: #9CEB44;
+    text-align: center;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    border-bottom: 1px;
+    text-decoration : underline ;
+    text-decoration-color : #9CEB44;
+    vertical-align: bottom;
+}
+
+.eway-nav-link {
+    color: #000;
+    text-align: center;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    background: #FFF;
+    border-bottom: 1px;
+    text-decoration : underline;
+    text-decoration-color : var(--eway-color);
+    vertical-align: bottom;
+    vertical-align: -50%;
+}
+
+.eway-nav-link:hover {
+     color: var(--eway-color);
+     text-align: center;
+     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+     font-size: 18px;
+     font-style: normal;
+     font-weight: 400;
+     line-height: 24px;
+     background: #FFF;
+     border-bottom: 1px;
+     text-decoration : underline;
+     text-decoration-color : var(--eway-color);
+     vertical-align: bottom;
+     vertical-align: -50%;
+ }

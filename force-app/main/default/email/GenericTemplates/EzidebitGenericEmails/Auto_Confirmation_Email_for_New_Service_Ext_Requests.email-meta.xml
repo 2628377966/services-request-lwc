@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Auto-Confirmation Email for New Service/Ext Requests for multimid merchants</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Auto-Confirmation Email for New Service/Ext Requests</name>
+    <relatedEntityType>Case</relatedEntityType>
+    <style>none</style>
+    <subject>Your request has been received</subject>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>
