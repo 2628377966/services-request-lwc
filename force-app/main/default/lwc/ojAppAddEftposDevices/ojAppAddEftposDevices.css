@@ -1,0 +1,66 @@
+.gap-14px-vr {
+    margin-top: 14px;
+}
+
+.gap-15px-vr {
+    margin-top: 15px;
+}
+
+.gap-16px-vr {
+    margin-top: 16px;
+}
+
+.gap-24px-vr {
+    margin-top: 24px;
+}
+
+.gap-48px-vr {
+    margin-top: 48px;
+}
+
+.gap-13px-hr {
+    margin-right: 13px;
+}
+
+.gap-24px-hr {
+    margin-right: 24px;
+}
+
+.slds-input {
+    background-color: #FAFAFA;
+    border: 1px solid var(--primary-color, #58B947);
+    border-radius: 4px;
+    height: 44px;
+}
+
+.dropdown-select {
+    appearance: none;
+    background-color: #FAFAFA;
+    border: 1px solid var(--primary-color, #58B947);
+    border-radius: 4px;
+    padding: 10px;
+    height: 44px;
+    font-size: 16px;
+    color: #000;
+    width: 120px;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%2358B947' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px 16px;
+}
+
+:host {
+
+}
+
+.custom-combobox {
+    --slds-c-input-color-border: #5A67D8;
+    --slds-c-input-color-background: #E6E6FA;
+    --slds-c-input-text-color: #2D3748;
+    --slds-c-input-color-border-focus: #7C3AED;
+}
+
+.custom-info-icon{
+    color: var(--primary-color, #58B947);
+    margin-left: 4px;
+}

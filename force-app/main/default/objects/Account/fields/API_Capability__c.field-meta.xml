@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>API_Capability__c</fullName>
+    <description>API capability for NPP</description>
+    <label>API Capability</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>NPP Azupay</fullName>
+                <default>false</default>
+                <label>NPP Azupay</label>
+            </value>
+            <value>
+                <fullName>NPP Transacumen</fullName>
+                <default>false</default>
+                <label>NPP Transacumen</label>
+            </value>
+            <value>
+                <fullName>PayTo Azupay</fullName>
+                <default>false</default>
+                <label>PayTo Azupay</label>
+            </value>
+            <value>
+                <fullName>PayTo Transacumen</fullName>
+                <default>false</default>
+                <label>PayTo Transacumen</label>
+            </value>
+            <value>
+                <fullName>Card Not Present</fullName>
+                <default>false</default>
+                <label>Card Not Present</label>
+            </value>
+            <value>
+                <fullName>Card Present</fullName>
+                <default>false</default>
+                <label>Card Present</label>
+            </value>
+            <value>
+                <fullName>Direct Debit</fullName>
+                <default>false</default>
+                <label>Direct Debit</label>
+            </value>
+            <value>
+                <fullName>Card Not Present Standalone Refund</fullName>
+                <default>false</default>
+                <label>Card Not Present Standalone Refund</label>
+            </value>
+            <value>
+                <fullName>PayID PaymentRequest</fullName>
+                <default>false</default>
+                <label>PayID PaymentRequest</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

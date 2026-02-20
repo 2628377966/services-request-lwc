@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Sales Assigned</fullName>
+        <default>false</default>
+        <label>Sales Assigned</label>
+    </customValue>
+    <customValue>
+        <fullName>Sent to Merchant</fullName>
+        <default>false</default>
+        <label>Sent to Merchant</label>
+    </customValue>
+    <customValue>
+        <fullName>Merchant Initiated</fullName>
+        <default>false</default>
+        <label>Merchant Initiated</label>
+    </customValue>
+    <customValue>
+        <fullName>Submitted</fullName>
+        <default>false</default>
+        <label>Submitted</label>
+    </customValue>
+    <customValue>
+        <fullName>Pending ID Verification</fullName>
+        <default>false</default>
+        <label>Pending ID Verification</label>
+    </customValue>
+    <customValue>
+        <fullName>In Review</fullName>
+        <default>false</default>
+        <label>In Review</label>
+    </customValue>
+    <customValue>
+        <fullName>Need Info</fullName>
+        <default>false</default>
+        <label>Need Info</label>
+    </customValue>
+    <customValue>
+        <fullName>Approved</fullName>
+        <default>false</default>
+        <label>Approved</label>
+    </customValue>
+    <customValue>
+        <fullName>Rejected</fullName>
+        <default>false</default>
+        <label>Rejected</label>
+    </customValue>
+    <customValue>
+        <fullName>EFTPOS Dispatched</fullName>
+        <default>false</default>
+        <label>EFTPOS Dispatched</label>
+    </customValue>
+    <customValue>
+        <fullName>Not Proceeding</fullName>
+        <default>false</default>
+        <label>Not Proceeding</label>
+    </customValue>
+    <customValue>
+        <fullName>New</fullName>
+        <default>false</default>
+        <label>New</label>
+    </customValue>
+    <description>Value Set for Application Status</description>
+    <masterLabel>Application Status</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

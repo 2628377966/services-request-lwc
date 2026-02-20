@@ -1,0 +1,887 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sub_Category__c</fullName>
+    <label>Sub-Category</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <controllingField>Category__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ACMA</fullName>
+                <default>false</default>
+                <label>ACMA</label>
+            </value>
+            <value>
+                <fullName>Additional Products</fullName>
+                <default>false</default>
+                <label>Additional Products</label>
+            </value>
+            <value>
+                <fullName>API access issues</fullName>
+                <default>false</default>
+                <label>API access issues</label>
+            </value>
+            <value>
+                <fullName>Awaiting Auth Signature</fullName>
+                <default>false</default>
+                <label>Awaiting Auth Signature</label>
+            </value>
+            <value>
+                <fullName>Awaiting BNZ Approval</fullName>
+                <default>false</default>
+                <label>Awaiting BNZ Approval</label>
+            </value>
+            <value>
+                <fullName>Awaiting ID</fullName>
+                <default>false</default>
+                <label>Awaiting ID</label>
+            </value>
+            <value>
+                <fullName>Awaiting Merchant Info</fullName>
+                <default>false</default>
+                <label>Awaiting Merchant Info</label>
+            </value>
+            <value>
+                <fullName>Bank Statement Missing / Invalid</fullName>
+                <default>false</default>
+                <label>Bank Statement Missing / Invalid</label>
+            </value>
+            <value>
+                <fullName>Cancellation</fullName>
+                <default>false</default>
+                <label>Cancellation</label>
+            </value>
+            <value>
+                <fullName>Cancellation Policy</fullName>
+                <default>false</default>
+                <label>Cancellation Policy</label>
+            </value>
+            <value>
+                <fullName>Change my Payer Details</fullName>
+                <default>false</default>
+                <label>Change my Payer Details</label>
+            </value>
+            <value>
+                <fullName>Change of ABN</fullName>
+                <default>false</default>
+                <label>Change of ABN</label>
+            </value>
+            <value>
+                <fullName>Change of Ownership</fullName>
+                <default>false</default>
+                <label>Change of Ownership</label>
+            </value>
+            <value>
+                <fullName>Client Dishonour Fee</fullName>
+                <default>false</default>
+                <label>Client Dishonour Fee</label>
+            </value>
+            <value>
+                <fullName>Contact Details</fullName>
+                <default>false</default>
+                <label>Contact Details</label>
+            </value>
+            <value>
+                <fullName>Copy of Client Contract</fullName>
+                <default>false</default>
+                <label>Copy of Client Contract</label>
+            </value>
+            <value>
+                <fullName>Copy of T&amp;C&apos;s</fullName>
+                <default>false</default>
+                <label>Copy of T&amp;C&apos;s</label>
+            </value>
+            <value>
+                <fullName>Credit License</fullName>
+                <default>false</default>
+                <label>Credit License</label>
+            </value>
+            <value>
+                <fullName>Critical information summary</fullName>
+                <default>false</default>
+                <label>Critical information summary</label>
+            </value>
+            <value>
+                <fullName>Data update</fullName>
+                <default>false</default>
+                <label>Data update</label>
+            </value>
+            <value>
+                <fullName>Developer/Support enquiries</fullName>
+                <default>false</default>
+                <label>Developer/Support enquiries</label>
+            </value>
+            <value>
+                <fullName>Direct Debit Request (DDR)</fullName>
+                <default>false</default>
+                <label>Direct Debit Request (DDR)</label>
+            </value>
+            <value>
+                <fullName>Do Not Call</fullName>
+                <default>false</default>
+                <label>Do Not Call</label>
+            </value>
+            <value>
+                <fullName>EDMS DD</fullName>
+                <default>false</default>
+                <label>EDMS DD</label>
+            </value>
+            <value>
+                <fullName>Escalated</fullName>
+                <default>false</default>
+                <label>Escalated</label>
+            </value>
+            <value>
+                <fullName>Failed Payment Common Codes &amp; Reasons</fullName>
+                <default>false</default>
+                <label>Failed Payment Common Codes &amp; Reasons</label>
+            </value>
+            <value>
+                <fullName>Fee Confirmation</fullName>
+                <default>false</default>
+                <label>Fee Confirmation</label>
+            </value>
+            <value>
+                <fullName>Fee Structure - Who Pays</fullName>
+                <default>false</default>
+                <label>Fee Structure - Who Pays</label>
+            </value>
+            <value>
+                <fullName>Financial Details</fullName>
+                <default>false</default>
+                <label>Financial Details</label>
+            </value>
+            <value>
+                <fullName>Financial Reports Pending</fullName>
+                <default>false</default>
+                <label>Financial Reports Pending</label>
+            </value>
+            <value>
+                <fullName>Financial Service License</fullName>
+                <default>false</default>
+                <label>Financial Service License</label>
+            </value>
+            <value>
+                <fullName>Helpdesk/IT</fullName>
+                <default>false</default>
+                <label>Helpdesk/IT</label>
+            </value>
+            <value>
+                <fullName>High Risk Client (Prim. Partners only)</fullName>
+                <default>false</default>
+                <label>High Risk Client (Prim. Partners only)</label>
+            </value>
+            <value>
+                <fullName>High Risk MCC</fullName>
+                <default>false</default>
+                <label>High Risk MCC</label>
+            </value>
+            <value>
+                <fullName>HL DD</fullName>
+                <default>false</default>
+                <label>HL DD</label>
+            </value>
+            <value>
+                <fullName>HL Set Up - App Incomplete</fullName>
+                <default>false</default>
+                <label>HL Set Up - App Incomplete</label>
+            </value>
+            <value>
+                <fullName>HL Web</fullName>
+                <default>false</default>
+                <label>HL Web</label>
+            </value>
+            <value>
+                <fullName>How to Add Payers</fullName>
+                <default>false</default>
+                <label>How to Add Payers</label>
+            </value>
+            <value>
+                <fullName>Integration transitions</fullName>
+                <default>false</default>
+                <label>Integration transitions</label>
+            </value>
+            <value>
+                <fullName>Invoice for maximum transaction value</fullName>
+                <default>false</default>
+                <label>Invoice for maximum transaction value</label>
+            </value>
+            <value>
+                <fullName>Legal Review</fullName>
+                <default>false</default>
+                <label>Legal Review</label>
+            </value>
+            <value>
+                <fullName>Manage Users</fullName>
+                <default>false</default>
+                <label>Manage Users</label>
+            </value>
+            <value>
+                <fullName>Max Trans Confirmation</fullName>
+                <default>false</default>
+                <label>Max Trans Confirmation</label>
+            </value>
+            <value>
+                <fullName>Minimum Monthly Fee</fullName>
+                <default>false</default>
+                <label>Minimum Monthly Fee</label>
+            </value>
+            <value>
+                <fullName>Minutes for Meetings</fullName>
+                <default>false</default>
+                <label>Minutes for Meetings</label>
+            </value>
+            <value>
+                <fullName>Monthly Access Fee</fullName>
+                <default>false</default>
+                <label>Monthly Access Fee</label>
+            </value>
+            <value>
+                <fullName>Obtain Access</fullName>
+                <default>false</default>
+                <label>Obtain Access</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Partner enquiries</fullName>
+                <default>false</default>
+                <label>Partner enquiries</label>
+            </value>
+            <value>
+                <fullName>Partner Tags</fullName>
+                <default>false</default>
+                <label>Partner Tags</label>
+            </value>
+            <value>
+                <fullName>Payer Dishonour Fee</fullName>
+                <default>false</default>
+                <label>Payer Dishonour Fee</label>
+            </value>
+            <value>
+                <fullName>Payer Fees</fullName>
+                <default>false</default>
+                <label>Payer Fees</label>
+            </value>
+            <value>
+                <fullName>Pending GP Approval</fullName>
+                <default>false</default>
+                <label>Pending GP Approval</label>
+            </value>
+            <value>
+                <fullName>Pending WWC</fullName>
+                <default>false</default>
+                <label>Pending WWC</label>
+            </value>
+            <value>
+                <fullName>Priority Campaign</fullName>
+                <default>false</default>
+                <label>Priority Campaign</label>
+            </value>
+            <value>
+                <fullName>Product Confirmation</fullName>
+                <default>false</default>
+                <label>Product Confirmation</label>
+            </value>
+            <value>
+                <fullName>Purpose of Business</fullName>
+                <default>false</default>
+                <label>Purpose of Business</label>
+            </value>
+            <value>
+                <fullName>Requires Escalation</fullName>
+                <default>false</default>
+                <label>Requires Escalation</label>
+            </value>
+            <value>
+                <fullName>Reseller / Supplier Agreements</fullName>
+                <default>false</default>
+                <label>Reseller / Supplier Agreements</label>
+            </value>
+            <value>
+                <fullName>Reset my Password</fullName>
+                <default>false</default>
+                <label>Reset my Password</label>
+            </value>
+            <value>
+                <fullName>Returned to Sales</fullName>
+                <default>false</default>
+                <label>Returned to Sales</label>
+            </value>
+            <value>
+                <fullName>RFI</fullName>
+                <default>false</default>
+                <label>RFI</label>
+            </value>
+            <value>
+                <fullName>Sandbox billing run</fullName>
+                <default>false</default>
+                <label>Sandbox billing run</label>
+            </value>
+            <value>
+                <fullName>Sandbox Creation Requests</fullName>
+                <default>false</default>
+                <label>Sandbox Creation Requests</label>
+            </value>
+            <value>
+                <fullName>Sandbox Data Update</fullName>
+                <default>false</default>
+                <label>Sandbox Data Update</label>
+            </value>
+            <value>
+                <fullName>Sandbox developer/support requests</fullName>
+                <default>false</default>
+                <label>Sandbox developer/support requests</label>
+            </value>
+            <value>
+                <fullName>Sandbox general enquiry</fullName>
+                <default>false</default>
+                <label>Sandbox general enquiry</label>
+            </value>
+            <value>
+                <fullName>Schedule</fullName>
+                <default>false</default>
+                <label>Schedule</label>
+            </value>
+            <value>
+                <fullName>Secondary ID Required</fullName>
+                <default>false</default>
+                <label>Secondary ID Required</label>
+            </value>
+            <value>
+                <fullName>Settlement/Billing Account</fullName>
+                <default>false</default>
+                <label>Settlement/Billing Account</label>
+            </value>
+            <value>
+                <fullName>Settlement Fee</fullName>
+                <default>false</default>
+                <label>Settlement Fee</label>
+            </value>
+            <value>
+                <fullName>Setup Fee</fullName>
+                <default>false</default>
+                <label>Setup Fee</label>
+            </value>
+            <value>
+                <fullName>Shareholder Document</fullName>
+                <default>false</default>
+                <label>Shareholder Document</label>
+            </value>
+            <value>
+                <fullName>Tax Invoice</fullName>
+                <default>false</default>
+                <label>Tax Invoice</label>
+            </value>
+            <value>
+                <fullName>Transaction Fee</fullName>
+                <default>false</default>
+                <label>Transaction Fee</label>
+            </value>
+            <value>
+                <fullName>Trust Deed</fullName>
+                <default>false</default>
+                <label>Trust Deed</label>
+            </value>
+            <value>
+                <fullName>Website Link</fullName>
+                <default>false</default>
+                <label>Website Link</label>
+            </value>
+            <value>
+                <fullName>Tracking Information Response Email</fullName>
+                <default>false</default>
+                <label>Tracking Information Response Email</label>
+            </value>
+            <value>
+                <fullName>Add User</fullName>
+                <default>false</default>
+                <label>Add User</label>
+            </value>
+            <value>
+                <fullName>Remove User</fullName>
+                <default>false</default>
+                <label>Remove User</label>
+            </value>
+            <value>
+                <fullName>Add Device</fullName>
+                <default>false</default>
+                <label>Add Device</label>
+            </value>
+            <value>
+                <fullName>Remove Device</fullName>
+                <default>false</default>
+                <label>Remove Device</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Plan Change Eway</controllingFieldValue>
+            <controllingFieldValue>Change of Details Eway</controllingFieldValue>
+            <controllingFieldValue>Change of Fee Form</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Full</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Partial</controllingFieldValue>
+            <controllingFieldValue>New Offer</controllingFieldValue>
+            <controllingFieldValue>Product Add MOTO</controllingFieldValue>
+            <controllingFieldValue>Product Add Eftpos</controllingFieldValue>
+            <controllingFieldValue>Product Add AMEX</controllingFieldValue>
+            <controllingFieldValue>Product Add DD</controllingFieldValue>
+            <controllingFieldValue>Product Add RealTime</controllingFieldValue>
+            <valueName>Awaiting Auth Signature</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Plan Change Eway</controllingFieldValue>
+            <controllingFieldValue>Change of Details Eway</controllingFieldValue>
+            <controllingFieldValue>Change of Fee Form</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Full</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Partial</controllingFieldValue>
+            <controllingFieldValue>New Offer</controllingFieldValue>
+            <controllingFieldValue>Product Add MOTO</controllingFieldValue>
+            <controllingFieldValue>Product Add Eftpos</controllingFieldValue>
+            <controllingFieldValue>Product Add AMEX</controllingFieldValue>
+            <controllingFieldValue>Product Add DD</controllingFieldValue>
+            <controllingFieldValue>Product Add RealTime</controllingFieldValue>
+            <valueName>Awaiting ID</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Plan Change Eway</controllingFieldValue>
+            <controllingFieldValue>Change of Details Eway</controllingFieldValue>
+            <controllingFieldValue>Change of Fee Form</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Full</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Partial</controllingFieldValue>
+            <controllingFieldValue>New Offer</controllingFieldValue>
+            <controllingFieldValue>Client Enquiry</controllingFieldValue>
+            <controllingFieldValue>Client Enquiry - Complaint</controllingFieldValue>
+            <controllingFieldValue>Internal Enquiry</controllingFieldValue>
+            <controllingFieldValue>Product Add MOTO</controllingFieldValue>
+            <controllingFieldValue>Product Add Eftpos</controllingFieldValue>
+            <controllingFieldValue>Product Add AMEX</controllingFieldValue>
+            <controllingFieldValue>Product Add DD</controllingFieldValue>
+            <controllingFieldValue>Product Add RealTime</controllingFieldValue>
+            <valueName>Fee Confirmation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Plan Change Eway</controllingFieldValue>
+            <controllingFieldValue>Change of Details Eway</controllingFieldValue>
+            <controllingFieldValue>Change of Fee Form</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Full</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Partial</controllingFieldValue>
+            <controllingFieldValue>New Offer</controllingFieldValue>
+            <controllingFieldValue>Client Enquiry</controllingFieldValue>
+            <controllingFieldValue>Client Enquiry - Complaint</controllingFieldValue>
+            <controllingFieldValue>Internal Enquiry</controllingFieldValue>
+            <controllingFieldValue>Product Add MOTO</controllingFieldValue>
+            <controllingFieldValue>Product Add Eftpos</controllingFieldValue>
+            <controllingFieldValue>Product Add AMEX</controllingFieldValue>
+            <controllingFieldValue>Product Add DD</controllingFieldValue>
+            <controllingFieldValue>Product Add RealTime</controllingFieldValue>
+            <valueName>Helpdesk/IT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Plan Change Eway</controllingFieldValue>
+            <controllingFieldValue>Change of Details Eway</controllingFieldValue>
+            <controllingFieldValue>Change of Fee Form</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Full</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Partial</controllingFieldValue>
+            <controllingFieldValue>New Offer</controllingFieldValue>
+            <controllingFieldValue>Client Enquiry</controllingFieldValue>
+            <controllingFieldValue>Client Enquiry - Complaint</controllingFieldValue>
+            <controllingFieldValue>Internal Enquiry</controllingFieldValue>
+            <controllingFieldValue>Product Add MOTO</controllingFieldValue>
+            <controllingFieldValue>Product Add Eftpos</controllingFieldValue>
+            <controllingFieldValue>Product Add AMEX</controllingFieldValue>
+            <controllingFieldValue>Product Add DD</controllingFieldValue>
+            <controllingFieldValue>Product Add RealTime</controllingFieldValue>
+            <valueName>Product Confirmation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Plan Change Eway</controllingFieldValue>
+            <controllingFieldValue>Change of Details Eway</controllingFieldValue>
+            <controllingFieldValue>Change of Fee Form</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Full</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Partial</controllingFieldValue>
+            <controllingFieldValue>New Offer</controllingFieldValue>
+            <controllingFieldValue>Client Enquiry</controllingFieldValue>
+            <controllingFieldValue>Client Enquiry - Complaint</controllingFieldValue>
+            <controllingFieldValue>Internal Enquiry</controllingFieldValue>
+            <controllingFieldValue>Product Add MOTO</controllingFieldValue>
+            <controllingFieldValue>Product Add Eftpos</controllingFieldValue>
+            <controllingFieldValue>Product Add AMEX</controllingFieldValue>
+            <controllingFieldValue>Product Add DD</controllingFieldValue>
+            <controllingFieldValue>Product Add RealTime</controllingFieldValue>
+            <valueName>Returned to Sales</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Change of Details Eway</controllingFieldValue>
+            <controllingFieldValue>Change of Fee Form</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Full</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Partial</controllingFieldValue>
+            <controllingFieldValue>New Offer</controllingFieldValue>
+            <controllingFieldValue>Product Add MOTO</controllingFieldValue>
+            <controllingFieldValue>Product Add Eftpos</controllingFieldValue>
+            <controllingFieldValue>Product Add AMEX</controllingFieldValue>
+            <controllingFieldValue>Product Add DD</controllingFieldValue>
+            <controllingFieldValue>Product Add RealTime</controllingFieldValue>
+            <valueName>Bank Statement Missing / Invalid</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>COE - E2E Full</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Partial</controllingFieldValue>
+            <controllingFieldValue>New Offer</controllingFieldValue>
+            <valueName>ACMA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>COE - E2E Full</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Partial</controllingFieldValue>
+            <controllingFieldValue>New Offer</controllingFieldValue>
+            <valueName>Awaiting BNZ Approval</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>COE - E2E Full</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Partial</controllingFieldValue>
+            <controllingFieldValue>New Offer</controllingFieldValue>
+            <valueName>Awaiting Merchant Info</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>COE - E2E Full</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Partial</controllingFieldValue>
+            <controllingFieldValue>New Offer</controllingFieldValue>
+            <valueName>Cancellation Policy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>COE - E2E Full</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Partial</controllingFieldValue>
+            <controllingFieldValue>Change of Ownership/ABN</controllingFieldValue>
+            <valueName>Change of Ownership</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>COE - E2E Full</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Partial</controllingFieldValue>
+            <controllingFieldValue>New Offer</controllingFieldValue>
+            <valueName>Copy of Client Contract</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>COE - E2E Full</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Partial</controllingFieldValue>
+            <controllingFieldValue>New Offer</controllingFieldValue>
+            <valueName>Copy of T&amp;C&apos;s</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>COE - E2E Full</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Partial</controllingFieldValue>
+            <controllingFieldValue>New Offer</controllingFieldValue>
+            <valueName>Credit License</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>COE - E2E Full</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Partial</controllingFieldValue>
+            <controllingFieldValue>New Offer</controllingFieldValue>
+            <valueName>Critical information summary</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>COE - E2E Full</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Partial</controllingFieldValue>
+            <controllingFieldValue>New Offer</controllingFieldValue>
+            <valueName>Do Not Call</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>COE - E2E Full</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Partial</controllingFieldValue>
+            <controllingFieldValue>New Offer</controllingFieldValue>
+            <valueName>Escalated</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>COE - E2E Full</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Partial</controllingFieldValue>
+            <controllingFieldValue>New Offer</controllingFieldValue>
+            <valueName>Financial Reports Pending</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>COE - E2E Full</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Partial</controllingFieldValue>
+            <controllingFieldValue>New Offer</controllingFieldValue>
+            <valueName>Financial Service License</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>COE - E2E Full</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Partial</controllingFieldValue>
+            <controllingFieldValue>New Offer</controllingFieldValue>
+            <valueName>High Risk Client (Prim. Partners only)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>COE - E2E Full</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Partial</controllingFieldValue>
+            <controllingFieldValue>New Offer</controllingFieldValue>
+            <valueName>High Risk MCC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>COE - E2E Full</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Partial</controllingFieldValue>
+            <controllingFieldValue>New Offer</controllingFieldValue>
+            <valueName>HL Set Up - App Incomplete</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>COE - E2E Full</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Partial</controllingFieldValue>
+            <controllingFieldValue>New Offer</controllingFieldValue>
+            <valueName>Invoice for maximum transaction value</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>COE - E2E Full</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Partial</controllingFieldValue>
+            <controllingFieldValue>New Offer</controllingFieldValue>
+            <valueName>Legal Review</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>COE - E2E Full</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Partial</controllingFieldValue>
+            <controllingFieldValue>New Offer</controllingFieldValue>
+            <valueName>Max Trans Confirmation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>COE - E2E Full</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Partial</controllingFieldValue>
+            <controllingFieldValue>New Offer</controllingFieldValue>
+            <valueName>Minutes for Meetings</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>COE - E2E Full</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Partial</controllingFieldValue>
+            <controllingFieldValue>New Offer</controllingFieldValue>
+            <valueName>Pending GP Approval</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>COE - E2E Full</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Partial</controllingFieldValue>
+            <controllingFieldValue>New Offer</controllingFieldValue>
+            <valueName>Pending WWC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>COE - E2E Full</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Partial</controllingFieldValue>
+            <controllingFieldValue>New Offer</controllingFieldValue>
+            <valueName>Priority Campaign</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>COE - E2E Full</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Partial</controllingFieldValue>
+            <controllingFieldValue>New Offer</controllingFieldValue>
+            <valueName>Purpose of Business</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>COE - E2E Full</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Partial</controllingFieldValue>
+            <controllingFieldValue>New Offer</controllingFieldValue>
+            <valueName>Requires Escalation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>COE - E2E Full</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Partial</controllingFieldValue>
+            <controllingFieldValue>New Offer</controllingFieldValue>
+            <valueName>Reseller / Supplier Agreements</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>COE - E2E Full</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Partial</controllingFieldValue>
+            <controllingFieldValue>New Offer</controllingFieldValue>
+            <valueName>RFI</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>COE - E2E Full</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Partial</controllingFieldValue>
+            <controllingFieldValue>New Offer</controllingFieldValue>
+            <valueName>Secondary ID Required</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>COE - E2E Full</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Partial</controllingFieldValue>
+            <controllingFieldValue>New Offer</controllingFieldValue>
+            <valueName>Shareholder Document</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>COE - E2E Full</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Partial</controllingFieldValue>
+            <controllingFieldValue>New Offer</controllingFieldValue>
+            <valueName>Trust Deed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>COE - E2E Full</controllingFieldValue>
+            <controllingFieldValue>COE - E2E Partial</controllingFieldValue>
+            <controllingFieldValue>New Offer</controllingFieldValue>
+            <valueName>Website Link</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Additional Products</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Change my Details</controllingFieldValue>
+            <valueName>Cancellation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Change my Details</controllingFieldValue>
+            <controllingFieldValue>Change my Business Details</controllingFieldValue>
+            <valueName>Contact Details</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Change my Details</controllingFieldValue>
+            <valueName>Financial Details</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Change my Details</controllingFieldValue>
+            <valueName>Schedule</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service (multi-MID)</controllingFieldValue>
+            <valueName>Add User</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service (multi-MID)</controllingFieldValue>
+            <valueName>Remove User</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service (multi-MID)</controllingFieldValue>
+            <valueName>Add Device</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service (multi-MID)</controllingFieldValue>
+            <valueName>Remove Device</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Change of Ownership/ABN</controllingFieldValue>
+            <valueName>Change of ABN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Change my Business Details</controllingFieldValue>
+            <valueName>Fee Structure - Who Pays</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Change my Business Details</controllingFieldValue>
+            <valueName>Settlement/Billing Account</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Change my Payer Details</controllingFieldValue>
+            <valueName>Change my Payer Details</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Change my Payer Details</controllingFieldValue>
+            <valueName>Failed Payment Common Codes &amp; Reasons</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Change my Payer Details</controllingFieldValue>
+            <valueName>Payer Fees</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>My Fees</controllingFieldValue>
+            <valueName>Client Dishonour Fee</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>My Fees</controllingFieldValue>
+            <valueName>Minimum Monthly Fee</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>My Fees</controllingFieldValue>
+            <valueName>Monthly Access Fee</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>My Fees</controllingFieldValue>
+            <valueName>Payer Dishonour Fee</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>My Fees</controllingFieldValue>
+            <valueName>Settlement Fee</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>My Fees</controllingFieldValue>
+            <valueName>Setup Fee</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>My Fees</controllingFieldValue>
+            <valueName>Tax Invoice</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>My Fees</controllingFieldValue>
+            <valueName>Transaction Fee</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ezidebit Online</controllingFieldValue>
+            <valueName>Manage Users</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ezidebit Online</controllingFieldValue>
+            <valueName>Obtain Access</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ezidebit Online</controllingFieldValue>
+            <valueName>Reset my Password</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Payer Onboarding/Forms</controllingFieldValue>
+            <valueName>Direct Debit Request (DDR)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Payer Onboarding/Forms</controllingFieldValue>
+            <valueName>How to Add Payers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Refund</controllingFieldValue>
+            <valueName>EDMS DD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Refund</controllingFieldValue>
+            <valueName>HL DD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Refund</controllingFieldValue>
+            <valueName>HL Web</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Production</controllingFieldValue>
+            <valueName>API access issues</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Production</controllingFieldValue>
+            <valueName>Data update</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Production</controllingFieldValue>
+            <valueName>Developer/Support enquiries</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Production</controllingFieldValue>
+            <valueName>Integration transitions</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Production</controllingFieldValue>
+            <valueName>Partner enquiries</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sandbox</controllingFieldValue>
+            <valueName>Sandbox billing run</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sandbox</controllingFieldValue>
+            <valueName>Sandbox Creation Requests</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sandbox</controllingFieldValue>
+            <valueName>Sandbox Data Update</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sandbox</controllingFieldValue>
+            <valueName>Sandbox developer/support requests</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sandbox</controllingFieldValue>
+            <valueName>Sandbox general enquiry</valueName>
+        </valueSettings>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

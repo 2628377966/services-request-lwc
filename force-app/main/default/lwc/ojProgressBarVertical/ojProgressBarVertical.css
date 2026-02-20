@@ -1,0 +1,130 @@
+:host div {
+    font-size: initial;
+}
+
+.slds-progress__marker {
+    pointer-events: none;
+}
+
+.proress-vertical-container{
+    /* position: relative;  */
+    z-index: 0;
+}
+.slds-progress .slds-progress-bar {
+    position: absolute;
+    top: 2.5rem;
+    left: 0.625rem;
+    margin-top: 0rem;
+}
+
+.slds-progress-bar_vertical {
+    height: 24rem;
+    width: 0.25rem;
+}
+
+.slds-progress_vertical .slds-progress__item {
+    min-height: 8rem;
+    max-height: 8.5rem;
+    align-items: flex-start;
+    top:1.25rem;
+}
+
+.progress-container{
+    height: 100%; /* Ensure container takes full height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.progress-item-text-color{
+    color: var(--progress-item-font-color);
+}
+
+.current-progress-item-text-style{
+    font-weight: 700 !important;
+}
+
+.progress-stage-text-style{
+    font-family: var(--progress-stage-font-family, sans-serif);
+    font-size: clamp(0.5rem, 2.0vw, 1.1rem)!important;
+    /* font-size: clamp(0.75em); */
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.text-with-min-max-width {
+    min-width: 4.6875em;
+    max-width: 6.6875em;
+    height: 2.625em;
+}
+
+.text-with-max-width {
+    min-width: 4.6875em;
+    max-width: 8.5625em;
+    height: 2.625em;
+}
+
+.default-progress-svg-circle {
+    fill :#E5E5E5;
+}
+
+.progress-svg-circle{
+    fill :var(--progress-svg-circle-color);
+}
+
+.progress-stage-svg-text{
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-anchor: middle;
+}
+
+.default-progress-stage-svg-text-color{
+    fill: white;
+}
+
+.progress-stage-svg-text-color{
+    fill: var(--progress-stage-svg-font-color);
+}
+.slds-progress-bar__value {
+    background: var(--progressbar-background-color);
+}
+
+.slds-progress_vertical .slds-progress__item.slds-is-completed:after, .slds-progress_vertical .slds-progress__item.slds-is-completed:before{
+    background-color: #ffffff;
+
+}
+
+  
+  @media (max-width: 1440px) {
+    .slds-progress .slds-progress-bar {
+        position: absolute;
+        top: 2.5rem;
+        left: 0.625rem;
+        margin-top: 0rem;
+    }
+    
+    .slds-progress-bar_vertical {
+        height: 19.5rem;
+        width: 0.25rem;
+    }
+
+    .slds-progress_vertical .slds-progress__item {
+        min-height: 6.5rem;
+        max-height: 7rem;
+        align-items: flex-start;
+        top:1.25rem;
+    }
+  }
+  
+  /* @media (max-width: 769px) {
+    .slds-progress-bar_vertical {
+      height: 5.33rem; 
+    }
+  }  */
+
+  .slds-progress-item-container {
+    display: flex; 
+    align-items: center; 
+    gap: 0.5rem; 
+}

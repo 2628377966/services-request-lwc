@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LatPay</fullName>
+    <active>false</active>
+    <label>LatPay</label>
+    <picklistValues>
+        <picklist>Association__c</picklist>
+        <values>
+            <fullName>group1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>quest</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Hard_Limit_profile__c</picklist>
+        <values>
+            <fullName>100K High HL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>100K Low HL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>100K Med HL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10K High HL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10K Low HL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10K Med HL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20K High HL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20K Low HL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20K Med HL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>50K High HL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>50K Low HL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>50K Med HL</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Supplier_Name__c</picklist>
+        <values>
+            <fullName>Latpay</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Smartpay</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Supported_Card_Types__c</picklist>
+        <values>
+            <fullName>eftpos</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>mastercard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>visa</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Terminal_Branding__c</picklist>
+        <values>
+            <fullName>Eway</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ezidebit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Global Payments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Guestpoint %28Eway%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hairware Beautyware %28Ezidebit%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Storage King %28Ezidebit%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Terminal_Integration_Mode__c</picklist>
+        <values>
+            <fullName>Integrated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standalone</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Terminal_Type__c</picklist>
+        <values>
+            <fullName>Quest 720</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quest 850</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+</RecordType>

@@ -1,0 +1,227 @@
+<template>
+    <div if:false={isSubmitPage} class="slds-size_3-of-12 proress-vertical-container">
+        <div if:true={isDesktop} class={progressClass} style="width: 200px; align-self: flex-start;">
+            <div class="slds-progress slds-progress_vertical">
+                <div>
+                    <ol class="slds-progress__list">
+                        <li class="slds-progress__item slds-is-completed">
+                            <div class="slds-progress-item-container">
+
+                                <div class="slds-progress__marker slds-progress__marker_icon" tabindex="0">
+                                    <svg if:false={stageSvgCompleted1} xmlns="http://www.w3.org/2000/svg" width="26"
+                                        height="26" viewBox="0 0 26 26" fill="none">
+                                        <circle cx="13" cy="13" r="13" class={stageSvgFillColor1} />
+                                        <text x="13" y="17" class={stageSvgTextColor1}>1</text>
+                                    </svg>
+                                    <svg if:true={stageSvgCompleted1} xmlns="http://www.w3.org/2000/svg" width="26"
+                                        height="26" viewBox="0 0 26 26" fill="none">
+                                        <g clip-path="url(#clip0_4063_3302)">
+                                            <circle cx="13" cy="13" r="13" class={stageSvgFillColor1} />
+                                            <g filter="url(#filter0_d_4063_3302)">
+                                                <path
+                                                    d="M12.9748 1.64014C6.69835 1.64014 1.61084 6.72764 1.61084 13.0041C1.61084 19.2799 6.69835 24.3681 12.9748 24.3681C19.2506 24.3681 24.3388 19.2799 24.3388 13.0041C24.3388 6.72764 19.2506 1.64014 12.9748 1.64014ZM12.9748 22.7343C7.601 22.7343 3.24466 18.3773 3.24466 13.0041C3.24466 7.6303 7.601 3.27399 12.9748 3.27399C18.3486 3.27399 22.7049 7.63032 22.7049 13.0041C22.7049 18.3772 18.3486 22.7343 12.9748 22.7343Z"
+                                                    fill={completedStageSvgColor} />
+                                                <path
+                                                    d="M2.11084 13.0041C2.11084 7.00379 6.97449 2.14014 12.9748 2.14014C18.9744 2.14014 23.8388 7.00381 23.8388 13.0041C23.8388 19.0037 18.9744 23.8681 12.9748 23.8681C6.97451 23.8681 2.11084 19.0038 2.11084 13.0041ZM2.74466 13.0041C2.74466 18.6534 7.32483 23.2343 12.9748 23.2343C18.6248 23.2343 23.2049 18.6534 23.2049 13.0041C23.2049 7.35418 18.6248 2.77399 12.9748 2.77399C7.32486 2.77399 2.74466 7.35416 2.74466 13.0041Z"
+                                                    stroke={completedStageSvgColor} />
+                                            </g>
+                                            <path
+                                                d="M17.9353 9.79346C17.6413 9.79346 17.3742 9.91279 17.1811 10.106L11.5431 15.7568L8.05009 12.2509C7.85691 12.0577 7.59057 11.9384 7.29582 11.9384C6.70774 11.9384 6.23047 12.415 6.23047 13.0038C6.23047 13.2979 6.34905 13.5635 6.54156 13.756L10.7888 18.0175C10.9813 18.2099 11.2484 18.33 11.5431 18.33C11.8379 18.33 12.1042 18.2106 12.2974 18.0175V18.0182L18.6896 11.611C18.8814 11.4186 19.0007 11.1522 19.0007 10.8582C19.0007 10.2701 18.5234 9.79346 17.9353 9.79346Z"
+                                                fill={completedStageSvgColor} />
+                                        </g>
+                                        <defs>
+                                            <filter id="filter0_d_4063_3302" x="-2.38916" y="1.64014" width="30.728"
+                                                height="30.728" filterUnits="userSpaceOnUse"
+                                                color-interpolation-filters="sRGB">
+                                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                <feColorMatrix in="SourceAlpha" type="matrix"
+                                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                                    result="hardAlpha" />
+                                                <feOffset dy="4" />
+                                                <feGaussianBlur stdDeviation="2" />
+                                                <feComposite in2="hardAlpha" operator="out" />
+                                                <feColorMatrix type="matrix"
+                                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                                                <feBlend mode="normal" in2="BackgroundImageFix"
+                                                    result="effect1_dropShadow_4063_3302" />
+                                                <feBlend mode="normal" in="SourceGraphic"
+                                                    in2="effect1_dropShadow_4063_3302" result="shape" />
+                                            </filter>
+                                            <clipPath id="clip0_4063_3302">
+                                                <rect width="26" height="26" fill={completedStageSvgColor} />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                <div class={progressItemTextColor1}>Select<br>Bank Accounts
+                                </div>
+                            </div>
+                        </li>
+                        <li class="slds-progress__item slds-is-completed">
+                            <div class="slds-progress-item-container">
+
+                                <div class="slds-progress__marker slds-progress__marker_icon" tabindex="0">
+                                    <svg if:false={stageSvgCompleted2} xmlns="http://www.w3.org/2000/svg" width="26"
+                                        height="26" viewBox="0 0 26 26" fill="none">
+                                        <circle cx="13" cy="13" r="13" class={stageSvgFillColor2} />
+                                        <text x="13" y="17" class={stageSvgTextColor2}>2</text>
+                                    </svg>
+                                    <svg if:true={stageSvgCompleted2} xmlns="http://www.w3.org/2000/svg" width="26"
+                                        height="26" viewBox="0 0 26 26" fill="none">
+                                        <g clip-path="url(#clip0_4063_3302)">
+                                            <circle cx="13" cy="13" r="13" class={stageSvgFillColor1} />
+                                            <g filter="url(#filter0_d_4063_3302)">
+                                                <path
+                                                    d="M12.9748 1.64014C6.69835 1.64014 1.61084 6.72764 1.61084 13.0041C1.61084 19.2799 6.69835 24.3681 12.9748 24.3681C19.2506 24.3681 24.3388 19.2799 24.3388 13.0041C24.3388 6.72764 19.2506 1.64014 12.9748 1.64014ZM12.9748 22.7343C7.601 22.7343 3.24466 18.3773 3.24466 13.0041C3.24466 7.6303 7.601 3.27399 12.9748 3.27399C18.3486 3.27399 22.7049 7.63032 22.7049 13.0041C22.7049 18.3772 18.3486 22.7343 12.9748 22.7343Z"
+                                                    fill={completedStageSvgColor} />
+                                                <path
+                                                    d="M2.11084 13.0041C2.11084 7.00379 6.97449 2.14014 12.9748 2.14014C18.9744 2.14014 23.8388 7.00381 23.8388 13.0041C23.8388 19.0037 18.9744 23.8681 12.9748 23.8681C6.97451 23.8681 2.11084 19.0038 2.11084 13.0041ZM2.74466 13.0041C2.74466 18.6534 7.32483 23.2343 12.9748 23.2343C18.6248 23.2343 23.2049 18.6534 23.2049 13.0041C23.2049 7.35418 18.6248 2.77399 12.9748 2.77399C7.32486 2.77399 2.74466 7.35416 2.74466 13.0041Z"
+                                                    stroke={completedStageSvgColor} />
+                                            </g>
+                                            <path
+                                                d="M17.9353 9.79346C17.6413 9.79346 17.3742 9.91279 17.1811 10.106L11.5431 15.7568L8.05009 12.2509C7.85691 12.0577 7.59057 11.9384 7.29582 11.9384C6.70774 11.9384 6.23047 12.415 6.23047 13.0038C6.23047 13.2979 6.34905 13.5635 6.54156 13.756L10.7888 18.0175C10.9813 18.2099 11.2484 18.33 11.5431 18.33C11.8379 18.33 12.1042 18.2106 12.2974 18.0175V18.0182L18.6896 11.611C18.8814 11.4186 19.0007 11.1522 19.0007 10.8582C19.0007 10.2701 18.5234 9.79346 17.9353 9.79346Z"
+                                                fill={completedStageSvgColor} />
+                                        </g>
+                                        <defs>
+                                            <filter id="filter0_d_4063_3303" x="-2.38916" y="1.64014" width="30.728"
+                                                height="30.728" filterUnits="userSpaceOnUse"
+                                                color-interpolation-filters="sRGB">
+                                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                <feColorMatrix in="SourceAlpha" type="matrix"
+                                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                                    result="hardAlpha" />
+                                                <feOffset dy="4" />
+                                                <feGaussianBlur stdDeviation="2" />
+                                                <feComposite in2="hardAlpha" operator="out" />
+                                                <feColorMatrix type="matrix"
+                                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                                                <feBlend mode="normal" in2="BackgroundImageFix"
+                                                    result="effect1_dropShadow_4063_3302" />
+                                                <feBlend mode="normal" in="SourceGraphic"
+                                                    in2="effect1_dropShadow_4063_3302" result="shape" />
+                                            </filter>
+                                            <clipPath id="clip0_4063_3303">
+                                                <rect width="26" height="26" fill={completedStageSvgColor} />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                <div class={progressItemTextColor2}>Bank<br>Details</div>
+                            </div>
+                        </li>
+                        <li class="slds-progress__item slds-is-completed">
+                            <div class="slds-progress-item-container">
+
+                                <div class="slds-progress__marker slds-progress__marker_icon" tabindex="0">
+                                    <svg if:false={stageSvgCompleted3} xmlns="http://www.w3.org/2000/svg" width="26"
+                                        height="26" viewBox="0 0 26 26" fill="none">
+                                        <circle cx="13" cy="13" r="13" class={stageSvgFillColor3} />
+                                        <text x="13" y="17" class={stageSvgTextColor3}>3</text>
+                                    </svg>
+                                    <svg if:true={stageSvgCompleted3} xmlns="http://www.w3.org/2000/svg" width="26"
+                                        height="26" viewBox="0 0 26 26" fill="none">
+                                        <g clip-path="url(#clip0_4063_3302)">
+                                            <circle cx="13" cy="13" r="13" class={stageSvgFillColor1} />
+                                            <g filter="url(#filter0_d_4063_3302)">
+                                                <path
+                                                    d="M12.9748 1.64014C6.69835 1.64014 1.61084 6.72764 1.61084 13.0041C1.61084 19.2799 6.69835 24.3681 12.9748 24.3681C19.2506 24.3681 24.3388 19.2799 24.3388 13.0041C24.3388 6.72764 19.2506 1.64014 12.9748 1.64014ZM12.9748 22.7343C7.601 22.7343 3.24466 18.3773 3.24466 13.0041C3.24466 7.6303 7.601 3.27399 12.9748 3.27399C18.3486 3.27399 22.7049 7.63032 22.7049 13.0041C22.7049 18.3772 18.3486 22.7343 12.9748 22.7343Z"
+                                                    fill={completedStageSvgColor} />
+                                                <path
+                                                    d="M2.11084 13.0041C2.11084 7.00379 6.97449 2.14014 12.9748 2.14014C18.9744 2.14014 23.8388 7.00381 23.8388 13.0041C23.8388 19.0037 18.9744 23.8681 12.9748 23.8681C6.97451 23.8681 2.11084 19.0038 2.11084 13.0041ZM2.74466 13.0041C2.74466 18.6534 7.32483 23.2343 12.9748 23.2343C18.6248 23.2343 23.2049 18.6534 23.2049 13.0041C23.2049 7.35418 18.6248 2.77399 12.9748 2.77399C7.32486 2.77399 2.74466 7.35416 2.74466 13.0041Z"
+                                                    stroke={completedStageSvgColor} />
+                                            </g>
+                                            <path
+                                                d="M17.9353 9.79346C17.6413 9.79346 17.3742 9.91279 17.1811 10.106L11.5431 15.7568L8.05009 12.2509C7.85691 12.0577 7.59057 11.9384 7.29582 11.9384C6.70774 11.9384 6.23047 12.415 6.23047 13.0038C6.23047 13.2979 6.34905 13.5635 6.54156 13.756L10.7888 18.0175C10.9813 18.2099 11.2484 18.33 11.5431 18.33C11.8379 18.33 12.1042 18.2106 12.2974 18.0175V18.0182L18.6896 11.611C18.8814 11.4186 19.0007 11.1522 19.0007 10.8582C19.0007 10.2701 18.5234 9.79346 17.9353 9.79346Z"
+                                                fill={completedStageSvgColor} />
+                                        </g>
+                                        <defs>
+                                            <filter id="filter0_d_4063_3304" x="-2.38916" y="1.64014" width="30.728"
+                                                height="30.728" filterUnits="userSpaceOnUse"
+                                                color-interpolation-filters="sRGB">
+                                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                <feColorMatrix in="SourceAlpha" type="matrix"
+                                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                                    result="hardAlpha" />
+                                                <feOffset dy="4" />
+                                                <feGaussianBlur stdDeviation="2" />
+                                                <feComposite in2="hardAlpha" operator="out" />
+                                                <feColorMatrix type="matrix"
+                                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                                                <feBlend mode="normal" in2="BackgroundImageFix"
+                                                    result="effect1_dropShadow_4063_3302" />
+                                                <feBlend mode="normal" in="SourceGraphic"
+                                                    in2="effect1_dropShadow_4063_3302" result="shape" />
+                                            </filter>
+                                            <clipPath id="clip0_4063_3304">
+                                                <rect width="26" height="26" fill={completedStageSvgColor} />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                <div class={progressItemTextColor3}>Verify<br>Bank Details</div>
+                            </div>
+                        </li>
+                        <li class="slds-progress__item slds-is-completed">
+                            <div class="slds-progress-item-container">
+
+                                <div class="slds-progress__marker slds-progress__marker_icon" tabindex="0">
+                                    <svg if:false={stageSvgCompleted4} xmlns="http://www.w3.org/2000/svg" width="26"
+                                        height="26" viewBox="0 0 26 26" fill="none">
+                                        <circle cx="13" cy="13" r="13" class={stageSvgFillColor4} />
+                                        <text x="13" y="17" class={stageSvgTextColor4}>4</text>
+                                    </svg>
+                                    <svg if:true={stageSvgCompleted4} xmlns="http://www.w3.org/2000/svg" width="26"
+                                        height="26" viewBox="0 0 26 26" fill="none">
+                                        <g clip-path="url(#clip0_4063_3302)">
+                                            <circle cx="13" cy="13" r="13" class={stageSvgFillColor1} />
+                                            <g filter="url(#filter0_d_4063_3302)">
+                                                <path
+                                                    d="M12.9748 1.64014C6.69835 1.64014 1.61084 6.72764 1.61084 13.0041C1.61084 19.2799 6.69835 24.3681 12.9748 24.3681C19.2506 24.3681 24.3388 19.2799 24.3388 13.0041C24.3388 6.72764 19.2506 1.64014 12.9748 1.64014ZM12.9748 22.7343C7.601 22.7343 3.24466 18.3773 3.24466 13.0041C3.24466 7.6303 7.601 3.27399 12.9748 3.27399C18.3486 3.27399 22.7049 7.63032 22.7049 13.0041C22.7049 18.3772 18.3486 22.7343 12.9748 22.7343Z"
+                                                    fill={completedStageSvgColor} />
+                                                <path
+                                                    d="M2.11084 13.0041C2.11084 7.00379 6.97449 2.14014 12.9748 2.14014C18.9744 2.14014 23.8388 7.00381 23.8388 13.0041C23.8388 19.0037 18.9744 23.8681 12.9748 23.8681C6.97451 23.8681 2.11084 19.0038 2.11084 13.0041ZM2.74466 13.0041C2.74466 18.6534 7.32483 23.2343 12.9748 23.2343C18.6248 23.2343 23.2049 18.6534 23.2049 13.0041C23.2049 7.35418 18.6248 2.77399 12.9748 2.77399C7.32486 2.77399 2.74466 7.35416 2.74466 13.0041Z"
+                                                    stroke={completedStageSvgColor} />
+                                            </g>
+                                            <path
+                                                d="M17.9353 9.79346C17.6413 9.79346 17.3742 9.91279 17.1811 10.106L11.5431 15.7568L8.05009 12.2509C7.85691 12.0577 7.59057 11.9384 7.29582 11.9384C6.70774 11.9384 6.23047 12.415 6.23047 13.0038C6.23047 13.2979 6.34905 13.5635 6.54156 13.756L10.7888 18.0175C10.9813 18.2099 11.2484 18.33 11.5431 18.33C11.8379 18.33 12.1042 18.2106 12.2974 18.0175V18.0182L18.6896 11.611C18.8814 11.4186 19.0007 11.1522 19.0007 10.8582C19.0007 10.2701 18.5234 9.79346 17.9353 9.79346Z"
+                                                fill={completedStageSvgColor} />
+                                        </g>
+                                        <defs>
+                                            <filter id="filter0_d_4063_3305" x="-2.38916" y="1.64014" width="30.728"
+                                                height="30.728" filterUnits="userSpaceOnUse"
+                                                color-interpolation-filters="sRGB">
+                                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                <feColorMatrix in="SourceAlpha" type="matrix"
+                                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                                    result="hardAlpha" />
+                                                <feOffset dy="4" />
+                                                <feGaussianBlur stdDeviation="2" />
+                                                <feComposite in2="hardAlpha" operator="out" />
+                                                <feColorMatrix type="matrix"
+                                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                                                <feBlend mode="normal" in2="BackgroundImageFix"
+                                                    result="effect1_dropShadow_4063_3302" />
+                                                <feBlend mode="normal" in="SourceGraphic"
+                                                    in2="effect1_dropShadow_4063_3302" result="shape" />
+                                            </filter>
+                                            <clipPath id="clip0_4063_3305">
+                                                <rect width="26" height="26" fill={completedStageSvgColor} />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                <div class={progressItemTextColor4}>Submit<br></div>
+                            </div>
+                        </li>
+                    </ol>
+                    <div class="slds-progress-bar progress-bar slds-progress-bar_vertical" aria-valuemax="100"
+                        aria-valuenow={progressValue} aria-label="This is a Test Progress bar" role="progressbar">
+                        <span class="slds-progress-bar__value" style={verticalProgressBarStyle}>
+                            <span class="slds-assistive-text">Progress:{progressValue}%</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

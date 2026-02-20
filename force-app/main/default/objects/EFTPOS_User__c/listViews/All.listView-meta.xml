@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>OBJECT_ID</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>EFTPOS_Device_Owner_Account__c</columns>
+    <columns>Email__c</columns>
+    <columns>Business_Name__c</columns>
+    <columns>First_Name__c</columns>
+    <columns>Last_Name__c</columns>
+    <columns>Status__c</columns>
+    <columns>EFTPOS_Device_Owner_Opportunity__c</columns>
+    <columns>EFTPOS_Device_User_Account__c</columns>
+    <columns>EFTPOS_Device_User_Lead__c</columns>
+    <columns>EFTPOS_Device_User_Opportunity__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

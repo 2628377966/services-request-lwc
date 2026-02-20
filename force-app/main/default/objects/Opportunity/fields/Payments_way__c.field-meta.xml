@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payments_way__c</fullName>
+    <label>Payments way</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>My product/service is provided to the customer in full before any payment is taken</fullName>
+                <default>false</default>
+                <label>My product/service is provided to the customer in full before any payment is taken</label>
+            </value>
+            <value>
+                <fullName>I take payments before or during my product/service delivery to the customer</fullName>
+                <default>false</default>
+                <label>I take payments before or during my product/service delivery to the customer</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

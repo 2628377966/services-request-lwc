@@ -1,0 +1,27 @@
+<template>
+    <div class="container slds-p-bottom_large">
+        <div class="page-center">
+            <div class="container">
+                <h1 class="mainTitle slds-p-top_large ">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+                        <use href={tickURL}></use>
+                    </svg>
+                    <span class="slds-p-left_small" style="font-size: 1.9rem;">Your request has been submitted!</span>
+                </h1>
+                <div class="slds-p-top_large">This is what happens next:</div>
+                <div class="slds-p-top_large" style="display: flex;">
+                    <div style="max-width: 100%; height:100%;"><img src={image01} class="limitImageSize"></div>
+                    <div class="slds-p-top_x-small slds-p-left_x-small">We have received your request and will work on this.</div>
+                </div>
+                <div class="slds-p-top_large" style="display: flex;">
+                    <div style="max-width: 100%; height:100%;"><img src={image02} class="limitImageSize"></div>
+                    <div class="slds-p-top_x-small slds-p-left_x-small">We will reach out if more information is needed.</div>
+                </div>
+                <div class="slds-p-top_large" style="display: flex;">
+                    <div style="max-width: 100%; height:100%;"><img src={image03} class="limitImageSize"></div>
+                    <div class="slds-p-top_x-small slds-p-left_x-small">That's it! Once your request is completed, you will receive a confirmation email. </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

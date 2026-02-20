@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Status__c</fullName>
+    <label>Account Status - HL</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Active</fullName>
+                <color>#F3D904</color>
+                <default>false</default>
+                <label>Active</label>
+            </value>
+            <value>
+                <fullName>Inactive</fullName>
+                <color>#FF0000</color>
+                <default>false</default>
+                <label>Inactive</label>
+            </value>
+            <value>
+                <fullName>Closed</fullName>
+                <color>#A53711</color>
+                <default>false</default>
+                <label>Closed</label>
+            </value>
+            <value>
+                <fullName>Unapproved</fullName>
+                <default>false</default>
+                <label>Unapproved</label>
+            </value>
+            <value>
+                <fullName>Suspended</fullName>
+                <default>false</default>
+                <label>Suspended</label>
+            </value>
+            <value>
+                <fullName>Fraud/Dispute</fullName>
+                <default>false</default>
+                <label>Fraud/Dispute</label>
+            </value>
+            <value>
+                <fullName>Dormant</fullName>
+                <default>false</default>
+                <label>Dormant</label>
+            </value>
+            <value>
+                <fullName>Application Incomplete</fullName>
+                <default>false</default>
+                <label>Application Incomplete</label>
+            </value>
+            <value>
+                <fullName>Hold Debits</fullName>
+                <default>false</default>
+                <label>Hold Debits</label>
+            </value>
+            <value>
+                <fullName>Purge</fullName>
+                <default>false</default>
+                <label>Purge</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

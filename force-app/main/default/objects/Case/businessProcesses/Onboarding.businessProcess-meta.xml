@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BusinessProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Onboarding</fullName>
+    <description>Process for Onboarding team</description>
+    <isActive>true</isActive>
+    <values>
+        <fullName>Active - Welcome Email Pending</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Assigned to Credit</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Awaiting EFTPOS dispatch</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Awaiting merchant</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>BNZ Pending Approval</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Closed%2FLost - Competitor</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Closed%2FLost - Documents</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Closed%2FLost - Pricing</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Closed%2FLost - Timeframe</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Credit %26 Risk</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>In Progress</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>IncompltComplnc</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>KYC Ready for Set Up</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Long Term Project</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Multi Mid User - Eftpos Config Pending</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>New</fullName>
+        <default>true</default>
+    </values>
+    <values>
+        <fullName>Resolved</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Resolved - Lost</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Resolved - Won</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Resolved- App incomplete</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Sales Team</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Settlement Hold - KYC Pending</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Unable to Contact</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>With BNZ</fullName>
+        <default>false</default>
+    </values>
+</BusinessProcess>

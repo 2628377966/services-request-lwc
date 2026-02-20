@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Requested__c</fullName>
+    <label>Product Requested</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Direct Debit</fullName>
+                <default>false</default>
+                <label>Direct Debit</label>
+            </value>
+            <value>
+                <fullName>eCommerce</fullName>
+                <default>false</default>
+                <label>eCommerce</label>
+            </value>
+            <value>
+                <fullName>BPAY</fullName>
+                <default>false</default>
+                <label>BPAY</label>
+            </value>
+            <value>
+                <fullName>Xero - RealTime</fullName>
+                <default>false</default>
+                <label>Xero - RealTime</label>
+            </value>
+            <value>
+                <fullName>Xero - BPAY</fullName>
+                <default>false</default>
+                <label>Xero - BPAY</label>
+            </value>
+            <value>
+                <fullName>EFTPOS</fullName>
+                <default>false</default>
+                <label>EFTPOS</label>
+            </value>
+            <value>
+                <fullName>EFTPOS (SmartPay)</fullName>
+                <default>false</default>
+                <label>EFTPOS (SmartPay)</label>
+            </value>
+            <value>
+                <fullName>Visa/MasterCard (Real Time)</fullName>
+                <default>false</default>
+                <label>Visa/MasterCard (Real Time)</label>
+            </value>
+            <value>
+                <fullName>Visa/MasterCard</fullName>
+                <default>false</default>
+                <label>Visa/MasterCard</label>
+            </value>
+            <value>
+                <fullName>Amex / Diners (RealTime)</fullName>
+                <default>false</default>
+                <label>Amex / Diners (RealTime)</label>
+            </value>
+            <value>
+                <fullName>SoftPOS</fullName>
+                <default>false</default>
+                <label>SoftPOS</label>
+            </value>
+            <value>
+                <fullName>Bank Account (Direct Debit)</fullName>
+                <default>false</default>
+                <label>Bank Account (Direct Debit)</label>
+            </value>
+            <value>
+                <fullName>AMEX/Diners</fullName>
+                <default>false</default>
+                <label>AMEX/Diners</label>
+            </value>
+            <value>
+                <fullName>PayTo</fullName>
+                <default>false</default>
+                <label>PayTo</label>
+            </value>
+            <value>
+                <fullName>Eway PF Visa/Mastercard</fullName>
+                <default>false</default>
+                <label>Eway PF Visa/Mastercard</label>
+            </value>
+            <value>
+                <fullName>Eway PF Amex</fullName>
+                <default>false</default>
+                <label>Eway PF Amex</label>
+            </value>
+            <value>
+                <fullName>EFTPOS Amex</fullName>
+                <default>false</default>
+                <label>EFTPOS Amex</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

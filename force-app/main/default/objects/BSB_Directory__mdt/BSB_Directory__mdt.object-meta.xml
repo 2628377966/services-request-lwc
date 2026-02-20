@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>BSB Directory contains BSB prefix (3 digits) and Bank Name. To download current BSB list, please go to https://bsb.auspaynet.com.au/</description>
+    <label>BSB Directory</label>
+    <pluralLabel>BSB Directory</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

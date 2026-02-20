@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Category__c</fullName>
+    <label>Category</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Activation</fullName>
+                <default>false</default>
+                <label>Activation</label>
+            </value>
+            <value>
+                <fullName>Active Not Processing</fullName>
+                <default>false</default>
+                <label>Active Not Processing</label>
+            </value>
+            <value>
+                <fullName>Agreement Review</fullName>
+                <default>false</default>
+                <label>Agreement Review</label>
+            </value>
+            <value>
+                <fullName>Amex notification</fullName>
+                <default>false</default>
+                <label>Amex notification</label>
+            </value>
+            <value>
+                <fullName>Anniversary</fullName>
+                <default>false</default>
+                <label>Anniversary</label>
+            </value>
+            <value>
+                <fullName>Anyone</fullName>
+                <default>false</default>
+                <label>Anyone</label>
+            </value>
+            <value>
+                <fullName>API Error</fullName>
+                <default>false</default>
+                <label>API Error</label>
+            </value>
+            <value>
+                <fullName>HK chargeback</fullName>
+                <default>false</default>
+                <label>Asia Chargeback</label>
+            </value>
+            <value>
+                <fullName>HK RFI</fullName>
+                <default>false</default>
+                <label>Asia RFI</label>
+            </value>
+            <value>
+                <fullName>At Risk</fullName>
+                <default>false</default>
+                <label>At Risk</label>
+            </value>
+            <value>
+                <fullName>AU BA Chargeback</fullName>
+                <default>false</default>
+                <label>AU BA Chargeback</label>
+            </value>
+            <value>
+                <fullName>AU BA claim</fullName>
+                <default>false</default>
+                <label>AU BA claim</label>
+            </value>
+            <value>
+                <fullName>AU CC Chargeback</fullName>
+                <default>false</default>
+                <label>AU CC Chargeback</label>
+            </value>
+            <value>
+                <fullName>AU CC RFI</fullName>
+                <default>false</default>
+                <label>AU CC RFI</label>
+            </value>
+            <value>
+                <fullName>AU Chargeback</fullName>
+                <default>false</default>
+                <label>AU Chargeback</label>
+            </value>
+            <value>
+                <fullName>AU Compliance</fullName>
+                <default>false</default>
+                <label>AU Compliance</label>
+            </value>
+            <value>
+                <fullName>BNZ</fullName>
+                <default>false</default>
+                <label>BNZ</label>
+            </value>
+            <value>
+                <fullName>Bpay</fullName>
+                <default>false</default>
+                <label>Bpay</label>
+            </value>
+            <value>
+                <fullName>Bpay Follow up</fullName>
+                <default>false</default>
+                <label>Bpay Follow up</label>
+            </value>
+            <value>
+                <fullName>Cancel my Account</fullName>
+                <default>false</default>
+                <label>Cancel my Account</label>
+            </value>
+            <value>
+                <fullName>Change my Business Details</fullName>
+                <default>false</default>
+                <label>Change my Business Details</label>
+            </value>
+            <value>
+                <fullName>Change my Details</fullName>
+                <default>false</default>
+                <label>Change my Details</label>
+            </value>
+            <value>
+                <fullName>Change my Payer Details</fullName>
+                <default>false</default>
+                <label>Change my Payer Details</label>
+            </value>
+            <value>
+                <fullName>Change of Details Eway</fullName>
+                <default>false</default>
+                <label>Change of Details Eway</label>
+            </value>
+            <value>
+                <fullName>Change Of Entity</fullName>
+                <default>false</default>
+                <label>Change Of Entity</label>
+            </value>
+            <value>
+                <fullName>Change of Fee Form</fullName>
+                <default>false</default>
+                <label>Change of Fee Form</label>
+            </value>
+            <value>
+                <fullName>Change of Ownership</fullName>
+                <default>false</default>
+                <label>Change of Ownership</label>
+            </value>
+            <value>
+                <fullName>Change of Ownership/ABN</fullName>
+                <default>false</default>
+                <label>Change of Ownership/ABN</label>
+            </value>
+            <value>
+                <fullName>Charge on my Statement</fullName>
+                <default>false</default>
+                <label>Charge on my Statement</label>
+            </value>
+            <value>
+                <fullName>Chat with Me Now</fullName>
+                <default>false</default>
+                <label>Chat with Me Now</label>
+            </value>
+            <value>
+                <fullName>Childcare</fullName>
+                <default>false</default>
+                <label>Childcare</label>
+            </value>
+            <value>
+                <fullName>Client Enquiry</fullName>
+                <default>false</default>
+                <label>Client Enquiry</label>
+            </value>
+            <value>
+                <fullName>Client Enquiry - Complaint</fullName>
+                <default>false</default>
+                <label>Client Enquiry - Complaint</label>
+            </value>
+            <value>
+                <fullName>Client response</fullName>
+                <default>false</default>
+                <label>Client response</label>
+            </value>
+            <value>
+                <fullName>COE - E2E Full</fullName>
+                <default>false</default>
+                <label>COE - E2E Full</label>
+            </value>
+            <value>
+                <fullName>COE - E2E Partial</fullName>
+                <default>false</default>
+                <label>COE - E2E Partial</label>
+            </value>
+            <value>
+                <fullName>Console</fullName>
+                <default>false</default>
+                <label>Console</label>
+            </value>
+            <value>
+                <fullName>Credit</fullName>
+                <default>false</default>
+                <label>Credit</label>
+            </value>
+            <value>
+                <fullName>Credit NZ</fullName>
+                <default>false</default>
+                <label>Credit NZ</label>
+            </value>
+            <value>
+                <fullName>CSA Setup</fullName>
+                <default>false</default>
+                <label>CSA Setup</label>
+            </value>
+            <value>
+                <fullName>Cuscal Claim</fullName>
+                <default>false</default>
+                <label>Cuscal Notification</label>
+            </value>
+            <value>
+                <fullName>Customer Service</fullName>
+                <default>false</default>
+                <label>Customer Service</label>
+            </value>
+            <value>
+                <fullName>Drive to Live</fullName>
+                <default>false</default>
+                <label>Drive to Live</label>
+            </value>
+            <value>
+                <fullName>Drop to Zero Processing</fullName>
+                <default>false</default>
+                <label>Drop to Zero Processing</label>
+            </value>
+            <value>
+                <fullName>Engagment Campaign</fullName>
+                <default>false</default>
+                <label>Engagment Campaign</label>
+            </value>
+            <value>
+                <fullName>Error/s</fullName>
+                <default>false</default>
+                <label>Error/s</label>
+            </value>
+            <value>
+                <fullName>eWay</fullName>
+                <default>false</default>
+                <label>eWay</label>
+            </value>
+            <value>
+                <fullName>Eway dispute</fullName>
+                <default>false</default>
+                <label>Eway dispute</label>
+            </value>
+            <value>
+                <fullName>Eway-OnBoard</fullName>
+                <default>false</default>
+                <label>Eway-OnBoard</label>
+            </value>
+            <value>
+                <fullName>Ezidebit Online</fullName>
+                <default>false</default>
+                <label>Ezidebit Online</label>
+            </value>
+            <value>
+                <fullName>EziFailPay - Ezidebit Dishonour Fee</fullName>
+                <default>false</default>
+                <label>EziFailPay - Ezidebit Dishonour Fee</label>
+            </value>
+            <value>
+                <fullName>Ezionline Walk-through</fullName>
+                <default>false</default>
+                <label>Ezionline Walk-through</label>
+            </value>
+            <value>
+                <fullName>Failed Payments</fullName>
+                <default>false</default>
+                <label>Failed Payments</label>
+            </value>
+            <value>
+                <fullName>Fees</fullName>
+                <default>false</default>
+                <label>Fees</label>
+            </value>
+            <value>
+                <fullName>TNS Refunds</fullName>
+                <default>false</default>
+                <label>Fetch TV Refunds</label>
+            </value>
+            <value>
+                <fullName>Fetch TV Refunds FU</fullName>
+                <default>false</default>
+                <label>Fetch TV Refunds FU</label>
+            </value>
+            <value>
+                <fullName>General Query</fullName>
+                <default>false</default>
+                <label>General Query</label>
+            </value>
+            <value>
+                <fullName>Health &amp; Fitness</fullName>
+                <default>false</default>
+                <label>Health &amp; Fitness</label>
+            </value>
+            <value>
+                <fullName>HK compliance</fullName>
+                <default>false</default>
+                <label>HK compliance</label>
+            </value>
+            <value>
+                <fullName>Hong Kong</fullName>
+                <default>false</default>
+                <label>Hong Kong</label>
+            </value>
+            <value>
+                <fullName>Incident response</fullName>
+                <default>false</default>
+                <label>Incident response</label>
+            </value>
+            <value>
+                <fullName>Internal Audit</fullName>
+                <default>false</default>
+                <label>Internal Audit</label>
+            </value>
+            <value>
+                <fullName>Internal Enquiry</fullName>
+                <default>false</default>
+                <label>Internal Enquiry</label>
+            </value>
+            <value>
+                <fullName>Internal Esclation</fullName>
+                <default>false</default>
+                <label>Internal Esclation</label>
+            </value>
+            <value>
+                <fullName>Limit Review</fullName>
+                <default>false</default>
+                <label>Limit Review</label>
+            </value>
+            <value>
+                <fullName>Mass update</fullName>
+                <default>false</default>
+                <label>Mass update</label>
+            </value>
+            <value>
+                <fullName>MBO</fullName>
+                <default>false</default>
+                <label>MBO</label>
+            </value>
+            <value>
+                <fullName>MBO NZ</fullName>
+                <default>false</default>
+                <label>MBO NZ</label>
+            </value>
+            <value>
+                <fullName>My Fees</fullName>
+                <default>false</default>
+                <label>My Fees</label>
+            </value>
+            <value>
+                <fullName>My Reports</fullName>
+                <default>false</default>
+                <label>My Reports</label>
+            </value>
+            <value>
+                <fullName>Negative ledger</fullName>
+                <default>false</default>
+                <label>Negative ledger</label>
+            </value>
+            <value>
+                <fullName>New App</fullName>
+                <default>false</default>
+                <label>New App</label>
+            </value>
+            <value>
+                <fullName>New Offer</fullName>
+                <default>false</default>
+                <label>New Offer</label>
+            </value>
+            <value>
+                <fullName>New Sales Lead</fullName>
+                <default>false</default>
+                <label>New Sales Lead</label>
+            </value>
+            <value>
+                <fullName>NZ BA Claim</fullName>
+                <default>false</default>
+                <label>NZ BA Claim</label>
+            </value>
+            <value>
+                <fullName>NZ BA Claim Chargeback</fullName>
+                <default>false</default>
+                <label>NZ BA Claim Chargeback</label>
+            </value>
+            <value>
+                <fullName>NZ CC Chargeback</fullName>
+                <default>false</default>
+                <label>NZ CC Chargeback</label>
+            </value>
+            <value>
+                <fullName>NZ CC RFI</fullName>
+                <default>false</default>
+                <label>NZ CC RFI</label>
+            </value>
+            <value>
+                <fullName>NZ chargeback</fullName>
+                <default>false</default>
+                <label>NZ chargeback</label>
+            </value>
+            <value>
+                <fullName>NZ compliance</fullName>
+                <default>false</default>
+                <label>NZ compliance</label>
+            </value>
+            <value>
+                <fullName>NZ dispute</fullName>
+                <default>false</default>
+                <label>NZ dispute</label>
+            </value>
+            <value>
+                <fullName>NZ manual dishonour</fullName>
+                <default>false</default>
+                <label>NZ manual dishonour</label>
+            </value>
+            <value>
+                <fullName>ONB</fullName>
+                <default>false</default>
+                <label>ONB</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Partner/Merchant Campaign</fullName>
+                <default>false</default>
+                <label>Partner/Merchant Campaign</label>
+            </value>
+            <value>
+                <fullName>Payer Onboarding/Forms</fullName>
+                <default>false</default>
+                <label>Payer Onboarding/Forms</label>
+            </value>
+            <value>
+                <fullName>Plan Change Eway</fullName>
+                <default>false</default>
+                <label>Plan Change Eway</label>
+            </value>
+            <value>
+                <fullName>Prior Client Relationship</fullName>
+                <default>false</default>
+                <label>Prior Client Relationship</label>
+            </value>
+            <value>
+                <fullName>Proactive Out Reach</fullName>
+                <default>false</default>
+                <label>Proactive Out Reach</label>
+            </value>
+            <value>
+                <fullName>Product/Processes</fullName>
+                <default>false</default>
+                <label>Product/Processes</label>
+            </value>
+            <value>
+                <fullName>Product Add</fullName>
+                <default>false</default>
+                <label>Product Add</label>
+            </value>
+            <value>
+                <fullName>Product Add AMEX</fullName>
+                <default>false</default>
+                <label>Product Add AMEX</label>
+            </value>
+            <value>
+                <fullName>Product Add DD</fullName>
+                <default>false</default>
+                <label>Product Add DD</label>
+            </value>
+            <value>
+                <fullName>Product Add Eftpos</fullName>
+                <default>false</default>
+                <label>Product Add Eftpos</label>
+            </value>
+            <value>
+                <fullName>Product Add MOTO</fullName>
+                <default>false</default>
+                <label>Product Add MOTO</label>
+            </value>
+            <value>
+                <fullName>Product Add RealTime</fullName>
+                <default>false</default>
+                <label>Product Add RealTime</label>
+            </value>
+            <value>
+                <fullName>Production</fullName>
+                <default>false</default>
+                <label>Production</label>
+            </value>
+            <value>
+                <fullName>Proof of Authority</fullName>
+                <default>false</default>
+                <label>Proof of Authority</label>
+            </value>
+            <value>
+                <fullName>Rate Review</fullName>
+                <default>false</default>
+                <label>Rate Review</label>
+            </value>
+            <value>
+                <fullName>Read Receipt</fullName>
+                <default>false</default>
+                <label>Read Receipt</label>
+            </value>
+            <value>
+                <fullName>Rebate Partner Updated</fullName>
+                <default>false</default>
+                <label>Rebate Partner Updated</label>
+            </value>
+            <value>
+                <fullName>Refund</fullName>
+                <default>false</default>
+                <label>Refund</label>
+            </value>
+            <value>
+                <fullName>Relationship Survey Response</fullName>
+                <default>false</default>
+                <label>Relationship Survey Response</label>
+            </value>
+            <value>
+                <fullName>Sandbox</fullName>
+                <default>false</default>
+                <label>Sandbox</label>
+            </value>
+            <value>
+                <fullName>Sandbox Query</fullName>
+                <default>false</default>
+                <label>Sandbox Query</label>
+            </value>
+            <value>
+                <fullName>Security Breach</fullName>
+                <default>false</default>
+                <label>Security Breach</label>
+            </value>
+            <value>
+                <fullName>Software Transition</fullName>
+                <default>false</default>
+                <label>Software Transition</label>
+            </value>
+            <value>
+                <fullName>StorMan</fullName>
+                <default>false</default>
+                <label>StorMan</label>
+            </value>
+            <value>
+                <fullName>System Performance</fullName>
+                <default>false</default>
+                <label>System Performance</label>
+            </value>
+            <value>
+                <fullName>Tax invoice</fullName>
+                <default>false</default>
+                <label>Tax invoice</label>
+            </value>
+            <value>
+                <fullName>Updated CSA</fullName>
+                <default>false</default>
+                <label>Updated CSA</label>
+            </value>
+            <value>
+                <fullName>WBC notification</fullName>
+                <default>false</default>
+                <label>WBC notification</label>
+            </value>
+            <value>
+                <fullName>Welcome Call</fullName>
+                <default>false</default>
+                <label>Welcome Call</label>
+            </value>
+            <value>
+                <fullName>Winback Campaign</fullName>
+                <default>false</default>
+                <label>Winback Campaign</label>
+            </value>
+            <value>
+                <fullName>TDT Proactive Outreach</fullName>
+                <default>false</default>
+                <label>TDT Proactive Outreach</label>
+            </value>
+            <value>
+                <fullName>Quest Eftpos</fullName>
+                <default>false</default>
+                <label>Quest Eftpos</label>
+            </value>
+            <value>
+                <fullName>Service (multi-MID)</fullName>
+                <default>false</default>
+                <label>Service (multi-MID)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Failed_Payment_Fee_Direct_Debit_Waived__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Indicator whether display failed payment fee direct debit waived</description>
+    <label>Failed Payment Fee Direct Debit Waived</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

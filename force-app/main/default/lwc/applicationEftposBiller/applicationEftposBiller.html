@@ -1,0 +1,231 @@
+<template>
+    <template if:true={showAddBiller}>
+        <div style="height:auto">
+            <div class="slds-size_8-of-12" style="margin: 6px auto;">
+                <lightning-layout multiple-rows="true">
+                    <lightning-layout-item size="12" padding="around-small" horizontal-align="left">
+                        <div class="title">
+                            <h2>{addBillerTitle}</h2>
+                            <p>{addBillerTitleInfo}</p>
+                            <p>{addBillerTitleInfoAdditional}</p>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" horizontal-align="left" margin="bottom-small">
+                        <div class="title">
+                            <p class="disclaimer-box">{addBillerTitleDisclaimer}</p>
+                        </div>
+                   </lightning-layout-item>
+                </lightning-layout>
+            </div>
+            <div class="slds-size_8-of-12" style="margin: 4px auto;">
+                <lightning-layout multiple-rows="true">
+                    <lightning-layout-item size="12" padding="around-small" horizontal-align="left">
+                        <template lwc:if={error}>
+                            <span class="error-message slds-has-error slds-form-element__help">{message}</span>
+                        </template>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </div>
+            <div class="slds-size_8-of-12" style="margin: 0.25em auto;">
+                <lightning-layout multiple-rows="true" class="slds-box slds-theme_shade summary-layout">
+                    <lightning-layout-item size="6" padding="around-small">
+                        <lightning-input label="First Name" name="FirstName" value={FirstName} required="true" onchange={handleInputChange} class="inputStyle"></lightning-input>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="6" padding="around-small">
+                        <lightning-input label="Last Name" name="LastName"  value={LastName} required="true" onchange={handleInputChange} class="inputStyle"></lightning-input>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" padding="around-small">
+                        <lightning-input label="Trading Name" name="TradingName" value={TradingName} required="true" onchange={handleInputChange} class="inputStyle"></lightning-input>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" padding="around-small">
+                        <lightning-input 
+                            label="Email Address" 
+                            name="Email" 
+                            type="email" 
+                            value={Email} 
+                            required="true" 
+                            onblur={handleEmailBlur} 
+                            onchange={handleInputChange} 
+                            class="inputStyle"
+                            field-level-help="Please provide an email address relevant to the applicant's business">
+                        </lightning-input>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" padding="around-small">
+                        <lightning-input label="Phone Number" name="Phone" type="tel"  value={Phone} required="true" onblur={handlePhoneBlur} onchange={handleInputChange} class="inputStyle"></lightning-input>
+                    </lightning-layout-item>
+                        <lightning-layout-item size="12" padding="around-small" style="text-align: right;">
+                            <button 
+                                class={btnBrandClass}
+                                onclick={handleAddMerchantSave}>
+                                Save
+                            </button>
+                        </lightning-layout-item>
+                </lightning-layout>
+            </div>
+        </div>
+    </template>
+    <template if:true={showSummary}>
+        <div style="height: 45vh; overflow-y: auto; margin-bottom:24px;padding-left:5px">
+            <div class="slds-size_8-of-12" style="margin: 6px auto;">
+                <lightning-layout multiple-rows="true">
+                    <lightning-layout-item size="12" padding="around-small" horizontal-align="left">
+                        <div class="title">
+                            <h2>{addBillerTitle}</h2>
+                            <p>{addBillerTitleInfo}</p>
+                            <p>{addBillerTitleInfoAdditional}</p>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" horizontal-align="left" margin="bottom-small">
+                        <div class="title">
+                            <p class="disclaimer-box">{addBillerTitleDisclaimer}</p>
+                        </div>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </div>
+            <template for:each={userPayload} for:item="usr">
+                <div key={usr.id} class="slds-size_8-of-12" style="margin: 0.25em auto;">
+                    <!-- View Mode -->
+                    <template if:false={usr.isEditing}>
+                        <lightning-layout multiple-rows class="slds-box slds-theme_shade summary-layout">
+                            <lightning-layout-item id={usr.id} padding="around-small" size="12" class="inputStyle slds-border_bottom" flexibility="auto, no-grow">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <!-- Merchant Icon and Name -->
+                                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                        <div class={editIconBrandClass} 
+                                            data-id={usr.id} 
+                                            title="Edit Merchant"
+                                            style="cursor: pointer; padding: 0.25rem;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <path d="M12.0004 10.1053C13.0006 10.1053 13.9783 9.80893 14.81 9.25374C15.6416 8.69855 16.2898 7.90944 16.6726 6.98619C17.0553 6.06295 17.1555 5.04703 16.9603 4.06691C16.7652 3.0868 16.2836 2.18651 15.5763 1.47988C14.8691 0.773261 13.968 0.292044 12.987 0.0970867C12.006 -0.0978702 10.9892 0.00219064 10.0651 0.384612C9.14103 0.767034 8.35122 1.41464 7.79553 2.24554C7.23984 3.07644 6.94325 4.05331 6.94325 5.05263C6.94325 6.39267 7.47603 7.67783 8.42443 8.62538C9.37283 9.57294 10.6592 10.1053 12.0004 10.1053ZM12.0004 1.51579C12.7005 1.51579 13.385 1.72322 13.9671 2.11186C14.5493 2.50049 15.003 3.05286 15.2709 3.69914C15.5388 4.34541 15.609 5.05655 15.4724 5.74263C15.3358 6.42871 14.9986 7.05892 14.5035 7.55356C14.0085 8.04819 13.3777 8.38504 12.691 8.52151C12.0043 8.65798 11.2925 8.58794 10.6457 8.32025C9.99882 8.05255 9.44596 7.59923 9.05698 7.0176C8.668 6.43596 8.46039 5.75215 8.46039 5.05263C8.46039 4.1146 8.83334 3.215 9.49722 2.55171C10.1611 1.88842 11.0615 1.51579 12.0004 1.51579ZM14.0232 11.3684H9.97753C8.16768 11.3711 6.43273 12.0906 5.15297 13.3692C3.87321 14.6478 3.15307 16.3812 3.15039 18.1895V21.2211C3.15039 21.9581 3.44343 22.6649 3.96505 23.1861C4.48667 23.7072 5.19414 24 5.93182 24H18.069C18.8066 24 19.5141 23.7072 20.0357 23.1861C20.5573 22.6649 20.8504 21.9581 20.8504 21.2211V18.1895C20.8477 16.3812 20.1276 14.6478 18.8478 13.3692C17.5681 12.0906 15.8331 11.3711 14.0232 11.3684ZM19.3333 21.2211C19.3333 21.5561 19.2 21.8774 18.9629 22.1142C18.7258 22.3511 18.4043 22.4842 18.069 22.4842H5.93182C5.59651 22.4842 5.27491 22.3511 5.03781 22.1142C4.80071 21.8774 4.66753 21.5561 4.66753 21.2211V18.1895C4.67021 16.7833 5.23049 15.4354 6.22573 14.441C7.22097 13.4467 8.57006 12.8869 9.97753 12.8842H14.0232C15.4307 12.8869 16.7798 13.4467 17.775 14.441C18.7703 15.4354 19.3306 16.7833 19.3333 18.1895V21.2211Z" fill="#58B947"/>
+                                            </svg>
+                                        </div>
+                                        <h2 class="userHeading">{usr.firstName} {usr.lastName}</h2>
+                                    </div>
+                                    
+                                    <!-- Edit and Delete Icons -->
+                                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                        <div 
+                                            class={editIconBrandClass}
+                                            onclick={handleEditUser} 
+                                            data-id={usr.id} 
+                                            title="Edit Merchant"
+                                            style="cursor: pointer; padding: 0.25rem;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                                <g clip-path="url(#clip0_1116_7294)">
+                                                    <path d="M20.8789 2.58533L21.4147 3.1211C21.9681 3.67458 21.9681 4.57343 21.4147 5.12691L20.2324 6.30914L17.6909 3.76756L18.8731 2.58533C19.4266 2.03186 20.3254 2.03186 20.8789 2.58533ZM9.11859 12.3398L16.6902 4.76825L19.2317 7.30982L11.6602 14.8814C11.4742 15.0674 11.2351 15.2002 10.9783 15.2622L8.07362 15.9308L8.74223 13.0217C8.79979 12.7649 8.93262 12.5258 9.12302 12.3398H9.11859ZM17.8724 1.58022L8.1179 11.3391C7.74154 11.7155 7.4803 12.1893 7.36074 12.7073L6.43533 16.719C6.38219 16.9581 6.45304 17.206 6.62573 17.3787C6.79841 17.5514 7.04637 17.6222 7.28547 17.5691L11.2971 16.6437C11.8151 16.5241 12.2889 16.2629 12.6653 15.8865L22.4198 6.1276C23.5267 5.02064 23.5267 3.22737 22.4198 2.12041L21.884 1.58022C20.7771 0.473261 18.9838 0.473261 17.8768 1.58022H17.8724ZM4.29226 3.41334C2.33516 3.41334 0.75 4.9985 0.75 6.9556V19.7077C0.75 21.6648 2.33516 23.25 4.29226 23.25H17.0444C19.0015 23.25 20.5867 21.6648 20.5867 19.7077V14.0401C20.5867 13.6505 20.2679 13.3317 19.8782 13.3317C19.4886 13.3317 19.1698 13.6505 19.1698 14.0401V19.7077C19.1698 20.8811 18.2178 21.8331 17.0444 21.8331H4.29226C3.11889 21.8331 2.1669 20.8811 2.1669 19.7077V6.9556C2.1669 5.78222 3.11889 4.83024 4.29226 4.83024H9.95988C10.3495 4.83024 10.6683 4.51144 10.6683 4.12179C10.6683 3.73214 10.3495 3.41334 9.95988 3.41334H4.29226Z"/>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1116_7294">
+                                                        <rect width="24" height="24" fill="white"/>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </div>
+                                        
+                                        <div 
+                                            class={editIconBrandClass}
+                                            onclick={handleDeleteUser} 
+                                            data-id={usr.id} 
+                                            title="Delete Merchant"
+                                            style="cursor: pointer; padding: 0.25rem;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                                <path d="M18.8427 20.0099C19.1629 20.33 19.6897 20.33 20.0099 20.0099C20.33 19.6897 20.33 19.1629 20.0099 18.8427L13.1671 12L20.0099 5.15728C20.33 4.83709 20.33 4.31033 20.0099 3.99014C19.6897 3.66995 19.1629 3.66995 18.8427 3.99014L12 10.8329L5.15728 3.99014C4.83709 3.66995 4.31033 3.66995 3.99014 3.99014C3.66995 4.31033 3.66995 4.83709 3.99014 5.15728L10.8329 12L3.99014 18.8427C3.66995 19.1629 3.66995 19.6897 3.99014 20.0099C4.31033 20.33 4.83709 20.33 5.15728 20.0099L12 13.1671L18.8427 20.0099Z"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </lightning-layout-item>
+                            <!-- Display Fields -->
+                            <lightning-layout-item padding="around-small" size="6" class="inputStyle" flexibility="auto, no-grow">
+                                <h2 class="slds-text-heading_medium"><strong>Trading Name</strong></h2>
+                            </lightning-layout-item>
+                            <lightning-layout-item padding="around-small" size="6" class="inputStyle" flexibility="auto, no-grow">
+                                <h2 class="slds-text-heading_medium">{usr.tradingName}</h2>
+                            </lightning-layout-item>
+                            <lightning-layout-item padding="around-small" size="6" class="inputStyle" flexibility="auto, no-grow">
+                                <h2 class="slds-text-heading_medium"><strong>Email</strong></h2>
+                            </lightning-layout-item>
+                            <lightning-layout-item padding="around-small" size="6" class="inputStyle" flexibility="auto, no-grow">
+                                <h2 class="slds-text-heading_medium" style="word-wrap: break-word;">{usr.email}</h2>
+                            </lightning-layout-item>
+                            <lightning-layout-item padding="around-small" size="6" class="inputStyle" flexibility="auto, no-grow">
+                                <h2 class="slds-text-heading_medium"><strong>Phone</strong></h2>
+                            </lightning-layout-item>
+                            <lightning-layout-item padding="around-small" size="6" class="inputStyle" flexibility="auto, no-grow">
+                                <h2 class="slds-text-heading_medium">{usr.phone}</h2>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </template>
+                    <!-- Edit Mode -->
+                    <template if:true={usr.isEditing}>
+                        <lightning-layout multiple-rows size="8" class="slds-box slds-theme_shade slds-p-around_medium summary-layout" if:true={usr.isEditing}>    
+                            <lightning-layout-item size="6" padding="around-small">
+                                <lightning-input label="First Name" name="firstName" value={editingUser.firstName} required onchange={handleEditInputChange} class="inputStyle"></lightning-input>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6" padding="around-small">
+                                <lightning-input label="Last Name" name="lastName" value={editingUser.lastName} required onchange={handleEditInputChange} class="inputStyle"></lightning-input>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="12" padding="around-small">
+                                <lightning-input label="Trading Name" name="tradingName" value={editingUser.tradingName} required onchange={handleEditInputChange} class="inputStyle"></lightning-input>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="12" padding="around-small">
+                                <lightning-input label="Email" name="email" type="email" value={editingUser.email} onblur={handleEmailBlur} required onchange={handleEditInputChange} class="inputStyle"></lightning-input>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="12" padding="around-small">
+                                <lightning-input label="Phone" name="phone" type="tel" value={editingUser.phone} onblur={handlePhoneBlur} required onchange={handleEditInputChange} class="inputStyle"></lightning-input>
+                            </lightning-layout-item>
+                            
+                            <!-- Action Buttons -->
+                            <lightning-layout-item size="12" padding="around-small" style="text-align: right;">
+                                <button 
+                                    class={btnCancelBrandClass}
+                                    onclick={handleCancelEdit}>
+                                    Cancel
+                                </button>
+                                <button 
+                                    class={btnBrandClass}
+                                    onclick={handleSaveEdit}>
+                                    Save
+                                </button>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </template>
+                </div>
+            </template>
+        </div>                
+    </template>    
+
+    <div if:true={showAddAnotherUser} class="slds-size_8-of-12" style="margin: 0.25em auto;">
+        <lightning-layout multiple-rows="true" class="slds-box slds-theme_shade summary-layout">
+            <lightning-layout-item size="12">
+                    <lightning-layout class="slds-size_12-of-12" style="margin: 6px auto;">
+                        <lightning-layout-item size="12" style="text-align: center;">
+                            <a class={linkStyle} onclick={handleAddAnotherMerchant}>{addBillerLinkLabel}</a>
+                        </lightning-layout-item>
+                    </lightning-layout>
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>
+
+    <template if:true={showPrefillCheckbox}>
+        <div class="slds-size_8-of-12" style="margin: 0.25em auto;">
+            <lightning-layout multiple-rows="true" class={brandClass}>
+                <lightning-layout-item size="12" class="inputStyle">
+                    <p style="margin-bottom: 1rem;"><strong>{capturePrefillTitle}</strong></p>
+                    <div style="margin-bottom: 25px;">
+                        <div class="custom-toggle">
+                            <span class={yesClass} data-value="Yes" onclick={handlePrefillToggle}>Yes</span>
+                            <span class={noClass} data-value="No" onclick={handlePrefillToggle}>No</span>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 6px;">
+                        <p style="margin: 0.25em auto;">{capturePrefillNote}</p>
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </template>
+    <template if:true={showFooter}>
+        <c-csaapplication-footer brand-type={brandType} show-previous-button={showPreviousButton} next-button-label={nextButtonLabel} onvalidateform={handleNext} add-biller-link-label={addBillerLinkLabel} onaddanotherbiller={handleAddAnotherBiller} show-add-another-biller ={showAddAnotherBiller} onhandleprevious={handlePreviousButton} is-next-button-disabled={isNextButtonDisabled}></c-csaapplication-footer> 
+    </template> 
+</template>

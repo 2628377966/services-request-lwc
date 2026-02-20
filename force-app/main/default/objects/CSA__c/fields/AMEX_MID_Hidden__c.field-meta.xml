@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AMEX_MID_Hidden__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>To hide AMEX MID section on fee structure page.</description>
+    <inlineHelpText>To hide AMEX MID section on fee structure page.</inlineHelpText>
+    <label>AMEX MID Hidden</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

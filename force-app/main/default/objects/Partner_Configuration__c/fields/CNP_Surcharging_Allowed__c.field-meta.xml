@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CNP_Surcharging_Allowed__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Allow/Disallow CNP surcharging for the partner</description>
+    <label>CNP Surcharging Allowed</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

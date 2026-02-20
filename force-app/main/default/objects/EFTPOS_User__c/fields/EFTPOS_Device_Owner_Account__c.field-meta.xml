@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EFTPOS_Device_Owner_Account__c</fullName>
+    <description>Device Owner Account</description>
+    <inlineHelpText>Device Owner Account</inlineHelpText>
+    <label>EFTPOS Device Owner Account</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>EFTPOS Users</relationshipLabel>
+    <relationshipName>EFTPOS_Users</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>true</reparentableMasterDetail>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

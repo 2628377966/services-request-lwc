@@ -1,0 +1,36 @@
+<template>
+    <template lwc:if={showForm}>
+        <div class="slds-grid slds-wrap center-container">
+            <div class="slds-col slds-size_12-of-12">
+                <h1 class="title">Merchant Services</h1>
+                <p>Please select a service you need.</p>
+            </div>
+            <div class="slds-col slds-size_12-of-12 center-container">
+                <div data-name="eftposMultiMerchantTile" class={eftposMultiMerchantClass} onclick={handleEftposMultiMerchantClick}>
+                    <img src={eftposMultiMerchantIcon} 
+                             alt="EFTPOS Multi-Merchant" 
+                             class="tile-icon"/>
+                    <span>EFTPOS Multi-Merchant Services</span>
+                </div>
+            </div>
+            <div class="slds-col slds-size_12-of-12 center-container">
+                <div data-name="requestNewProductTile" class={requestNewProductClass} onclick={handleRequestNewProductClick}>
+                    <img src={requestNewProductIcon} 
+                             alt="Request New Payment Product" 
+                             class="tile-icon"/>
+                    <span>Request New Payment Product</span>
+                </div>
+            </div>
+        </div>
+        <!-- Error Place Holder -->
+        <template lwc:if={displayError}>
+            <span class="error-message slds-has-error slds-form-element__help">Unable to process the application, please contact support for further assistance.</span>
+        </template>
+    </template>
+    <!-- Spinner for Data Load -->
+    <template lwc:if={isLoading}>
+        <div class="spinner-background">
+            <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+        </div>
+    </template>
+</template>

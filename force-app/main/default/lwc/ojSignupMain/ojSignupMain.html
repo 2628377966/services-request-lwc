@@ -1,0 +1,55 @@
+<template>
+    <template lwc:if={showForm}>
+        <template if:true={spinnerLoading}>
+            <lightning-spinner class="spinner" size="large" variant="brand"
+                alternative-text="Loading"></lightning-spinner>
+        </template>
+        <br />
+        <div class="ojSignupMainContainer">
+            <template if:true={showProgressBarVertical}>
+                <div class="vericalProgressbar slds-show_medium">
+                    <c-oj-progress-bar-vertical payload={payload}></c-oj-progress-bar-vertical>
+                </div>
+            </template>
+            <div class="ojSingupMainComps">
+                <lwc:component data-id="childComp" payload={payload} onnewpayload={handleNewPayload}
+                    lwc:is={componentConstructor}></lwc:component>
+                <br />
+                <div>
+                    <div>
+                        <div class="gap-aboveButtons"></div>
+                         <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                            <div style="display: inline-block;">
+                                <div lwc:if={showPreviousButton}>
+                                    <button class="slds-button slds-button_neutral button1"
+                                        onclick={handlePreviousButton}>{previousButtonLabel}</button>
+                                </div>
+                            </div>
+                            <div style="display: inline-block; margin: 0 auto;">
+                                <div lwc:if={showNewRequestButton}>
+                                    <button 
+                                        data-name="newReqButton" 
+                                        onclick={handleNewRequestButton} 
+                                        disabled={disableNewRequestButton} 
+                                        class="newReqButton1">
+                                        Submit New Request
+                                    </button>
+                                </div>
+                            </div>
+                            <div style="display: inline-block;">
+                                <div lwc:if={showNextButton}>
+                                    <button data-name="button2" class="slds-button slds-button_neutral button2Disabled"
+                                        onclick={handleNextButton} disabled={disableNextButton}>{nextButtonLabel}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+        </div>
+        <br />
+        <br />
+    </template>
+</template>

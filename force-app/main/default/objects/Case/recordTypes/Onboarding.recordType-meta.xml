@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Onboarding</fullName>
+    <active>true</active>
+    <businessProcess>Onboarding</businessProcess>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <description>Used by Onboarding team to replace requests sent to Sales@ezidebit.com.au</description>
+    <label>Onboarding</label>
+    <picklistValues>
+        <picklist>Category__c</picklist>
+        <values>
+            <fullName>Activation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Anyone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BNZ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COE - E2E Full</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COE - E2E Partial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CSA Setup</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancel my Account</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Change my Business Details</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Change my Details</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Change my Payer Details</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Change of Details Eway</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Change of Fee Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Change of Ownership</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Change of Ownership%2FABN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Charge on my Statement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chat with Me Now</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Childcare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client Enquiry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client Enquiry - Complaint</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client response</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Eway-OnBoard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EziFailPay - Ezidebit Dishonour Fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ezidebit Online</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Failed Payments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Health %26 Fitness</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hong Kong</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal Audit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal Enquiry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Limit Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MBO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MBO NZ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mass update</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>My Fees</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>My Reports</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New App</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Offer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Sales Lead</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ONB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payer Onboarding%2FForms</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Plan Change Eway</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product Add</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product Add AMEX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product Add DD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product Add Eftpos</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product Add MOTO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product Add RealTime</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Proof of Authority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rebate Partner Updated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Refund</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Security Breach</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service %28multi-MID%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>StorMan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>System Performance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tax invoice</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Updated CSA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>eWay</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Origin</picklist>
+        <values>
+            <fullName>Client Care</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>External Client Support Email - Genie</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>External Onboarding Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal Onboarding Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Submitted by Sales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Non Critical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Urgent</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason</picklist>
+        <values>
+            <fullName>Acknowledgement of Eft Rolls Ordered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Activations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Call Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client Care Query</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client Monitoring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DDR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DDR Unblock</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duplicate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Escalation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fee Enquiry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Forwarded to On-boarding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Ezidebit Action Required%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Onboarding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product Add</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spam</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sub_Category__c</picklist>
+        <values>
+            <fullName>Add Device</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Add User</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Additional Products</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancellation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Change my Payer Details</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Change of ABN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Change of Ownership</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client Dishonour Fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contact Details</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Direct Debit Request %28DDR%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EDMS DD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Failed Payment Common Codes %26 Reasons</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fee Structure - Who Pays</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Financial Details</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HL DD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HL Web</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>How to Add Payers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manage Users</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Minimum Monthly Fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly Access Fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Obtain Access</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payer Dishonour Fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payer Fees</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Remove Device</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Remove User</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reset my Password</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schedule</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Settlement Fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Settlement%2FBilling Account</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Setup Fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tax Invoice</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transaction Fee</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Activation - Follow-up</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Feature Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Question</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salesforce Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Top 100 Client</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

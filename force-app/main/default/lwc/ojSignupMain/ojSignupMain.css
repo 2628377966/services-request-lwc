@@ -1,0 +1,94 @@
+* {
+    font-family: var(--dxp-s-body-font-family);
+}
+
+.ojSignupMainContainer {
+    display: flex;
+    width: 90%;
+    margin: auto;
+}
+
+.ojSignupMainContainer .vericalProgressbar {
+    align-self: auto;
+    flex-grow: 0.5;
+}
+
+.ojSignupMainContainer .ojSingupMainComps {
+    max-width: 600px;
+    margin: auto; 
+}
+
+@media (max-width: 768px) {
+    .ojSignupMainContainer {
+        width: 90%;
+        margin: auto;
+    }
+
+}
+
+.button1 {
+    border-radius: var(--button1-border-radius, '4px');
+    background: var(--button1-background, white);
+    border: var(--button1-border, 1px solid transparent);
+    color: var(--button1-color);
+    font-weight: 500;
+    height: 48px;
+    font-size: 18px;
+    padding: 0px 2rem;
+}
+
+.button1:focus {
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-box-shadow: 0 0 0 0 transparent;
+}
+
+.button2 {
+    border-radius: var(--button2-border-radius, '4px');
+    background: var(--button2-background, white);
+    border: var(--button2-border, 1px solid transparent);
+    color: var(--button2-color);
+    font-weight: 500;
+    height: 48px;
+    font-size: 18px;
+    padding: 0px 2rem;
+    border-width: 0px;
+    border-style: none;
+}
+
+.button2:focus {
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-box-shadow: 0 0 0 0 transparent;
+}
+
+.button2Disabled {
+    border-radius: var(--button2-border-radius, '4px');
+    background-color: #C2C1C2;
+    color: var(--button2-color);
+    font-weight: 500;
+    height: 48px;
+    font-size: 18px;
+    padding: 0px 2rem;
+    border-width: 0px;
+    border-style: none;
+}
+
+.button2Disabled:focus {
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-box-shadow:  0 0 0 0 transparent;
+}
+
+.gap-aboveButtons{
+    margin-top: 80px;
+}
+
+.newReqButton1 {
+    background: none;
+    border: none;
+    color: var(--button1-color);
+    font-weight: 500;
+    height: 48px;
+    font-size: 18px;
+    padding: 0px 2rem;
+    text-decoration: underline;
+    cursor: pointer; 
+}

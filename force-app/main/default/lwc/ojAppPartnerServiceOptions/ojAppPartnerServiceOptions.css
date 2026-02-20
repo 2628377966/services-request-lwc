@@ -1,0 +1,122 @@
+/* ======================
+   Layout Containers
+   ====================== */
+
+.center-container {
+    margin: auto;
+}
+
+/* ======================
+   Tiles
+   ====================== */
+
+.tile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;  
+    font-weight: 700;
+    margin: 10px 0!important;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid var(--Warm-Grey-76, #C2C1C2);
+    background: var(--States-a11y-light, #F7F7F8);
+    gap: 8px;
+}
+
+.tile-clickable:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tile-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Tile sizing */
+.custom-tile-desktop {
+    height: 7rem;
+}
+
+.custom-tile-mobile {
+    height: 7rem; 
+}
+
+/* ======================
+   Tile Inner Elements
+   ====================== */
+
+.tile .tile-icon {
+    flex-shrink: 0;
+    align-self: center;
+}
+
+.tile span {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    min-width: 0;
+}
+
+.tile-icon {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    display: block;
+}
+
+/* ======================
+   Other Components
+   ====================== */
+
+.error-message {
+    color: var(--dxp-g-destructive, #c23934);
+    font-size: 1rem;
+}
+
+.spinner-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* ======================
+   Media Queries
+   ====================== */
+
+@media (min-width: 769px) {
+    .custom-tile-desktop {
+        height: calc(7rem + (1.5rem * ((100vw - 768px) / 672)));
+    }
+}
+
+@media (min-width: 1440px) {
+    .custom-tile-desktop {
+        height: calc(8.5rem + (1.5rem * ((100vw - 1440px) / 480)));
+    }
+}
+
+@media (min-width: 1920px) {
+    .custom-tile-desktop {
+        height: 10rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .tile {
+        gap: 4px;
+    }
+
+    .tile-icon {
+        width: 48px;
+        height: 48px;
+    }
+}

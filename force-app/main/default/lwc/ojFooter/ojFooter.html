@@ -1,0 +1,27 @@
+<template>
+    <div class="content slds-text-align_center slds-is-fixed slds-size_12-of-12 slds-p-vertical_small" style="left: 0px;">
+        <button class="collapsible slds-text-link_reset" onclick={handleCollapse}>
+            <template lwc:if={chevronDoubleDown}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="19" fill="currentColor" class="bi bi-chevron-double-down slds-hide_large" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+                    <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+                </svg>
+            </template>
+            <template lwc:else>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="19" fill="currentColor" class="bi bi-chevron-double-up slds-hide_large" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M7.646 2.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 3.707 2.354 9.354a.5.5 0 1 1-.708-.708z"/>
+                    <path fill-rule="evenodd" d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708z"/>
+                </svg>
+            </template>
+        </button>
+        <template lwc:if={chevronDoubleDown}>
+            <div  class="slds-scrollable_none">
+                © {yearOfCopyright} {companyName}. All Rights Reserved.
+            </div>
+            <div  class="slds-scrollable_none">
+                <a href={privacyPolicyLink} class="link" target="_blank">Privacy Policy  </a>|
+                <a href={termsOfUseLink} class="link" target="_blank">  Terms of Use</a>
+            </div>
+        </template>
+    </div>
+</template>

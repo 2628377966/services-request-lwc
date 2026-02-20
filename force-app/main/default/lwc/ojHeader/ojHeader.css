@@ -1,0 +1,51 @@
+* {
+    font-family: var(--dxp-s-body-font-family);
+}
+
+.header {
+    background-color: var(--header-background-color, white);
+    border: var(--header-border);
+    width: 100%;
+    display: flex;
+}
+
+.container {
+    background-color: var(--header-background-color, white);
+    border: var(--header-border, '2px dotted red');
+    text-align: var(--header-text-align, left);
+    display: flex;
+    width: 80%;
+    margin: auto;
+}
+
+.horizontalLine {
+    background-color: var(--header-background-color, white);
+}
+
+.mobileDivider {
+    border-width: 4px;
+    border-style: solid;
+    border-color: var(--divider-border-color, 'white');
+}
+
+.desktopDivider {
+    border-width: 4px;
+    border-style: solid;
+    border-color: var(--divider-border-color, 'white');
+}
+
+.push {
+    margin-left: auto;
+}
+
+.needHelp {
+    font-size: 1.5 rem;
+    font-weight: bold;
+    color: var(--header-color, black);
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 80%;
+    }
+}

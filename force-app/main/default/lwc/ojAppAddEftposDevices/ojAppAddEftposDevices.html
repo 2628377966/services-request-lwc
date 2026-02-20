@@ -1,0 +1,23 @@
+<template>
+    <template lwc:if={showForm}>
+        <h1 class="title">Add Eftpos Devices</h1>
+        <div class="gap-16px-vr"></div>
+        <p>Please indicate how many Eftpos Devices you would like to add?</p>
+        <div class="gap-24px-vr"></div>               
+                <div class="slds-form-element__control custom-dropdown">
+                    <select id="device-count-select"
+                    class="dropdown-select slds-input"
+                    onchange={handleSelect}>
+                        <template for:each={processedDeviceOptions} for:item="option">
+                            <option key={option.value}
+                                value={option.value}
+                                selected={option.selected}>
+                                {option.label}
+                            </option>
+                        </template>
+                    </select>
+                </div>
+        <div class="gap-24px-vr"></div>  
+        <p>Great news! All configurations and merchants (if applicable) from the previously enabled eftpos devices will automatically be applied to your new device/s.</p>
+    </template>
+</template>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EFTPOS_Debit_Card_Transaction_Fee_Waived__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>If EFTPOS cards transaction flat fee is waived</description>
+    <label>EFTPOS Debit Card Transaction Fee Waived</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

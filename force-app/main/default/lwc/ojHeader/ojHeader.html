@@ -1,0 +1,39 @@
+<template>
+    <div class="horizontalLine">
+        <div class="header">
+            <div class="container">
+                <div style="margin: .5rem auto .25rem .5rem;">
+                    <figure style="width:171px">
+                        <div>
+                            <img src={logoURL}>
+                        </div>
+                    </figure>
+                </div>
+                <div style="margin: auto 0 auto auto;">
+                    <figure style="width:171px">
+                        <div>
+                            <img src={partnerLogoURL}>
+                        </div>
+                    </figure>
+                </div>
+            </div>
+            <div class="slds-hide_medium" style="margin: auto auto auto 0px; padding: .3rem;">
+                <a href={supportPhoneNumber} target="_blank" onclick={callSupport}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30">
+                        <use href={phoneURL}></use>
+                    </svg>
+                </a>
+            </div>
+            <div class="slds-show_medium" style="margin: auto auto auto 0px; padding: .3rem;">
+                <div class="needHelp">
+                    Need help?
+                </div>
+                <div class="needHelp">
+                    {supportPhoneNumber}
+                </div>
+            </div>
+        </div>
+        <div class="mobileDivider slds-hide_medium"></div>
+        <div class="desktopDivider slds-show_medium"></div>
+    </div>
+</template>

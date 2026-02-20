@@ -1,0 +1,17 @@
+h1.title {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+div.tile {
+    border-radius: 5px;
+    border: 1px solid var(--Warm-Grey-76, #C2C1C2);
+    background: var(--States-a11y-light, #F7F7F8);
+    margin: 20px 0;
+    padding: 5% 0;
+    text-align: center;
+}
+
+.pointer {
+    cursor: pointer;   
+}

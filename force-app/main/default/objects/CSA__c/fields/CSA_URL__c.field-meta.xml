@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CSA_URL__c</fullName>
+    <externalId>false</externalId>
+    <formula>HYPERLINK ($Setup.Global_Settings__c.SiteURL__c &amp; &quot;/CSAStep1?oppId=&quot;&amp;  Opportunity__c  &amp; &quot;&amp;csa=&quot; &amp;  Id  ,&quot;Click here to view client service agreement&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>CSA URL</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

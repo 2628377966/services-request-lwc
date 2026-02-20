@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EFTPOS_Manual_Input_Enabled__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Flags if Manual Input is enabled on their EFTPOS terminals</description>
+    <inlineHelpText>Only an option if Quest is the EFTPOS provider</inlineHelpText>
+    <label>EFTPOS Manual Input</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

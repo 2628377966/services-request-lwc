@@ -1,0 +1,61 @@
+.row {
+    border-radius: 4px;
+    border: 1px solid var(--Ezidebit-Grey-Underline, #E5E5E5);
+    padding: 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    cursor: pointer;
+}
+
+.row-title {
+    color: var(--Eway-Black, #25262B);
+    /* Ezidebit Menu text */
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.gap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    align-self: stretch;
+}
+
+.gap-small{
+    margin-top: 16px;
+}
+
+.button {
+    border-radius: 4px;
+    border: 2px solid #E5E5E5;
+    background: var(--Ezi-Capture-Field, #FAFAFA);
+}
+
+.button-label {
+    color: var(--Ezi-Black, #000);
+    text-align: center;
+    font-family: "GPCommerce";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    /* 133.333% */
+}
+
+.button2 {
+    border-radius: var(--button2-border-radius, '4px');
+    background: var(--button2-background, white);
+    border: var(--button2-border, 1px solid transparent);
+    color: var(--button2-color);
+    font-weight: 500;
+    height: 48px;
+    font-size: 18px;
+    padding: 0px 2rem;
+    border-width: 0px;
+    border-style: none;
+}

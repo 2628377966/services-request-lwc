@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <!-- ============================================ -->
+    <!-- One Journey (OJ) Component Migration Package -->
+    <!-- Generated: 2026-01-30                        -->
+    <!-- ============================================ -->
+
+    <!-- Lightning Web Components -->
+    <types>
+        <!-- Core Components -->
+        <members>ojSignupUtils</members>
+        <members>ojUtil</members>
+        <members>ojHeader</members>
+        <members>ojFooter</members>
+        <members>ojInitiator</members>
+        <members>ojSignupInitiator</members>
+        <members>ojSignupMain</members>
+        <!-- Flow Step Components -->
+        <members>ojAppSignupOptions</members>
+        <members>ojAppPartnerServiceOptions</members>
+        <members>ojAppSignupVerifyAccount</members>
+        <members>ojAppSignupShowKYCCSA</members>
+        <members>ojAppRequestService</members>
+        <members>ojAppRemoveEftposMultipleMerchants</members>
+        <members>ojAppAddEftposDevices</members>
+        <members>ojAppRemoveEftposDevices</members>
+        <members>ojThankYou</members>
+        <!-- Supporting UI Components -->
+        <members>ojProgressbarHorizontal</members>
+        <members>ojProgressBarVertical</members>
+        <members>applicationEftposBiller</members>
+        <name>LightningComponentBundle</name>
+    </types>
+
+    <!-- Apex Classes (Controllers) -->
+    <types>
+        <!-- Primary Controllers -->
+        <members>OJInitiatorCtrl</members>
+        <members>BillerMatchController</members>
+        <members>OnboardingCaseCtrl</members>
+        <members>EftposUserController</members>
+        <members>OJButtonsHelper</members>
+        <members>OjdbMainCtrl</members>
+        <members>OJbdVerifyYourAccountsCtrl</members>
+        <!-- Helper Classes -->
+        <members>OJErrorLogger</members>
+        <members>PartnerConfigHelper</members>
+        <members>AutoConvertLeads</members>
+        <members>CustomException</members>
+        <members>SchemaUtil</members>
+        <!-- Test Classes -->
+        <members>OJInitiatorCtrlTest</members>
+        <members>BillerMatchControllerTest</members>
+        <members>OnboardingCaseCtrlTest</members>
+        <members>OJButtonsHelperTest</members>
+        <members>OjdbMainCtrlTest</members>
+        <members>OJbdVerifyYourAccountsCtrlTest</members>
+        <name>ApexClass</name>
+    </types>
+
+    <!-- Lightning Message Channels -->
+    <types>
+        <members>oneJourney__c</members>
+        <members>onboardingMessageChannel</members>
+        <name>LightningMessageChannel</name>
+    </types>
+
+    <!-- Static Resources -->
+    <types>
+        <members>ojCSSLibrary</members>
+        <members>sfGlobalFontLibrary</members>
+        <members>OneJourneyResources</members>
+        <members>CSA</members>
+        <members>EzidebitKYC</members>
+        <members>datepicker</members>
+        <members>bootmultiselect</members>
+        <members>Eway_Web_Favicon</members>
+        <name>StaticResource</name>
+    </types>
+
+    <!-- Custom Metadata Types & Custom Objects -->
+    <types>
+        <!-- Custom Metadata Types -->
+        <members>Multi_MID_Biller_Terminology__mdt</members>
+        <members>OJ_Button_Label__mdt</members>
+        <members>One_Journey_State__mdt</members>
+        <members>BSB_Directory__mdt</members>
+        <!-- Custom Objects -->
+        <members>Theme__c</members>
+        <members>EFTPOS_Device__c</members>
+        <members>EFTPOS_User__c</members>
+        <members>Application__c</members>
+        <members>Partner_Configuration__c</members>
+        <name>CustomObject</name>
+    </types>
+
+    <!-- Custom Metadata Records -->
+    <types>
+        <members>Multi_MID_Biller_Terminology__mdt.*</members>
+        <members>OJ_Button_Label__mdt.*</members>
+        <members>One_Journey_State__mdt.*</members>
+        <name>CustomMetadata</name>
+    </types>
+
+    <!-- Custom Fields on Standard Objects -->
+    <!-- Account Custom Fields -->
+    <types>
+        <members>Account.Brand__c</members>
+        <members>Account.Registered_Name__c</members>
+        <members>Account.Support_Phone_Number__c</members>
+        <members>Account.Partner_Logo_URL__c</members>
+        <members>Account.Partner_Type__c</members>
+        <members>Account.Software__c</members>
+        <members>Account.Client_Code__c</members>
+        <members>Account.Unformatted_ABN__c</members>
+        <members>Account.ABN__c</members>
+        <members>Account.Account_Status__c</members>
+        <members>Account.API_Capability__c</members>
+        <members>Account.EFTPOS_Relationship__c</members>
+        <members>Account.EFTPOS_Owner_Name__c</members>
+        <members>Account.EFTPOS_Provider__c</members>
+        <members>Account.Trading_Name__c</members>
+        <members>Account.Opportunity_ID__c</members>
+        <!-- Lead Custom Fields -->
+        <members>Lead.Brand__c</members>
+        <members>Lead.Support_Phone_Number__c</members>
+        <members>Lead.Partner_Logo_URL__c</members>
+        <members>Lead.Software__c</members>
+        <members>Lead.Date_Marketing_Qualified__c</members>
+        <members>Lead.Terminal_Owner__c</members>
+        <members>Lead.EFTPOS_Relationship__c</members>
+        <members>Lead.Enquiry_Type__c</members>
+        <members>Lead.Company_Referred_By__c</members>
+        <!-- Opportunity Custom Fields -->
+        <members>Opportunity.CSA__c</members>
+        <members>Opportunity.Product_Requested__c</members>
+        <members>Opportunity.Partner_Referred_Account__c</members>
+        <members>Opportunity.Multiple_EFTPOS_Users__c</members>
+        <members>Opportunity.isClosedCSA__c</members>
+        <members>Opportunity.isClosedAddProduct__c</members>
+        <members>Opportunity.IsClosed_CSA_Date__c</members>
+        <members>Opportunity.EF_Number_of_terminals__c</members>
+        <members>Opportunity.Client_Average_Transaction_Value__c</members>
+        <members>Opportunity.Client_Largest_Transaction_Value__c</members>
+        <members>Opportunity.Client_Number_of_Customers__c</members>
+        <members>Opportunity.Client_Payment_Frequency__c</members>
+        <members>Opportunity.Client_Average_Transaction_per_month__c</members>
+        <members>Opportunity.Client_Transactions_Near_Max_Amt__c</members>
+        <members>Opportunity.Payments_way__c</members>
+        <members>Opportunity.Client_Average_days__c</members>
+        <members>Opportunity.Client_Maximum_days__c</members>
+        <members>Opportunity.Public_Contact__c</members>
+        <!-- Contact Custom Fields -->
+        <members>Contact.Is_Primary_Contact__c</members>
+        <members>Contact.Is_Preferred_Contact__c</members>
+        <!-- Case Custom Fields -->
+        <members>Case.Category__c</members>
+        <members>Case.Sub_Category__c</members>
+        <name>CustomField</name>
+    </types>
+
+    <!-- Record Types -->
+    <types>
+        <members>Case.Onboarding</members>
+        <name>RecordType</name>
+    </types>
+
+    <!-- Queues -->
+    <types>
+        <members>Case.Onboarding</members>
+        <name>Queue</name>
+    </types>
+
+    <!-- Email Templates -->
+    <types>
+        <members>Auto_Confirmation_Email_for_New_Service_Ext_Requests</members>
+        <name>EmailTemplate</name>
+    </types>
+
+    <version>62.0</version>
+</Package>

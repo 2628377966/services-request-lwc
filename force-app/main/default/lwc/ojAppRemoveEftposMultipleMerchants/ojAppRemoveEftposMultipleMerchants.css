@@ -1,0 +1,131 @@
+.gap-14px-vr {
+    margin-top: 14px;
+}
+
+.gap-15px-vr {
+    margin-top: 15px;
+}
+
+.gap-16px-vr {
+    margin-top: 16px;
+}
+
+.gap-24px-vr {
+    margin-top: 24px;
+}
+
+.gap-48px-vr {
+    margin-top: 48px;
+}
+
+.gap-13px-hr {
+    margin-right: 13px;
+}
+
+.gap-24px-hr {
+    margin-right: 24px;
+}
+
+.validation-form {
+    padding: 24px;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 48px;
+    align-self: stretch;
+    border-radius: 4px;
+    border: 1px solid #E5E5E5;
+    background: #FAFAFA;
+    margin-bottom: 24px;
+}
+
+.save-button {
+    color: var(--primary-color, black);
+    border: 1.5px solid var(--primary-color, black);
+    padding: 12px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    /* 133.333% */
+}
+
+.save-button:disabled, .save-button[disabled] {
+    color: #C2C1C2; 
+    border: 1.5px solid #C2C1C2;
+}
+
+.cancel-button {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    color: var(--primary-color, black);
+    text-align: center;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 133.333% */
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+    cursor: pointer;
+}
+
+.label-warp {
+    color: var(--Eway-Black, #25262B);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.new-merchant {
+    color: var(--primary-color, black);
+    text-align: center;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    /* 133.333% */
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+    cursor: pointer;
+}
+
+.divider {
+    height: 1px;
+    background-color: var(--divider-border-color, 'white');
+}
+
+.small-title {
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.small-value {
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.business-name {
+    color: #000;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}

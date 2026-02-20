@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>New</fullName>
+        <default>true</default>
+        <label>New</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>On Hold</fullName>
+        <default>false</default>
+        <label>On Hold</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>WIP</fullName>
+        <default>false</default>
+        <label>WIP</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Open</fullName>
+        <default>false</default>
+        <label>Open</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Pending</fullName>
+        <default>false</default>
+        <label>Pending</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Follow-up</fullName>
+        <default>false</default>
+        <label>Follow-up</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>BLOCKED</fullName>
+        <default>false</default>
+        <label>BLOCKED</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Submitted for Approval</fullName>
+        <default>false</default>
+        <label>Submitted for Approval</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Submitted for Processing</fullName>
+        <default>false</default>
+        <label>Submitted for Processing</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Rejected</fullName>
+        <default>false</default>
+        <label>Rejected</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Processed</fullName>
+        <default>false</default>
+        <label>Processed</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Waiting Docs</fullName>
+        <default>false</default>
+        <label>Waiting Docs</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Compliance FU</fullName>
+        <default>false</default>
+        <label>Compliance FU</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>BA dispute</fullName>
+        <default>false</default>
+        <label>BA dispute</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>BA dispute FU</fullName>
+        <default>false</default>
+        <label>BA dispute FU</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>CC RFI</fullName>
+        <default>false</default>
+        <label>CC RFI</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>CC RFI FU</fullName>
+        <default>false</default>
+        <label>CC RFI FU</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>COE requirements issued</fullName>
+        <default>false</default>
+        <label>COE requirements issued</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>CSA Returned</fullName>
+        <default>false</default>
+        <label>CSA Returned</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>In Progress</fullName>
+        <default>false</default>
+        <label>In Progress</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>CC RFI Refund</fullName>
+        <default>false</default>
+        <label>CC RFI Refund</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Closed/Merged</fullName>
+        <default>false</default>
+        <label>Closed/Merged</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Sent to BNZ (NZ only)</fullName>
+        <default>false</default>
+        <label>Sent to BNZ (NZ only)</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Compliance Docs</fullName>
+        <default>false</default>
+        <label>Compliance Docs</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>EFTPOS</fullName>
+        <default>false</default>
+        <label>EFTPOS</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Sent to TL</fullName>
+        <default>false</default>
+        <label>Sent to TL</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Fee Waiver Turn On</fullName>
+        <default>false</default>
+        <label>Fee Waiver Turn On</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Ready to Close</fullName>
+        <default>false</default>
+        <label>Ready to Close</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Assigned to Credit</fullName>
+        <default>false</default>
+        <label>Assigned to Credit</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Waiting(Internal)</fullName>
+        <default>false</default>
+        <label>Waiting(Internal)</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Awaiting merchant</fullName>
+        <default>false</default>
+        <label>Awaiting merchant</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>With BNZ</fullName>
+        <default>false</default>
+        <label>With BNZ</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Resolved- App incomplete</fullName>
+        <default>false</default>
+        <label>Resolved- App incomplete</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Awaiting EFTPOS dispatch</fullName>
+        <default>false</default>
+        <label>Awaiting EFTPOS dispatch</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Onboarding Process</fullName>
+        <default>false</default>
+        <label>Onboarding Process</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Payer migration</fullName>
+        <default>false</default>
+        <label>Payer migration</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Resolved - Lost</fullName>
+        <default>false</default>
+        <label>Resolved - Lost</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Resolved - Won</fullName>
+        <default>false</default>
+        <label>Resolved - Won</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Resolved</fullName>
+        <default>false</default>
+        <label>Resolved</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Referred to Eway</fullName>
+        <default>false</default>
+        <label>Referred to Eway</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Follow up from Eway</fullName>
+        <default>false</default>
+        <label>Follow up from Eway</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Referred by Eway</fullName>
+        <default>false</default>
+        <label>Referred by Eway</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Merchant Response Received</fullName>
+        <default>false</default>
+        <label>Merchant Response Received</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Awaiting Third Party</fullName>
+        <default>false</default>
+        <label>Awaiting Third Party</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Escalated</fullName>
+        <default>false</default>
+        <label>Escalated</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Approved</fullName>
+        <default>false</default>
+        <label>Approved</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Declined</fullName>
+        <default>false</default>
+        <label>Declined</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Completed</fullName>
+        <default>false</default>
+        <label>Completed</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Closed</fullName>
+        <default>false</default>
+        <label>Closed</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Not Started</fullName>
+        <default>false</default>
+        <label>Not Started</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>2nd Attempt</fullName>
+        <default>false</default>
+        <label>2nd Attempt</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>3rd Attempt</fullName>
+        <default>false</default>
+        <label>3rd Attempt</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Working</fullName>
+        <default>false</default>
+        <label>Working</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>With Client</fullName>
+        <default>false</default>
+        <label>With Client</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>With Internal Team</fullName>
+        <default>false</default>
+        <label>With Internal Team</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Finalizing</fullName>
+        <default>false</default>
+        <label>Finalizing</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Awaiting Client/Payer</fullName>
+        <default>false</default>
+        <label>Awaiting Client/Payer</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Decided not to Call</fullName>
+        <default>false</default>
+        <label>No Call Required</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Awaiting BDM</fullName>
+        <default>false</default>
+        <label>Awaiting BDM</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Sales Team</fullName>
+        <default>false</default>
+        <label>Sales Team</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Credit &amp; Risk</fullName>
+        <default>false</default>
+        <label>Credit &amp; Risk</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>BNZ Pending Approval</fullName>
+        <default>false</default>
+        <label>BNZ Pending Approval</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>KYC Ready for Set Up</fullName>
+        <default>false</default>
+        <label>KYC Ready for Set Up</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Closed/Lost - Timeframe</fullName>
+        <default>false</default>
+        <label>Closed/Lost - Timeframe</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Closed/Lost - Competitor</fullName>
+        <default>false</default>
+        <label>Closed/Lost - Competitor</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Closed/Lost - Pricing</fullName>
+        <default>false</default>
+        <label>Closed/Lost - Pricing</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Closed/Lost - Documents</fullName>
+        <default>false</default>
+        <label>Closed/Lost - Documents</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>1st Contact Done</fullName>
+        <default>false</default>
+        <label>1st Contact Done</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>2nd Contact Done</fullName>
+        <default>false</default>
+        <label>2nd Contact Done</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>3rd Contact Done</fullName>
+        <default>false</default>
+        <label>3rd Contact Done</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Waiting for Client</fullName>
+        <default>false</default>
+        <label>Waiting for Client</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Waiting for Internal team</fullName>
+        <default>false</default>
+        <label>Waiting for Internal team</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Action with CA</fullName>
+        <default>false</default>
+        <label>Action with CA</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Decided not to call Managed</fullName>
+        <default>false</default>
+        <label>No Call Required - Managed</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Cant engage currently</fullName>
+        <default>false</default>
+        <label>Cant engage currently</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>No Call Required - Duplicate</fullName>
+        <default>false</default>
+        <label>No Call Required - Duplicate</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>No Call Required - Recently Engaged</fullName>
+        <default>false</default>
+        <label>No Call Required - Recently Engaged</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>No Call Required - Escalated to other team</fullName>
+        <default>false</default>
+        <label>No Call Required - Escalated to other team</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Contacted/Actioned</fullName>
+        <default>false</default>
+        <label>Contacted/Actioned</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Waiting on Internal Team</fullName>
+        <default>false</default>
+        <label>Waiting on Internal Team</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Multi Mid User - Eftpos Config Pending</fullName>
+        <default>false</default>
+        <label>Multi Mid User - Eftpos Config Pending</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Active - Welcome Email Pending</fullName>
+        <default>false</default>
+        <label>Active - Welcome Email Pending</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Settlement Hold - KYC Pending</fullName>
+        <default>false</default>
+        <label>Settlement Hold - KYC Pending</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>LongTermProject</fullName>
+        <default>false</default>
+        <label>Long Term Project</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>UnabletoContact</fullName>
+        <default>false</default>
+        <label>Unable to Contact</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>IncompltComplnc</fullName>
+        <default>false</default>
+        <label>IncompltComplnc</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Duplicate</fullName>
+        <default>false</default>
+        <label>Duplicate</label>
+        <closed>true</closed>
+    </standardValue>
+</StandardValueSet>

@@ -1,0 +1,53 @@
+<template>
+    <div class="slds-size_12-of-12 slds-is-relative" style="margin: 0 2em;">
+        <template lwc:if={showForm}>
+            <template lwc:if={isLoading}>
+                <lightning-spinner alternative-text="Generating" size="large"></lightning-spinner>
+            </template>
+
+            <lightning-layout multiple-rows>
+                <lightning-layout-item padding="around-small" size="12">
+                    <div >
+                        <h1 class="title">Existing Account Info</h1>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small" size="12">
+                    <p>As an existing {brand} merchant, please provide the below details.</p>
+                </lightning-layout-item>
+            </lightning-layout>
+    
+            <lightning-layout multiple-rows>
+                <lightning-layout-item padding="around-small" size="6">
+                    <lightning-input label="Payments Client ID" value={clientId}
+                        onchange={handleInputChange} onblur={startSearchMatch}
+                        name="clientId" type="text" pattern="\d{3}-\d{3}-\d{3}" required
+                        message-when-pattern-mismatch="Please enter in the format: XXX-XXX-XXX">
+                    </lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small" size="8">
+                    <lightning-input label="Business Registration Number" value={businessNumber}
+                        onchange={handleInputChange} onblur={startSearchMatch}
+                        name="businessNumber" type="text" pattern="^(?:(?:\s*\d\s*){9}|(?:\s*\d\s*){11}|(?:\s*\d\s*){13})$" required
+                        message-when-pattern-mismatch="Please enter a valid business registration number">
+                    </lightning-input>
+                </lightning-layout-item>
+
+                <lightning-layout-item padding="around-small" size="8">
+                    <lightning-input label="Email Address of Requester" value={requesterEmailAddress}
+                        onchange={handleInputChange} onblur={startSearchMatch}
+                        name="requesterEmailAddress" type="email" required>
+                    </lightning-input>
+                </lightning-layout-item>
+            </lightning-layout>
+        </template>
+
+        <template lwc:if={success}>
+            <span class="slds-text-color_success slds-has-error slds-form-element__help" style="font-size: 1rem;">{message}</span>
+        </template>
+        <!-- Error Place Holder -->
+        <template lwc:if={error}>
+            <span class="error-message slds-has-error slds-form-element__help">{message}</span>
+        </template>
+        <!---->
+    </div>
+</template>

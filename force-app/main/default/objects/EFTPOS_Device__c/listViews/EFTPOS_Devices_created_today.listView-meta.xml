@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EFTPOS_Devices_created_today</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Merchant_ID__c</columns>
+    <columns>Terminal_Activation_Date__c</columns>
+    <columns>Terminal_ID__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>equals</operation>
+        <value>TODAY</value>
+    </filters>
+    <label>EFTPOS Devices created today</label>
+</ListView>

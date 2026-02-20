@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Email</fullName>
+        <default>false</default>
+        <label>Email</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Phone</fullName>
+        <default>false</default>
+        <label>Phone</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Web</fullName>
+        <default>false</default>
+        <label>Web</label>
+    </standardValue>
+    <standardValue>
+        <fullName>System Generated</fullName>
+        <default>false</default>
+        <label>System Generated</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Internal Client Support AU Email</fullName>
+        <default>false</default>
+        <label>Internal Client Support AU Email</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Internal Client Support NZ Email</fullName>
+        <default>false</default>
+        <label>Internal Client Support NZ Email</label>
+    </standardValue>
+    <standardValue>
+        <fullName>External Client Support Email</fullName>
+        <default>false</default>
+        <label>External Client Support Email</label>
+    </standardValue>
+    <standardValue>
+        <fullName>External Integration Email</fullName>
+        <default>false</default>
+        <label>External Integration Email</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Internal Integration Email</fullName>
+        <default>false</default>
+        <label>Internal Integration Email</label>
+    </standardValue>
+    <standardValue>
+        <fullName>External Onboarding Email</fullName>
+        <default>false</default>
+        <label>External Onboarding Email</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Internal Onboarding Email</fullName>
+        <default>false</default>
+        <label>Internal Onboarding Email</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Submitted by Sales</fullName>
+        <default>false</default>
+        <label>Submitted by Sales</label>
+    </standardValue>
+    <standardValue>
+        <fullName>CSV upload</fullName>
+        <default>false</default>
+        <label>CSV upload</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Data Entry</fullName>
+        <default>false</default>
+        <label>Data Entry</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Client Care</fullName>
+        <default>false</default>
+        <label>Client Care</label>
+    </standardValue>
+    <standardValue>
+        <fullName>External Claims Email</fullName>
+        <default>false</default>
+        <label>External Claims Email</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Ezidebit NZ Compliance</fullName>
+        <default>false</default>
+        <label>Ezidebit NZ Compliance</label>
+    </standardValue>
+    <standardValue>
+        <fullName>External Emails Global Payments</fullName>
+        <default>false</default>
+        <label>External Emails - Global Payments</label>
+    </standardValue>
+    <standardValue>
+        <fullName>External Client Support Email - NewBook</fullName>
+        <default>false</default>
+        <label>External Client Support Email - NewBook</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Bank Cancellation Requests</fullName>
+        <default>false</default>
+        <label>Bank Cancellation Requests</label>
+    </standardValue>
+    <standardValue>
+        <fullName>External Client Support Email - Genie</fullName>
+        <default>false</default>
+        <label>External Client Support Email - Genie</label>
+    </standardValue>
+    <standardValue>
+        <fullName>eWAY Shared</fullName>
+        <default>false</default>
+        <label>Eway Shared</label>
+    </standardValue>
+    <standardValue>
+        <fullName>External Client Support Email - Feedback</fullName>
+        <default>false</default>
+        <label>External Client Support Email - Feedback</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Internal Client Support AU Email - NPS</fullName>
+        <default>false</default>
+        <label>Internal Client Support AU Email - NPS</label>
+    </standardValue>
+    <standardValue>
+        <fullName>External Client Support Email - Partners</fullName>
+        <default>false</default>
+        <label>External Client Support Email - Partners</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Medallia</fullName>
+        <default>false</default>
+        <label>Medallia</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Chat</fullName>
+        <default>false</default>
+        <label>Chat</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Social Media</fullName>
+        <default>false</default>
+        <label>Social Media</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Ref from AFCA</fullName>
+        <default>false</default>
+        <label>Ref from AFCA</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Unknown</fullName>
+        <default>false</default>
+        <label>Unknown</label>
+    </standardValue>
+</StandardValueSet>

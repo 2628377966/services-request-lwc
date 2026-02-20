@@ -1,0 +1,5 @@
+.error-message {
+    color: var(--dxp-g-destructive, '#c23934');
+    margin: auto;
+    font-size:  1rem;
+  }

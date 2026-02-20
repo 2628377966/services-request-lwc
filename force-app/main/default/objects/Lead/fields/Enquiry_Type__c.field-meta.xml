@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enquiry_Type__c</fullName>
+    <label>Enquiry Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Affiliate</fullName>
+                <default>false</default>
+                <label>Affiliate</label>
+            </value>
+            <value>
+                <fullName>Certified Developer</fullName>
+                <default>false</default>
+                <label>Certified Developer</label>
+            </value>
+            <value>
+                <fullName>Demo Request</fullName>
+                <default>false</default>
+                <label>Demo Request</label>
+            </value>
+            <value>
+                <fullName>Existing client</fullName>
+                <default>false</default>
+                <label>Existing client</label>
+            </value>
+            <value>
+                <fullName>Integration Enquiry</fullName>
+                <default>false</default>
+                <label>Integration Enquiry</label>
+            </value>
+            <value>
+                <fullName>Integration Partner</fullName>
+                <default>false</default>
+                <label>Integration Partner</label>
+            </value>
+            <value>
+                <fullName>New client</fullName>
+                <default>false</default>
+                <label>New client</label>
+            </value>
+            <value>
+                <fullName>Payer enquiring about a charge</fullName>
+                <default>false</default>
+                <label>Payer enquiring about a charge</label>
+            </value>
+            <value>
+                <fullName>Sandbox Request</fullName>
+                <default>false</default>
+                <label>Sandbox Request</label>
+            </value>
+            <value>
+                <fullName>Referred By MBO</fullName>
+                <default>false</default>
+                <label>Referred By MBO</label>
+            </value>
+            <value>
+                <fullName>Request a call back</fullName>
+                <default>false</default>
+                <label>Request a call back</label>
+            </value>
+            <value>
+                <fullName>Book a Walkthrough</fullName>
+                <default>false</default>
+                <label>Book a Walkthrough</label>
+            </value>
+            <value>
+                <fullName>Request a quote</fullName>
+                <default>false</default>
+                <label>Request a quote</label>
+            </value>
+            <value>
+                <fullName>Download a Trial</fullName>
+                <default>false</default>
+                <label>Download a Trial</label>
+            </value>
+            <value>
+                <fullName>Downloaded content</fullName>
+                <default>false</default>
+                <label>Downloaded content</label>
+            </value>
+            <value>
+                <fullName>Watched Video</fullName>
+                <default>false</default>
+                <label>Watched Video</label>
+            </value>
+            <value>
+                <fullName>Subscribed to eNews</fullName>
+                <default>false</default>
+                <label>Subscribed to eNews</label>
+            </value>
+            <value>
+                <fullName>Cloud Enquiry</fullName>
+                <default>false</default>
+                <label>Cloud Enquiry</label>
+            </value>
+            <value>
+                <fullName>Inbound Partner Lead</fullName>
+                <default>false</default>
+                <label>Inbound Partner Lead</label>
+            </value>
+            <value>
+                <fullName>Outbound Partner Lead</fullName>
+                <default>false</default>
+                <label>Outbound Partner Lead</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

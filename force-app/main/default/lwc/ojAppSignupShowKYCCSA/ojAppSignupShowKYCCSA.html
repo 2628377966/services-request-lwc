@@ -1,0 +1,18 @@
+<template>
+    
+    <div class="slds-grid slds-wrap">
+        <template lwc:if={showSpinner}>
+            <lightning-spinner alternative-text="Loading" size="Large"></lightning-spinner>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <p>Please wait ...Do not close this window</p>
+        </template>    
+         <!-- Error Place Holder -->
+         <template lwc:if={displayError}>
+            <span class="error-message slds-has-error slds-form-element__help">Unable to process the application successfully, please contact support for further assistance.</span>
+        </template>
+        <!---->
+    </div>
+</template>

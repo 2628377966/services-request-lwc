@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>BizCoT_C_Link</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BizCoT&amp;C_Link</shortDescription>
+        <value>https://www.bizcover.com.au/privacy/</value>
+    </labels>
+    <labels>
+        <fullName>BizCover_Cyber_Liability_Insurance</fullName>
+        <categories>Bizcover</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BizCover Cyber Liability Insurance</shortDescription>
+        <value>BizCover Cyber Liability Insurance</value>
+    </labels>
+    <labels>
+        <fullName>BizCover_Enquiry_Form</fullName>
+        <categories>Bizcover</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BizCover Enquiry Form</shortDescription>
+        <value>BizCover Enquiry Form</value>
+    </labels>
+    <labels>
+        <fullName>BizcoT_c_1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BizcoT&amp;c_1</shortDescription>
+        <value>I give permission for Ezidebit to give my contact details and current PCI-DSS
+            compliance status to BizCover AND I give BizCover permission to contact me for the
+            purpose of arranging a proposal for insurance cover. I acknowledge that any insurance
+            agreement entered into is solely between myself, BizCover and their insurance providers
+            and no advice has been provided by Ezidebit in relation to insurance. I acknowledge that
+            the information provided to BizCover is held by them in accordance with the BizCover</value>
+    </labels>
+    <labels>
+        <fullName>BizcoT_c_2</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BizcoT&amp;c_2</shortDescription>
+        <value>and that Ezidebit makes no warranty about how your data is managed. I acknowledge
+            that Ezidebit receives no commission for any insurance products I may purchase from
+            BizCover.</value>
+    </labels>
+    <labels>
+        <fullName>Bizcover_caseDesc_clientNotFound</fullName>
+        <categories>Bizcover</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Bizcover_case_client_not_found_Description</shortDescription>
+        <value>Identification details submitted in the Bizcover application form do not match any
+            merchant account in Salesforce. Please contact the person that submitted the form for
+            more detail.</value>
+    </labels>
+    <labels>
+        <fullName>Bizcover_caseDesc_optOut</fullName>
+        <categories>Bizcover</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Bizcover_case_client_optOut_Description</shortDescription>
+        <value>A Bizcover application form has been submitted by a merchant that has previously
+            opted out of the Merchant Trust (MTI) program. Please contact the merchant to discuss.</value>
+    </labels>
+    <labels>
+        <fullName>Bizcover_caseSubject</fullName>
+        <categories>Bizcover</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Bizcover_caseSubject</shortDescription>
+        <value>requires assistance with their BizCover Application</value>
+    </labels>
+    <labels>
+        <fullName>Case_CA_Rate_Review_Record_Type</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Case_CA_Rate_Review_Record_Type</shortDescription>
+        <value>012Mn000000ltVhIAI</value>
+    </labels>
+    <labels>
+        <fullName>Client_Code_Id</fullName>
+        <categories>basic labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Client Code/Id</shortDescription>
+        <value>Client Code/Id</value>
+    </labels>
+    <labels>
+        <fullName>Company_Name</fullName>
+        <categories>basic labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Company Name</shortDescription>
+        <value>Company Name</value>
+    </labels>
+    <labels>
+        <fullName>EFTPOS_Device_Quest_RecordTypeId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EFTPOS_Device_Quest_RecordTypeId</shortDescription>
+        <value>012Mn000000B0MUIA0</value>
+    </labels> 
+    <labels>
+        <fullName>Email_Address</fullName>
+        <categories>basic labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email Address</shortDescription>
+        <value>Email Address</value>
+    </labels>
+    <labels>
+        <fullName>EwayConnectionNetworkId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EwayConnectionNetworkId</shortDescription>
+        <value>04P1r000000blOT</value>
+    </labels>
+    <labels>
+        <fullName>Eway_Docs_Reminder_Email_Template_Id</fullName>
+        <categories>OmniCSA_EmailTemplateIds</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Eway Docs Reminder Email Template Id</shortDescription>
+        <value>00XMn00000CAK6cMAH</value>
+    </labels>
+    <labels>
+        <fullName>Eway_Save_for_Later_Email_Template_ID</fullName>
+        <categories>OmniCSA_EmailTemplateIds</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Eway Save for Later Email Template Id</shortDescription>
+        <value>00XMn00000CAK6bMAH</value>
+    </labels>
+    <labels>
+        <fullName>EziDebit_Contact_Us_Link</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EziDebit Contact Us Link</shortDescription>
+        <value>https://www.ezidebit.com/en-au/contact</value>
+    </labels>
+    <labels>
+        <fullName>EziDebit_Home_Page_Link</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EziDebit Home Page Link</shortDescription>
+        <value>https://www.ezidebit.com/en-au</value>
+    </labels>
+    <labels>
+        <fullName>Ezidebit_Docs_Reminder_Template_Id</fullName>
+        <categories>OmniCSA_EmailTemplateIds</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Ezidebit Docs Reminder Template Id</shortDescription>
+        <value>00XMn00000CAK6eMAH</value>
+    </labels>
+    <labels>
+        <fullName>Ezidebit_Error_Email_Address</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Ezidebit Error Email Address</shortDescription>
+        <value>sf-tracking@ezidebit.com.au</value>
+    </labels>
+    <labels>
+        <fullName>Ezidebit_Save_for_Later_Email_Template_Id</fullName>
+        <categories>OmniCSA_EmailTemplateIds</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Ezidebit Save for Later Email Template Id</shortDescription>
+        <value>00XMn00000CAK6fMAH</value>
+    </labels>
+    <labels>
+        <fullName>Ezidebit_Url_Validation_Regex</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Ezidebit_Url_Validation_Regex</shortDescription>
+        <value>^(?:(https?:\\/\\/)|www\\.)?[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?(\\.[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?)+(?:\\:\\d{2,5})?(?:[\\/?#][^\\s]*)?$</value>
+    </labels>
+    <labels>
+        <fullName>First_Name</fullName>
+        <categories>basic labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>First Name</shortDescription>
+        <value>First Name</value>
+    </labels>
+    <labels>
+        <fullName>HL_AU_Account_No</fullName>
+        <categories>HL Sandbox</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HL AU Account No</shortDescription>
+        <value>12345</value>
+    </labels>
+    <labels>
+        <fullName>HL_AU_BSB</fullName>
+        <categories>HL Sandbox</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HL AU BSB</shortDescription>
+        <value>064000</value>
+    </labels>
+    <labels>
+        <fullName>HL_AU_Merchant</fullName>
+        <categories>HL Sandbox</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HL AU Merchant</shortDescription>
+        <value>24609026</value>
+    </labels>
+    <labels>
+        <fullName>HL_Authorisation_Contact_Level</fullName>
+        <categories>HL_PROD</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HL_Authorisation_Contact_Level</shortDescription>
+        <value>CONTACT</value>
+    </labels>
+    <labels>
+        <fullName>HL_Authorisation_Level</fullName>
+        <categories>HL Sandbox</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HL_Authorisation_Level</shortDescription>
+        <value>SIGNATORY</value>
+    </labels>
+    <labels>
+        <fullName>HL_Authorisation_Signatory_Level</fullName>
+        <categories>HL_PROD</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HL_Authorisation_Signatory_Level</shortDescription>
+        <value>SIGNATORY</value>
+    </labels>
+    <labels>
+        <fullName>HL_Biller_Status</fullName>
+        <categories>HL Sandbox</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HL Biller Status</shortDescription>
+        <value>Active</value>
+    </labels>
+    <labels>
+        <fullName>HL_Billing_Address_Street</fullName>
+        <categories>HL Sandbox</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HL Billing Address Street</shortDescription>
+        <value>Not applicable</value>
+    </labels>
+    <labels>
+        <fullName>HL_Billing_City</fullName>
+        <categories>HL Sandbox</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HL Billing City</shortDescription>
+        <value>Brisbane</value>
+    </labels>
+    <labels>
+        <fullName>HL_Billing_Post_Code</fullName>
+        <categories>HL Sandbox</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HL Billing Post Code</shortDescription>
+        <value>4000</value>
+    </labels>
+    <labels>
+        <fullName>HL_Business_Manager_Code</fullName>
+        <categories>HL Sandbox</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HL Business Manager Code</shortDescription>
+        <value>Ezidebit</value>
+    </labels>
+    <labels>
+        <fullName>HL_Business_Type</fullName>
+        <categories>HL Sandbox</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HL Business Type</shortDescription>
+        <value>16</value>
+    </labels>
+    <labels>
+        <fullName>HL_NZ_Account_No</fullName>
+        <categories>HL Sandbox</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HL NZ Account No</shortDescription>
+        <value>001234000</value>
+    </labels>
+    <labels>
+        <fullName>HL_NZ_BSB</fullName>
+        <categories>HL Sandbox</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HL NZ BSB</shortDescription>
+        <value>010194</value>
+    </labels>
+    <labels>
+        <fullName>HL_NZ_Merchant_Name</fullName>
+        <categories>HL Sandbox</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HL NZ Merchant Name</shortDescription>
+        <value>52466</value>
+    </labels>
+    <labels>
+        <fullName>HL_Phone</fullName>
+        <categories>HL Sandbox</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HL Phone</shortDescription>
+        <value>0400000000</value>
+    </labels>
+    <labels>
+        <fullName>HL_Prod_BillerStatus</fullName>
+        <categories>HL_PROD</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HL_Prod_BillerStatus</shortDescription>
+        <value>APP_INCOMPLT</value>
+    </labels>
+    <labels>
+        <fullName>HL_Tax_Registration_Number</fullName>
+        <categories>HL Sandbox</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HL Tax Registration Number</shortDescription>
+        <value>0</value>
+    </labels>
+    <labels>
+        <fullName>HL_User_Name</fullName>
+        <categories>HL Sandbox</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HL User Name</shortDescription>
+        <value>int-user</value>
+    </labels>
+    <labels>
+        <fullName>KYC_Save_For_Later_Eway_Link</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>KYC Save For Later Eway Link</shortDescription>
+        <value>https://my.eway.io/Application-Saved.html</value>
+    </labels>
+    <labels>
+        <fullName>KYC_Save_For_Later_Ezi_Link</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>KYC Save For Later Ezi Link</shortDescription>
+        <value>https://www.ezidebit.com/en-au/saved-application</value>
+    </labels>
+    <labels>
+        <fullName>Last_Name</fullName>
+        <categories>basic labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Last Name</shortDescription>
+        <value>Last Name</value>
+    </labels>
+    <labels>
+        <fullName>MTI_summary</fullName>
+        <categories>MTI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>text for mti hidden fees advise</shortDescription>
+        <value>The Merchant Trust Initiative provides information about cybersecurity, data
+            protection and PCI DSS compliance. Included is access to tools and resources that
+            provide education on what you need to do to improve security and meet your compliance
+            obligations. After 50 transactions have been processed, you will be enrolled into the
+            Merchant Trust Initiative. For more information visit</value>
+    </labels>
+    <labels>
+        <fullName>MTI_summary_url</fullName>
+        <categories>MTI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MTI info url</shortDescription>
+        <value>https://www.ezidebit.com/en-au/payment-solutions/business-security</value>
+    </labels>
+    <labels>
+        <fullName>MTI_summary_url_display</fullName>
+        <categories>MTI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MTI info text display instead of url</shortDescription>
+        <value>our website</value>
+    </labels>
+    <labels>
+        <fullName>MTI_summary_url_eway_brand</fullName>
+        <categories>MTI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MTI_summary_url_eway_brand</shortDescription>
+        <value>https://www.eway.com.au/advanced-cybersecurity/</value>
+    </labels>
+    <labels>
+        <fullName>MTI_TrustKeeperProvider</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MTI_TrustKeeperProvider</shortDescription>
+        <value>Aperia</value>
+    </labels>
+    <labels>
+        <fullName>Merchant_Trust_Initiative</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Merchant Trust Initiative</shortDescription>
+        <value>Merchant Trust Initiative</value>
+    </labels>
+    <labels>
+        <fullName>OppPaymentsWayPicklistToShowChildFields</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OppPaymentsWayPicklistToShowChildFields</shortDescription>
+        <value>I take payments before or during my product/service delivery to the customer</value>
+    </labels>
+    <labels>
+        <fullName>PartnerReferMerchantLink</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Partner Refer Merchant Link</shortDescription>
+        <value>https://go.ezidebit.com/Glofox-Referrals.html</value>
+    </labels>
+    <labels>
+        <fullName>Phone_Number</fullName>
+        <categories>basic labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Phone Number</shortDescription>
+        <value>Phone Number</value>
+    </labels>
+    <labels>
+        <fullName>QuestPrintCharacters</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>QuestPrintCharacters</shortDescription>
+        <value>[^a-zA-Z0-9 !&quot;#$%&amp;&apos;\(\)\*\+\,\-\.\/\:\;&lt;=&gt;\?@\[\]\^\_\`\{\|\}\~]</value>
+    </labels>
+    <labels>
+        <fullName>Service_Extend_Journey_Enabled_ISVs</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Service Extend Journey Enabled ISVs</shortDescription>
+        <value>001Mn00000Inqr8IAB,001Mn00000dLyVlIAK,001Mn00000PBQGwIAP</value>
+    </labels>
+    <labels>
+        <fullName>Smartpay_DispatchFile_ErrorEmail</fullName>
+        <categories>SmartpayDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Smartpay_DispatchFile_ErrorEmail</shortDescription>
+        <value>nagamani.kotha@ezidebit.com.au;lynda.deveson@ezidebit.com.au;majid.reisidehkordi@ezidebit.com.au</value>
+    </labels>
+    <labels>
+        <fullName>Smartpay_dispatch_file_subject_line</fullName>
+        <categories>SmartpayDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Smartpay dispatch file subject line</shortDescription>
+        <value>Smartpay Dispatch file</value>
+    </labels>
+    <labels>
+        <fullName>SurveyWebisteForSupport</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SurveyWebisteForSupport</shortDescription>
+        <value>https://gpaunz.typeform.com/to/BaFrrAjN</value>
+    </labels>
+    <labels>
+        <fullName>SurveyWebsiteForSales</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SurveyWebsiteForSales</shortDescription>
+        <value>https://gpaunz.typeform.com/to/BaFrrAjN</value>
+    </labels>
+    <labels>
+        <fullName>Thankyou_Bizcover_page</fullName>
+        <categories>Bizcover</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Thankyou Bizcover redirect page</shortDescription>
+        <value>https://go.ezidebit.com/bizcover-thank-you.html</value>
+    </labels>
+    <labels>
+        <fullName>accept_TnC</fullName>
+        <categories>basic labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>accept T&amp;C</shortDescription>
+        <value>Please accept the terms and conditions.</value>
+    </labels>
+    <labels>
+        <fullName>field_must_be_populated</fullName>
+        <categories>basic labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>field must be populated</shortDescription>
+        <value>field must be populated!</value>
+    </labels>
+    <labels>
+        <fullName>success_Bizcover_page</fullName>
+        <categories>Bizcover</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>success Bizcover redirect page</shortDescription>
+        <value>https://go.ezidebit.com/bizcover-success.html</value>
+    </labels>
+        <labels>
+        <fullName>Partner_Portal_Login_URL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Partner Portal Login URL</shortDescription>
+        <value>https://ezidebit--ezifull.sandbox.my.site.com/partner/s/login</value>
+    </labels>
+</CustomLabels>

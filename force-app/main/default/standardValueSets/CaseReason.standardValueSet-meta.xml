@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Bug Fix</fullName>
+        <default>false</default>
+        <label>Bug Fix</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Create / Remove User</fullName>
+        <default>false</default>
+        <label>Create / Remove User</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>New Field/s</fullName>
+        <default>false</default>
+        <label>New Field/s</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>New Function</fullName>
+        <default>false</default>
+        <label>New Function</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Reporting</fullName>
+        <default>false</default>
+        <label>Reporting</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Training</fullName>
+        <default>false</default>
+        <label>Training</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Transfer / merge records</fullName>
+        <default>false</default>
+        <label>Transfer / merge records</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Integration Support</fullName>
+        <default>false</default>
+        <label>Integration Support</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Update Records/Fields/Templates</fullName>
+        <default>false</default>
+        <label>Update Records/Fields/Templates</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Research</fullName>
+        <default>false</default>
+        <label>Research</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Client Care Query</fullName>
+        <default>false</default>
+        <label>Client Care Query</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Activations</fullName>
+        <default>false</default>
+        <label>Activations</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>DDR</fullName>
+        <default>false</default>
+        <label>DDR</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Duplicate</fullName>
+        <default>false</default>
+        <label>Duplicate</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Forwarded to On-boarding</fullName>
+        <default>false</default>
+        <label>Forwarded to On-boarding</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>No Ezidebit Action Required.</fullName>
+        <default>false</default>
+        <label>No Ezidebit Action Required.</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>CSA</fullName>
+        <default>false</default>
+        <label>CSA</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Duplicate/Case Resolved Confirmation email/Auto Response</fullName>
+        <default>false</default>
+        <label>Duplicate/Case Resolved Confirmation email/Auto Response</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>MTI</fullName>
+        <default>false</default>
+        <label>MTI</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Account Closure</fullName>
+        <default>false</default>
+        <label>Account Closure</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Terminal Return</fullName>
+        <default>false</default>
+        <label>Terminal Return</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Internal/External Join</fullName>
+        <default>false</default>
+        <label>Internal/External Join</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Credit</fullName>
+        <default>false</default>
+        <label>Credit</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Onboarding</fullName>
+        <default>false</default>
+        <label>Onboarding</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Client Monitoring</fullName>
+        <default>false</default>
+        <label>Client Monitoring</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>COD</fullName>
+        <default>false</default>
+        <label>COD</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Product Add</fullName>
+        <default>false</default>
+        <label>Product Add</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Call Request</fullName>
+        <default>false</default>
+        <label>Call Request</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>DDR Unblock</fullName>
+        <default>false</default>
+        <label>DDR Unblock</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Fee Enquiry</fullName>
+        <default>false</default>
+        <label>Fee Enquiry</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Spam</fullName>
+        <default>false</default>
+        <label>Spam</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Outage</fullName>
+        <default>false</default>
+        <label>Outage</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>COE</fullName>
+        <default>false</default>
+        <label>COE</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Acknowledgement of Eft Rolls Ordered</fullName>
+        <default>false</default>
+        <label>Acknowledgement of Eft Rolls Ordered</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Escalation</fullName>
+        <default>false</default>
+        <label>Escalation</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Price Increase Apr 24</fullName>
+        <default>false</default>
+        <label>Price Increase Apr 24</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Account Updates</fullName>
+        <default>false</default>
+        <label>Account Updates</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Accounts and Billing</fullName>
+        <default>false</default>
+        <label>Accounts and Billing</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Card Type Addon</fullName>
+        <default>false</default>
+        <label>Card Type Addon</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Anti Fraud</fullName>
+        <default>false</default>
+        <label>Anti Fraud</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Apps and Integrations</fullName>
+        <default>false</default>
+        <label>Apps and Integrations</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Login Issues</fullName>
+        <default>false</default>
+        <label>Login Issues</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>For other teams</fullName>
+        <default>false</default>
+        <label>For other teams</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Spam and Duplicate</fullName>
+        <default>false</default>
+        <label>Spam and Duplicate</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Health Check</fullName>
+        <default>false</default>
+        <label>Health Check</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>PCI Compliance</fullName>
+        <default>false</default>
+        <label>PCI Compliance</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Data Transfers</fullName>
+        <default>false</default>
+        <label>Data Transfers</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+</StandardValueSet>

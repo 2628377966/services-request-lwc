@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Multiple_MID</fullName>
+    <active>true</active>
+    <description>When a Card Present via Single API is enabled, the value of the Multi-MID enabled field on the Device object for a Quest terminal needs to be set to true</description>
+    <errorConditionFormula>INCLUDES(Account__r.API_Capability__c, &apos;Card Present&apos;) 
+&amp;&amp;  !Multi_MID_Enabled__c</errorConditionFormula>
+    <errorDisplayField>Multi_MID_Enabled__c</errorDisplayField>
+    <errorMessage>When a Card Present via Single API is enabled, make sure Multiple Merchant Id is checked.</errorMessage>
+</ValidationRule>

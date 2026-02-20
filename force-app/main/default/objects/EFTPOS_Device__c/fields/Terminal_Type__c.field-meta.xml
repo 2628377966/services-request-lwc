@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Terminal_Type__c</fullName>
+    <label>Terminal Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Quest 850</fullName>
+                <default>true</default>
+                <label>Quest 850</label>
+            </value>
+            <value>
+                <fullName>Quest 720</fullName>
+                <default>false</default>
+                <label>Quest 720</label>
+            </value>
+            <value>
+                <fullName>Yazara</fullName>
+                <default>false</default>
+                <label>Yazara</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
