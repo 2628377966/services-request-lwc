@@ -2,24 +2,16 @@ public without sharing class OnboardingCaseCtrl  {
     @AuraEnabled(cacheable = false)
     public static void createAddEftposCase(String clientId, String businessNumber, String requesterEmailAddress, String selectedEftposDevices) {
         try {
-            Group owner = [
-                SELECT Id 
-                FROM Group 
-                WHERE DeveloperName = 'Onboarding' AND Type = 'Queue' 
-                LIMIT 1
-            ];
+            List<Group> ownerGroups = [SELECT Id FROM Group WHERE DeveloperName = 'Onboarding' AND Type = 'Queue' LIMIT 1];
 
-            Id caseRecordTypeId = Schema.SObjectType.Case
-                .getRecordTypeInfosByDeveloperName()
-                .get('Onboarding')
-                .getRecordTypeId();
+            Schema.RecordTypeInfo rtInfo = Schema.SObjectType.Case.getRecordTypeInfosByDeveloperName().get('Onboarding');
 
             businessNumber = businessNumber.deleteWhitespace();
             List<Account> existingAccounts = getexistingAccountRecords(clientId, businessNumber);
 
             Case c = new Case();
-            c.RecordTypeId = caseRecordTypeId;
-            c.OwnerId = owner.Id;
+            if (rtInfo != null) { c.RecordTypeId = rtInfo.getRecordTypeId(); }
+            if (!ownerGroups.isEmpty()) { c.OwnerId = ownerGroups[0].Id; }
             c.AccountId = existingAccounts.get(0).Id;
             c.Category__c = 'Service (multi-MID)';
             c.Sub_Category__c = 'Add Device';
@@ -47,58 +39,62 @@ public without sharing class OnboardingCaseCtrl  {
 
     @AuraEnabled
     public static void createCaseToRemoveMultipleMerchant(String clientId, String businessNumber, String requesterEmailAddress, String merchants) {
-        businessNumber = businessNumber.deleteWhitespace();
-        RecordType rc = [SELECT Id FROM RecordType WHERE SobjectType = 'Case' AND DeveloperName = 'Onboarding' LIMIT 1];
-        Group owner = [SELECT Id FROM Group WHERE DeveloperName = 'Onboarding' AND Type = 'Queue' LIMIT 1];
-        List<Account> existingAccounts = [
-            SELECT Id, Name, Industry
-            FROM Account
-            WHERE Client_Code__c = :clientId 
-              AND Unformatted_ABN__c = :businessNumber
-        ];
+        try {
+            businessNumber = businessNumber.deleteWhitespace();
+            List<RecordType> rcList = [SELECT Id FROM RecordType WHERE SobjectType = 'Case' AND DeveloperName = 'Onboarding' LIMIT 1];
+            List<Group> ownerGroups = [SELECT Id FROM Group WHERE DeveloperName = 'Onboarding' AND Type = 'Queue' LIMIT 1];
+            List<Account> existingAccounts = [
+                SELECT Id, Name, Industry
+                FROM Account
+                WHERE Client_Code__c = :clientId 
+                  AND Unformatted_ABN__c = :businessNumber
+            ];
 
-        List<Object> merchantRecords = (List<Object>) JSON.deserializeUntyped(merchants);
-        System.debug(merchantRecords);
-        
-        String formattedMerchants = '';
-        for (Integer i = 0; i < merchantRecords.size(); i++) {
-            Map<String, Object> eachMerchant = (Map<String, Object>)merchantRecords[i];
-            if ((Boolean)eachMerchant.get('isValid') == true) {
-                String formattedString = 'tradingName: ' + (String)eachMerchant.get('tradingName') + ',\n' +
-                                         'email: ' + (String)eachMerchant.get('email') + ',\n' +
-                                         'clientId: ' + (String)eachMerchant.get('clientId') + ';';
-                
-                if (i < merchantRecords.size() - 1) {
-                    formattedMerchants += formattedString + '\n';
-                } else {
-                    formattedMerchants += formattedString;
+            List<Object> merchantRecords = (List<Object>) JSON.deserializeUntyped(merchants);
+            System.debug(merchantRecords);
+            
+            String formattedMerchants = '';
+            for (Integer i = 0; i < merchantRecords.size(); i++) {
+                Map<String, Object> eachMerchant = (Map<String, Object>)merchantRecords[i];
+                if ((Boolean)eachMerchant.get('isValid') == true) {
+                    String formattedString = 'tradingName: ' + (String)eachMerchant.get('tradingName') + ',\n' +
+                                             'email: ' + (String)eachMerchant.get('email') + ',\n' +
+                                             'clientId: ' + (String)eachMerchant.get('clientId') + ';';
+                    
+                    if (i < merchantRecords.size() - 1) {
+                        formattedMerchants += formattedString + '\n';
+                    } else {
+                        formattedMerchants += formattedString;
+                    }
                 }
             }
+
+            Case c = new Case();
+            if (!rcList.isEmpty()) { c.RecordTypeId = rcList[0].Id; }
+            if (!ownerGroups.isEmpty()) { c.OwnerId = ownerGroups[0].Id; }
+            c.AccountId = existingAccounts.get(0).Id;
+            c.Category__c = 'Service (multi-MID)';
+            c.Sub_Category__c = 'Remove User';
+            c.Status = 'New';
+            c.Subject = 'New Request - ' + existingAccounts.get(0).Industry + ' - Existing Merchant (Multi MID)';
+            c.Origin = 'Web';
+            c.Description =
+                'Remove Multiple Merchants\n' +
+                '---------------------------\n' +
+                'Trading Name: ' + existingAccounts.get(0).Name + '\n' +
+                'Payments ID: ' + clientId + '\n' +
+                'ABN: ' + businessNumber + '\n' +
+                'Requesters email address: ' + requesterEmailAddress + '\n' +
+                '-------- Merchants to Remove --------\n'
+                + formattedMerchants;
+
+            insert c;
+          
+            //Send Confirmation email
+            sendConfirmationEmail(c.Id, requesterEmailAddress);
+        } catch (Exception ex) {
+            System.debug('Exception: ' + ex);
         }
-
-        Case c = new Case();
-        c.RecordTypeId = rc.Id;
-        c.OwnerId = owner.Id;
-        c.AccountId = existingAccounts.get(0).Id;
-        c.Category__c = 'Service (multi-MID)';
-        c.Sub_Category__c = 'Remove User';
-        c.Status = 'New';
-        c.Subject = 'New Request - ' + existingAccounts.get(0).Industry + ' - Existing Merchant (Multi MID)';
-        c.Origin = 'Web';
-        c.Description =
-            'Remove Multiple Merchants\n' +
-            '---------------------------\n' +
-            'Trading Name: ' + existingAccounts.get(0).Name + '\n' +
-            'Payments ID: ' + clientId + '\n' +
-            'ABN: ' + businessNumber + '\n' +
-            'Requesters email address: ' + requesterEmailAddress + '\n' +
-            '-------- Merchants to Remove --------\n'
-            + formattedMerchants;
-
-        insert c;
-      
-        //Send Confirmation email
-        sendConfirmationEmail(c.Id, requesterEmailAddress);
     }
 
     @AuraEnabled(cacheable = false)
@@ -129,12 +125,7 @@ public without sharing class OnboardingCaseCtrl  {
                 }
             }
 
-            Group owner = [
-                SELECT Id 
-                FROM Group 
-                WHERE DeveloperName = 'Onboarding' AND Type = 'Queue' 
-                LIMIT 1
-            ];
+            List<Group> ownerGroups = [SELECT Id FROM Group WHERE DeveloperName = 'Onboarding' AND Type = 'Queue' LIMIT 1];
 
             Id caseRecordTypeId = Schema.SObjectType.Case
                 .getRecordTypeInfosByDeveloperName()
@@ -146,7 +137,7 @@ public without sharing class OnboardingCaseCtrl  {
 
             Case c = new Case();
             c.RecordTypeId = caseRecordTypeId;
-            c.OwnerId = owner.Id;
+            c.OwnerId = ownerGroups[0].Id;
             c.AccountId = existingAccounts.get(0).Id;
             c.Category__c = 'Service (multi-MID)';
             c.Sub_Category__c = 'Remove Device';

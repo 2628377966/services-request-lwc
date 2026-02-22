@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Biller Terminology</label>
+    <protected>false</protected>
+    <values>
+        <field>AB_Add_Biller_Label__c</field>
+        <value xsi:type="xsd:string">Add Another Merchant</value>
+    </values>
+    <values>
+        <field>AB_Add_Disclaimer__c</field>
+        <value xsi:type="xsd:string">Ezidebit provides payment accounts for registered AU/NZ businesses. Please ensure the information you provide below reflects the correct business entity.</value>
+    </values>
+    <values>
+        <field>AB_Add_Info_Additional__c</field>
+        <value xsi:type="xsd:string">These accounts will be linked to your EFTPOS terminal(s).</value>
+    </values>
+    <values>
+        <field>AB_Add_Info__c</field>
+        <value xsi:type="xsd:string">Please provide details of any additional merchants you would like to add to your payment solutions. Each merchant you add will need their own payments account with Ezidebit.</value>
+    </values>
+    <values>
+        <field>AB_Add_Title__c</field>
+        <value xsi:type="xsd:string">Add Multiple Merchants</value>
+    </values>
+    <values>
+        <field>AB_Capture_Prefill_CSA_Note__c</field>
+        <value xsi:type="xsd:string">Note: All multiple merchant agreements will be sent to you to prefill some of the information for their business. Each individual multi-merchant will then be able to review and update these details before submitting.</value>
+    </values>
+    <values>
+        <field>AB_Capture_Prefill_CSA_Title__c</field>
+        <value xsi:type="xsd:string">Would you like to prefill all EFTPOS user applications?</value>
+    </values>
+    <values>
+        <field>AB_Info__c</field>
+        <value xsi:type="xsd:string">Please review and confirm your list of multiple merchants to be added to your Eftpos terminal/s.</value>
+    </values>
+    <values>
+        <field>AB_Next_Button_Label__c</field>
+        <value xsi:type="xsd:string">Confirm</value>
+    </values>
+    <values>
+        <field>AB_Title__c</field>
+        <value xsi:type="xsd:string">Add Multiple Merchants</value>
+    </values>
+    <values>
+        <field>Execution_Amex_Marketing_Info__c</field>
+        <value xsi:type="xsd:string">The public contact details provided on this form will also be used for marketing emails relating to your Amex payment products.</value>
+    </values>
+    <values>
+        <field>FS_Setup_Label__c</field>
+        <value xsi:type="xsd:string">Would you like to set up more than one merchants on your EFTPOS terminal/s ?</value>
+    </values>
+    <values>
+        <field>FS_Title__c</field>
+        <value xsi:type="xsd:string">Multiple Merchants</value>
+    </values>
+    <values>
+        <field>PDF_Number_Nominated_Label__c</field>
+        <value xsi:type="xsd:string">Number of multiple merchants nominated</value>
+    </values>
+    <values>
+        <field>PDF_Setup_Label__c</field>
+        <value xsi:type="xsd:string">Have you set up more than one merchants on your payment solution/s ?</value>
+    </values>
+    <values>
+        <field>PDF_Sub_Title__c</field>
+        <value xsi:type="xsd:string">Add Multiple Merchants</value>
+    </values>
+    <values>
+        <field>PDF_Title__c</field>
+        <value xsi:type="xsd:string">Add Multi-Merchant Setup</value>
+    </values>
+</CustomMetadata>
