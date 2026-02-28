@@ -1,0 +1,400 @@
+<apex:page applyBodyTag="false" applyHtmlTag="false" docType="html-5.0" showHeader="false" sidebar="false" controller="KYC_EftposBiller_Controller" action="{!init}" cache="false" standardStylesheets="false">
+    <!-- Force recompile: Updated on 2025-10-01 12:00 PM -->
+    <html lang="en">
+        <head>
+            
+            <meta charset="utf-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <meta name="description" content="CSA Online" />
+            <meta name="author" content="Ezidebit" />
+            
+            <apex:outputPanel rendered="{!isEzidebitBrand }" layout="none">
+                <title>Ezidebit CSA Fees Structure</title>
+                <link rel="icon" type="image/png" href="{!URLFOR($Resource.EzidebitKYC, 'image/CSAICON.png')}" />
+            </apex:outputPanel>
+            <apex:outputPanel rendered="{! !isEzidebitBrand }" layout="none">
+                <title>Eway CSA Fees Structure</title>
+                <link rel="icon" type="image/png" href="{!URLFOR($Resource.Eway_Web_Favicon)}" />
+            </apex:outputPanel>
+            
+            <!-- Bootstrap Core CSS -->
+            <apex:stylesheet value="{!URLFOR($Resource.CSA, 'css/bootstrap.min.css')}"/>
+            
+            <!-- Bootstrap Toggle -->
+            <apex:stylesheet value="{!URLFOR($Resource.CSA, 'css/bootstrap-toggle.min.css')}"/>
+            
+            <!-- Custom CSS -->
+            <apex:stylesheet value="{!URLFOR($Resource.CSA, 'css/one-page-wonder.css')}"/>
+            
+            <apex:stylesheet value="{!URLFOR($Resource.datepicker, 'css/bootstrap-datepicker.min.css')}"/>
+            
+            <apex:stylesheet value="{!URLFOR($Resource.bootmultiselect, 'css/bootstrap-multiselect.css')}"/>
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+            
+            <apex:outputPanel rendered="{!isEzidebitBrand }" layout="none">
+                <style>
+                    .horizontalLineColor{
+                        border: 0px solid #58B947;
+                        background-color: #58B947;
+                    }
+                    .form-control{
+                        height:40px;
+                        margin:10px 0;
+                        border: 1px solid #58B947 ;
+                    }
+                    .form-control[disabled],.form-control[readonly],fieldset[disabled] .form-control {
+                        background-color: #E5E5E5;
+                        opacity: 1
+                    }
+                    .has-error .form-control {
+                        border-color: #A94442;
+                    }
+                    .has-error .help-block {
+                        color: #A94442;
+                    }
+                    .help-block {
+                        color: #A94442;
+                    }
+                    .tooltip-new {
+                        color: #58B947;
+                    }
+                    .text-danger {
+                        color: #A94442;
+                    }
+                    .subHorizontalLineColor {
+                        border-color: #58B947;
+                        height: 1px;
+                    }
+                    input[type=checkbox] {
+                        position: relative;
+                        cursor: pointer;
+                    }
+                    input[type=checkbox]:before {
+                        content: "";
+                        position: absolute;
+                        width: 16px;
+                        height: 16px;
+                        top: 0;
+                        left: 0;
+                        border: 1px solid #58B947;
+                        padding: 1px;
+                        background-color: #FAFAFA;
+                    }
+                    input[type=checkbox]:checked:before {
+                        background-color: #58B947;
+                    }
+                    input[type=checkbox]:checked:after {
+                        content: "";
+                        display: block;
+                        width: 5px;
+                        height: 10px;
+                        border: solid #FFFFFF;
+                        border-width: 0 2px 2px 0;
+                        -webkit-transform: rotate(45deg);
+                        -ms-transform: rotate(45deg);
+                        transform: rotate(45deg);
+                        position: absolute;
+                        top: 2px;
+                        left: 6px;
+                    }
+                </style>
+            </apex:outputPanel>
+
+            <apex:outputPanel rendered="{! !isEzidebitBrand }" layout="none">
+                <style>
+                    .horizontalLineColor{
+                        border: 0px solid #FDBA12;
+                        background-color: #FDBA12;
+                    }
+                    .form-control{
+                        height:40px;
+                        margin:10px 0;
+                        border: 1px solid #D1DAE1;
+                    }
+                    .form-control[disabled],.form-control[readonly],fieldset[disabled] .form-control {
+                        background-color: #E9EDF1;
+                        opacity: 1
+                    }
+                    .has-error .form-control {
+                        border-color: #FF3547;
+                    }
+                    .has-error .help-block {
+                        color: #FF3547;
+                    }
+                    .help-block {
+                        color: #FF3547;
+                    }
+                    .tooltip-new {
+                        color: #FDBA12;
+                    }
+                    .text-danger {
+                        color: #FF3547;
+                    }
+                    .subHorizontalLineColor {
+                        border-color: #FDBA12;
+                        height: 1px;
+                    }
+                    input[type=checkbox] {
+                        position: relative;
+                        cursor: pointer;
+                        margin-right: 10px;
+                    }
+                    input[type=checkbox]:before {
+                        content: "";
+                        position: absolute;
+                        width: 16px;
+                        height: 16px;
+                        top: 0;
+                        left: 0;
+                        border: 1px solid #D1DAE1;
+                        padding: 1px;
+                        background-color: #FFFFFF;
+                    }
+                    input[type=checkbox]:checked:before {
+                        background-color: #FDBA12;
+                    }
+                    input[type=checkbox]:checked:after {
+                        content: "";
+                        display: block;
+                        width: 5px;
+                        height: 10px;
+                        border: solid #FFFFFF;
+                        border-width: 0 2px 2px 0;
+                        -webkit-transform: rotate(45deg);
+                        -ms-transform: rotate(45deg);
+                        transform: rotate(45deg);
+                        position: absolute;
+                        top: 2px;
+                        left: 6px;
+                    }
+                    .btn-default {
+                        border-radius: 25px;
+                    }
+                </style>
+            </apex:outputPanel>
+
+            <style>
+                @-webkit-keyframes colors {
+                0%{background-position:0% 50%} 
+                50%{background-position:100% 50%}
+                100%{background-position:0% 50%}
+                }
+                @-moz-keyframes colors {
+                0%{background-position:0% 50%}
+                50%{background-position:100% 50%}
+                100%{background-position:0% 50%}
+                }
+                @keyframes colors { 
+                0%{background-position:0% 50%}
+                50%{background-position:100% 50%}
+                100%{background-position:0% 50%}
+                }
+                
+                .headline{
+                background-color:#6eb33f;
+                color:#fff;
+                height:none;
+                padding: 50px 0;
+                width: 100%;
+                background: linear-gradient(270deg, #6eb33f, #007dc3, #6eb33f);
+                background-size: 800% 800%;
+                -webkit-animation: colors 30s ease infinite;
+                -moz-animation: colors 30s ease infinite;
+                animation: colors 30s ease infinite;
+                }
+                
+                .headline h2{
+                background:none;
+                }
+
+                .featurette-heading{
+                font-size:30px;
+                margin-bottom:20px; 
+                }
+                
+                div.container form#j_id0:j_id6 div#about.featurette div.form-group div.requiredInput span.lookupInput a#j_id0:j_id6:oppid_lkwgt.form-control{background-color:blue;}
+                .featurette-divider {
+                margin: 4px 0;
+                border: none;
+                background-color: transparent;
+                }
+                
+                .success{
+                background-color:#5d9936;
+                }
+                
+                footer p {
+                color:#838383;
+                }
+                
+                .navbar-fixed-top{
+                border-bottom:2px #6eb33f solid;
+                }
+                
+                th {
+                background-color:#e7e7e7;
+                }
+                
+                .alert {
+                font-size: 18px;
+                font-weight: bold;
+                }
+                
+                #FundsClearedFrequency {
+                display:none;
+                }
+                body {
+                    margin-top: 20px;
+                }
+
+                .ezidebitSubHeadingBackgroundColor{
+                    background-color: #CDE9C3;
+                }
+                .ewaySubHeadingBackgroundColor{
+                    background-color: #FDBA12;
+                }
+
+                .btn-primary-ezi {
+                    color: #fff;
+                    background-color: #58B947;
+                }
+
+                .btn-primary-ezi:hover {
+                    color: #fff;
+                    background-color: #9CEB44;
+                }
+
+                .btn-primary-eway {
+                    color: #FAFAFA;
+                    background-color: #25262B;
+                    border-radius: 25px;
+                }
+
+                .btn-primary-eway:hover {
+                    color: black;
+                    background-color: #FDBA12;
+                }
+
+                .progress-bar-ezi {
+                    background-color: #58B947
+                }
+
+                .progress-bar-eway {
+                    background-color: #FDBA12
+                }
+
+                .btn-save-later-ezi {
+                    color: #000000;
+                    background-color: white;
+                    border: 2px solid #58B947;
+                }
+
+                .btn-save-later-eway {
+                    color: #000000;
+                    background-color: white;
+                    border-radius: 25px;
+                    border: 1px solid #25262B;
+                }
+                .link-ezi {
+                    color: #58B947;
+                    text-decoration: underline;
+                }
+
+                .link-eway {
+                    color: #25262B;
+                    text-decoration: underline;
+                }
+
+            </style>
+            
+            <body>
+                <div class="container" style="padding-bottom: 8px;">
+                    <table cellspacing="0" cellpadding="0" border="0" style="width: 100%; border-collapse: collapse; text-align:left;">
+                        <tr>
+                            <td style="text-align: left;">
+                                <apex:image rendered="{! isEzidebitBrand}" value="{!URLFOR($Resource.EzidebitKYC, 'image/Ezidebit_Logo_Large.png')}" style="margin-top:10px; padding:5px 0; height:50px;" alt="Ezidebit Logo" />
+                                <!-- <apex:image rendered="{! !isEzidebitBrand}" value="{!URLFOR($Resource.Eway_Payment_Logo)}" style="margin-top:10px; padding:5px 0; height:50px;" alt="Eway Logo" />                    -->
+                            </td>
+                            <td style="text-align: right; width: 50%;">
+                            </td>
+                            <td style="text-align: right;">
+                                <img style="margin-right:10px; height:50px; float:right;" src="{!Logo}" />
+                            </td>
+                            <td style="text-align:right;font-size: 14px;">
+                                <p>
+                                    <b style="font-weight: bold; line-height: 20px; letter-spacing: 0em;">Need help?</b><br />Call {!supportPhoneNo}
+                                </p>
+                            </td>
+                        </tr>
+                    </table>                                    
+                    
+                </div>
+                <hr style="height:3px; margin: 0 0;" class="horizontalLineColor"/>
+                
+                 <div class="container">
+                        <apex:form >
+                            <!-- Introduce Featurette -->
+                            <div class="featurette" id="about">
+        
+                                <h2 class="featurette-heading">                             
+                                    <span class="text-muted">Payment Configuration</span></h2>                        
+                                <br/>
+                                
+                                <div class="progress">
+                                    <div class="progress-bar active {!IF(isEzidebitBrand, 'progress-bar-ezi', 'progress-bar-eway')} progress-bar-striped" style="width: 70%">
+                                        <span class="sr-only">70% Complete </span>
+                                    </div>
+                                </div>
+                                
+                                <hr class="featurette-divider" />
+                                <p class="lead">
+                                    <apex:messages />
+                                </p>
+                                
+                            </div>
+                                
+                                <apex:includeLightning />  
+
+                                <div id="lwcEftposUser" />    
+
+                  <footer>
+                        <div class="row text-center">
+                            <div class="col-lg-12">
+                                <p>Copyright &copy; {!IF(isEzidebitBrand, 'Ezidebit', 'Eway')} {!year(today())}</p>
+                            </div>
+                        </div>
+                  </footer>
+                </apex:form>
+               </div>
+
+            </body>
+            <script type="text/javascript">
+                    console.log('Page loaded at: ' + new Date().toISOString()); // Debug: Force recompile
+                    $Lightning.use("c:kycEftposUserPage", function() {
+                        $Lightning.createComponent("c:applicationEftposBiller",
+                            { 
+                                oppId : "{!oppid}" ,
+                                csaId : "{!csaid}" ,
+                                acctId : "{!accid}" ,
+                                origin : "{!origin}",
+                                brandType : "{!brandType}",
+                                partnerLogoUrl : "{!logo}",
+                                supportPhoneNumber : "{!supportPhoneNo}",
+                                pageSource : "kycPage",
+                                nextPageName : "{!nextPageName}",
+                                conid : "{!conid}"
+                            },
+                            "lwcEftposUser",
+                            function(cmp) {
+                                console.log('LWC Componenet added in VF page');
+                                console.log('oppId' + "{!oppid}");
+                                console.log('nextPageName ' + "{!nextPageName}");
+                            });
+                    });
+            </script>
+            
+</head>       
+</html>             
+</apex:page>

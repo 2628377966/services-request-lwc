@@ -60,6 +60,7 @@ export default class OjProgressBarVertical extends LightningElement {
     }
 
     setCssProperties(styleString){
+        if (!styleString) return;
         const declarations = styleString.split(';').filter(declaration => declaration.trim() !== '');
         declarations.forEach(declaration => {
             const [property, value] = declaration.split(':').map(item => item.trim());

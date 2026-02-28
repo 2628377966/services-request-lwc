@@ -41,51 +41,44 @@ public without sharing class BillerMatchController {
             if (validAccounts.size() > 1) {
                 return new BillerMatchWrapper(msgIfMultiAcctsMatch + supportPhoneNumber);
             }
-
+            Id merchantAccountId = null;
             if(validAccounts.size() == 1){
+                merchantAccountId = validAccounts[0].Id;
                 List<Contact> contacts = [SELECT Id, Email FROM Contact WHERE AccountId = :validAccounts[0].Id AND Email =: requesterEmailAddress];
                 
                 if(contacts.size() == 0){
-                    return new BillerMatchWrapper(msgIfNoContactFound + supportPhoneNumber + '.');
+                    return new BillerMatchWrapper(msgIfNoContactFound + supportPhoneNumber + '.').withMerchantAccountId(merchantAccountId);
                 }else {
                     tempRequesterConId = contacts[0].Id;
                 }
             }
-
-            // Query EFTPOS_User__c
-            List<EFTPOS_User__c> eftposUser = [
-                SELECT  EFTPOS_Device_Owner_Account__r.Software__c,
-                        EFTPOS_Device_Owner_Opportunity__c,
-                        EFTPOS_Device_Owner_Opportunity__r.CSA__c
-                FROM    EFTPOS_User__c
-                WHERE   EFTPOS_Device_User_Lead__c = :leadId
-                LIMIT   1
-            ];
-
-            // Scenario for EFTPOS User
-            if (String.isEmpty(leadId)) {
+            System.debug('##>>>leadId: ' + leadId);
+            // Query EFTPOS_User__c according to leadId
+            List<EFTPOS_User__c> eftposUser = new List<EFTPOS_User__c>();
+            if(String.isNotEmpty(leadId)){
+                eftposUser = [SELECT  EFTPOS_Device_Owner_Account__r.Software__c,
+                                    EFTPOS_Device_Owner_Opportunity__c,
+                                    EFTPOS_Device_Owner_Opportunity__r.CSA__c
+                                FROM    EFTPOS_User__c
+                                WHERE   EFTPOS_Device_User_Lead__c = :leadId
+                                LIMIT   1];
+            }
+            
+            if (String.isEmpty(leadId) && validAccounts.size() == 1) {
+                Boolean isMultiMidEnabled = PartnerConfigHelper.getPartnerAccountBySoftware(new Set<String> {validAccounts[0].Software__c})
+                                                                .get(validAccounts[0].Software__c)?.Multi_MID_Enabled__c;
+                Boolean hasEFTPOS = productsByAccountIdMap.get(validAccounts[0].Id)?.contains('EFTPOS');
+                return new BillerMatchWrapper(msgIfAcctMatch, 'ProdAdd', isMultiMidEnabled, hasEFTPOS, getCSAId(validAccounts[0].Id), getOppId(validAccounts[0].Id))
+                    .withMerchantAccountId(validAccounts[0].Id);
+            }else if (String.isnotEmpty(leadId) && eftposUser.size() > 0) {
                 if (validAccounts.size() == 1) {
                     if (validAccounts[0].Software__c == eftposUser[0].EFTPOS_Device_Owner_Account__r.Software__c) {
                         Boolean isMultiMidEnabled = PartnerConfigHelper.getPartnerAccountBySoftware(new Set<String> {validAccounts[0].Software__c})
                             .get(validAccounts[0].Software__c)?.Multi_MID_Enabled__c;
                         Boolean hasEFTPOS = productsByAccountIdMap.get(validAccounts[0].Id)?.contains('EFTPOS');
-                        return new BillerMatchWrapper(msgIfAcctMatch, 'ProdAdd', isMultiMidEnabled, hasEFTPOS, getCSAId(validAccounts[0].Id), getOppId(validAccounts[0].Id));
+                        return new BillerMatchWrapper(msgIfAcctMatch, 'ProdAdd', isMultiMidEnabled, hasEFTPOS).withMerchantAccountId(merchantAccountId);
                     } else {
-                        return new BillerMatchWrapper(msgIfSoftwareUnmatch, 'NormalCSA');
-                    }
-                }
-    
-                // If no accounts with valid statuses
-                return new BillerMatchWrapper(msgIfInvalidStatus, 'NormalCSA');
-            } else if (String.isnotEmpty(leadId) && eftposUser.size() > 0) {
-                if (validAccounts.size() == 1) {
-                    if (validAccounts[0].Software__c == eftposUser[0].EFTPOS_Device_Owner_Account__r.Software__c) {
-                        Boolean isMultiMidEnabled = PartnerConfigHelper.getPartnerAccountBySoftware(new Set<String> {validAccounts[0].Software__c})
-                            .get(validAccounts[0].Software__c)?.Multi_MID_Enabled__c;
-                        Boolean hasEFTPOS = productsByAccountIdMap.get(validAccounts[0].Id)?.contains('EFTPOS');
-                        return new BillerMatchWrapper(msgIfAcctMatch, 'ProdAdd', isMultiMidEnabled, hasEFTPOS);
-                    } else {
-                        return new BillerMatchWrapper(msgIfSoftwareUnmatch, 'NormalCSA');
+                        return new BillerMatchWrapper(msgIfSoftwareUnmatch, 'NormalCSA').withMerchantAccountId(merchantAccountId);
                     }
                 }
     
@@ -215,6 +208,20 @@ public without sharing class BillerMatchController {
             con.Is_Preferred_Contact__c = true;
             update con;
 
+            // Remove any auto-created contact roles from the cloned opportunity
+            List<OpportunityContactRole> existingRoles = [
+                SELECT Id FROM OpportunityContactRole WHERE OpportunityId = :billerOpp.Id
+            ];
+            if (!existingRoles.isEmpty()) {
+                delete existingRoles;
+            }
+
+            OpportunityContactRole billerContactRole = new OpportunityContactRole();
+            billerContactRole.contactId = con.Id;
+            billerContactRole.opportunityId = billerOpp.Id;
+            billerContactRole.Role = 'Decision Maker';
+            billerContactRole.isPrimary = true;
+            insert billerContactRole;
 
             if ( eftposUser.size() > 0 ){
                 // Update EFTPOS User
@@ -289,6 +296,12 @@ public without sharing class BillerMatchController {
         @AuraEnabled public String oppId { get; set; }
         @AuraEnabled public String siteURL { get; set; }
         @AuraEnabled public String requesterContactId { get; set; }
+        @AuraEnabled public String merchantAccountId { get; set; }
+
+        public BillerMatchWrapper withMerchantAccountId(String merchantAccountId) {
+            this.merchantAccountId = merchantAccountId;
+            return this;
+        }
 
         public BillerMatchWrapper(String message) {
             this.message = message;

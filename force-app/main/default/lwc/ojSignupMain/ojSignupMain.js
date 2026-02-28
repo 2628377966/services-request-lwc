@@ -95,6 +95,7 @@ export default class OjSignupMain extends LightningElement {
     }
 
     async handlePayload(payload) {
+        console.log('Signup Main handlePayload Received payload:', JSON.stringify(payload));
         this.payload = payload;
         if (payload.Account) {
             this.brand = payload.Account.Brand__c;

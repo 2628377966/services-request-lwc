@@ -14,6 +14,7 @@ export function getIconURL(resourceName) {
 }
 
 export function setCSSProperties(componentCSS, cssClass, styleString) {
+    if (!styleString) return;
     const declarations = styleString.split(';').filter(declaration => declaration.trim() !== '');
     declarations.forEach(declaration => {
         const [property, value] = declaration.split(':').map(item => item.trim());
@@ -22,6 +23,7 @@ export function setCSSProperties(componentCSS, cssClass, styleString) {
 }
 
 export function setFont(componentCSS, brandFont) {
+    if (!brandFont) return;
     componentCSS.style.setProperty('--dxp-s-button-font-family', brandFont);
     componentCSS.style.setProperty('--dxp-g-root-font-family', brandFont);
     componentCSS.style.setProperty('--dxp-s-body-font-family', brandFont);

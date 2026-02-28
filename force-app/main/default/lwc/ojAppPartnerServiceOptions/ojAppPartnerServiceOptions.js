@@ -27,7 +27,7 @@ export default class OjAppPartnerServiceOptions extends LightningElement {
         this.brand = this.payload?.Account?.Brand__c || 'Ezidebit';
         
         // Set icons based on brand
-        const iconPrefix = this.brand.toLowerCase() === 'eway' ? 'eway' : 'ezidebit';
+        const iconPrefix = this.brand.toLowerCase();
         this.eftposMultiMerchantIcon = getIconURL(`${iconPrefix}-icon-cards`);
         this.requestNewProductIcon = getIconURL(`${iconPrefix}-icon-fees`);
         

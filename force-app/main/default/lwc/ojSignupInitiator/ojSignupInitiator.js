@@ -51,7 +51,9 @@ export default class OjSignupInitiator extends LightningElement {
             if (pageRef.state.pId) {
                 this.recordId = pageRef.state.pId;
                 this.requiredFields = getRequiredFields();
-            } else { 
+                console.log('recordId for account:', this.recordId);
+                console.log('Required fields for account:', JSON.stringify(this.requiredFields));
+            } else {
                 this.recordId = pageRef.state.Id;
                 this.requiredFields = getAllSignupFields();
             }
@@ -90,7 +92,7 @@ export default class OjSignupInitiator extends LightningElement {
                 
                 // Add flag to indicate partner service flow (pId parameter)
                 this.payload.isPartnerServiceFlow = this.payload.Account ? true : false;
-                
+                console.log('Fetched data:', JSON.stringify(this.payload));
                 this.waitSeconds(2);
             })
             .catch(error => {
@@ -116,8 +118,16 @@ export default class OjSignupInitiator extends LightningElement {
     }
 
     waitSeconds(secs) {
+        const self = this;
         setTimeout(() => {
-            publish(this.messageContext, ONE_JOURNEY_CHANNEL, this.payload);
+            try {
+                console.log(`Publishing message after waiting for ${secs} seconds...`);
+                publish(self.messageContext, ONE_JOURNEY_CHANNEL, self.payload);
+                console.log(`Published message: ${JSON.stringify(self.payload)}`);
+            } catch (error) {
+                console.error('Error publishing message:', error.message);
+                console.error('Error stack:', error.stack);
+            }
         }, secs * 1000);
     }
 
