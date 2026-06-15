@@ -1,4 +1,5 @@
-import { LightningElement, wire } from 'lwc'; 
+import { LightningElement, wire } from 'lwc';
+import { CurrentPageReference } from 'lightning/navigation';
 import { MessageContext, subscribe, unsubscribe } from 'lightning/messageService';
 import ONE_JOURNEY_CHANNEL from '@salesforce/messageChannel/oneJourney__c';
 import { setCSSProperties, setFont, getAllSignupSteps } from 'c/ojUtil';
@@ -8,6 +9,7 @@ import ojAppPartnerServiceOptions from 'c/ojAppPartnerServiceOptions';
 import ojAppSignupVerifyAccount from 'c/ojAppSignupVerifyAccount';
 import ojAppSignupShowKYCCSA from 'c/ojAppSignupShowKYCCSA';
 import ojAppRequestService from 'c/ojAppRequestService';
+import applicationEftposBiller from 'c/applicationEftposBiller';
 import ojAppRemoveEftposMultipleMerchants from 'c/ojAppRemoveEftposMultipleMerchants';
 import ojAppAddEftposDevices from 'c/ojAppAddEftposDevices';
 import ojAppRemoveEftposDevices from 'c/ojAppRemoveEftposDevices';
@@ -15,6 +17,7 @@ import ojThankYou from 'c/ojThankYou';
 
 import proceedToNormalCSA from '@salesforce/apex/BillerMatchController.proceedToNormalCSA';
 import proceedToProdAdd from '@salesforce/apex/BillerMatchController.proceedToProdAdd';
+import updatePrefillDetails from '@salesforce/apex/EftposUserController.updatePrefillDetails';
 
 import createCaseToRemoveMultipleMerchant from '@salesforce/apex/OnboardingCaseCtrl.createCaseToRemoveMultipleMerchant';
 import createAddEftposDevicesCase from '@salesforce/apex/OnboardingCaseCtrl.createAddEftposCase';
@@ -32,10 +35,11 @@ export default class OjSignupMain extends LightningElement {
         [1, { 'Previous_Button_Label': null, 'Next_Button_Label': null }],
         [2, { 'Previous_Button_Label': 'Previous', 'Next_Button_Label': 'Next' }],
         [3, { 'Previous_Button_Label': 'Previous', 'Next_Button_Label': 'Next' }],
-        [4, { 'Previous_Button_Label': 'Previous', 'Next_Button_Label': 'Confirm' }],
+        [4, { 'Previous_Button_Label': 'Previous', 'Next_Button_Label': 'Next' }],
         [5, { 'Previous_Button_Label': 'Previous', 'Next_Button_Label': 'Confirm' }],
         [6, { 'Previous_Button_Label': 'Previous', 'Next_Button_Label': 'Confirm' }],
-        [7, { 'Previous_Button_Label': null, 'Next_Button_Label': null }]
+        [7, { 'Previous_Button_Label': 'Previous', 'Next_Button_Label': 'Confirm' }],
+        [8, { 'Previous_Button_Label': null, 'Next_Button_Label': null }]
     ]);
     disableNextButton = true;
     spinnerLoading = false;
@@ -47,10 +51,11 @@ export default class OjSignupMain extends LightningElement {
         { isComplete: false, showNextButton: false , showNewRequestButton: false }, //showKycCSAApplication ojAppSignupShowKYCCSA 1
         { isComplete: false, showNextButton: true , showNewRequestButton: false }, //showVerifyClientDetails ojAppSignupVerifyAccount 2
         { isComplete: false, showNextButton: true , showNewRequestButton: false }, // ojAppRequestService 3
-        { isComplete: false, showNextButton: true , showNewRequestButton: false }, // ojAppRemoveEftposMultipleMerchants 4
-        { isComplete: false, showNextButton: true , showNewRequestButton: false }, // ojAppAddEftposDevices 5
-        { isComplete: false, showNextButton: true , showNewRequestButton: false }, // ojAppRemoveEftposDevices 6
-        { isComplete: true, showNextButton: false , showNewRequestButton: true }  // ojThankYou 7
+        { isComplete: false, showNextButton: true , showNewRequestButton: false }, // applicationEftposBiller 4
+        { isComplete: false, showNextButton: true , showNewRequestButton: false }, // ojAppRemoveEftposMultipleMerchants 5
+        { isComplete: false, showNextButton: true , showNewRequestButton: false }, // ojAppAddEftposDevices 6
+        { isComplete: false, showNextButton: true , showNewRequestButton: false }, // ojAppRemoveEftposDevices 7
+        { isComplete: true, showNextButton: false , showNewRequestButton: true }  // ojThankYou 8
     ];
 
     get showProgressBarVertical() {
@@ -82,6 +87,9 @@ export default class OjSignupMain extends LightningElement {
     @wire(MessageContext)
     messageContext;
 
+    @wire(CurrentPageReference)
+    pageRef;
+
     connectedCallback() {
         this.subscribeToOneJourneyChannel();
     }
@@ -107,6 +115,10 @@ export default class OjSignupMain extends LightningElement {
         setCSSProperties(this.template.host, 'button1', this.payload.Theme.Button1__c);
         setCSSProperties(this.template.host, 'button2', this.payload.Theme.Button2__c);
         setFont(this.template.host, this.payload.Theme.Font__c);
+        // const stepParam = parseInt(this.pageRef?.state?.step, 10);
+        // if (!isNaN(stepParam) && stepParam >= 0 && stepParam <= 8) {
+        //     this.payload = { ...this.payload, currentStep: stepParam };
+        // }
         await this.showHideComponents();
         this.showHideProgressBar();
         this.showForm = true;
@@ -159,7 +171,7 @@ export default class OjSignupMain extends LightningElement {
         let step;
         if (this.payload.currentStep == 2) {
             step = 0; //showSignupOptions
-        } else if (this.payload.currentStep == 5 || this.payload.currentStep == 6) {
+        } else if (this.payload.currentStep == 6 || this.payload.currentStep == 7) {
             step = 3; //showRequestService
         } else {
             step = this.payload.currentStep - 1;
@@ -175,6 +187,17 @@ export default class OjSignupMain extends LightningElement {
         this.spinnerLoading = true;
 
         if (this.isFormFullyValid()) {
+            // Update prefill details server-side when leaving step 4 (applicationEftposBiller)
+            if (this.payload.currentStep == 4 && this.payload?.currentState?.prefillChecked != null) {
+                try {
+                    await updatePrefillDetails({
+                        oppId: this.payload?.currentState?.oppId,
+                        prefill: this.payload.currentState.prefillChecked
+                    });
+                } catch (err) {
+                    console.log('Failed to update prefill details' + JSON.stringify(err));
+                }
+            }
             let step = this.getNextStep(this.payload.currentStep);
             this.payload = { ...this.payload, ...{ 'currentStep': step } };
             this.showHideComponents();
@@ -209,16 +232,17 @@ export default class OjSignupMain extends LightningElement {
         } else if (currentStep == 2 && this.payload.currentState.existingClientIsSelected && this.isFormFullyValid(this.payload.currentStep)) {
             return 3;
         } else if (currentStep == 3 && this.payload.currentState.addUserIsSelected) {
-            window.location.href = this.payload.currentState.siteURL + '/kyc_eftposbiller?oppId='
-            + this.payload.currentState.oppId + '&csa=' 
-            + this.payload.currentState.csaId  + '&origin=signup' +'&conid='+this.payload.currentState.requesterContactId;
-        } else if (currentStep == 3 && this.payload.currentState.removeUserIsSelected) {
             return 4;
-        } else if (currentStep == 3 && this.payload?.currentState?.addDeviceIsSelected) {
+        } else if (currentStep == 3 && this.payload.currentState.removeUserIsSelected) {
             return 5;
-        } else if (currentStep == 3 && this.payload?.currentState?.removeDeviceIsSelected) {
+        } else if (currentStep == 3 && this.payload?.currentState?.addDeviceIsSelected) {
             return 6;
+        } else if (currentStep == 3 && this.payload?.currentState?.removeDeviceIsSelected) {
+            return 7;
         } else if (currentStep == 4) {
+            this.payload = { ...this.payload, isNotAddMerchant: true };
+            return 8;
+        } else if (currentStep == 5) {
             console.log(JSON.stringify(this.payload.currentState.toBeRemovedMerchants));
             createCaseToRemoveMultipleMerchant({
                 clientId: this.payload?.currentState?.ClientId,
@@ -228,8 +252,8 @@ export default class OjSignupMain extends LightningElement {
             })
             //window.location.href = 'https://www.ezidebit.com/en-au/online-csa-enquiry';
             this.payload = { ...this.payload, isNotAddMerchant: true };
-            return 7;
-        } else if (currentStep == 5) {
+            return 8;
+        } else if (currentStep == 6) {
             createAddEftposDevicesCase({
                 clientId: this.payload?.currentState?.ClientId,
                 businessNumber: this.payload?.currentState?.BusinessRegistrationNumber,
@@ -238,8 +262,8 @@ export default class OjSignupMain extends LightningElement {
             })
             //window.location.href = 'https://www.ezidebit.com/en-au/online-csa-enquiry';
             this.payload = { ...this.payload, isNotAddMerchant: true };
-            return 7;
-        } else if (currentStep == 6) {
+            return 8;
+        } else if (currentStep == 7) {
 
             createRemoveEftposDevicesCase({
                 clientId: this.payload?.currentState?.ClientId,
@@ -249,8 +273,8 @@ export default class OjSignupMain extends LightningElement {
             })
             //window.location.href = 'https://www.ezidebit.com/en-au/online-csa-enquiry';    
             this.payload = { ...this.payload, isNotAddMerchant: true };        
-            return 7;
-        } else if (currentStep == 7) {
+            return 8;
+        } else if (currentStep == 8) {
 
             return  2;
         }
@@ -270,14 +294,16 @@ export default class OjSignupMain extends LightningElement {
             this.components[4].isComplete = !!this.payload?.currentState?.enableStep4NextButton;
         } else if (this.payload.currentStep == 5) {
             this.components[5].isComplete = !!this.payload?.currentState?.enableStep5NextButton;
-            this.components[5].showNextButton = !!this.payload?.currentState?.showStep5NextButton;
         } else if (this.payload.currentStep == 6) {
             this.components[6].isComplete = !!this.payload?.currentState?.enableStep6NextButton;
             this.components[6].showNextButton = !!this.payload?.currentState?.showStep6NextButton;
-        }else if (this.payload.currentStep == 7) {
-            this.components[7].isComplete = true;
-            this.components[7].showNextButton = false;
-            this.components[7].newReqButton = true;
+        } else if (this.payload.currentStep == 7) {
+            this.components[7].isComplete = !!this.payload?.currentState?.enableStep7NextButton;
+            this.components[7].showNextButton = !!this.payload?.currentState?.showStep7NextButton;
+        } else if (this.payload.currentStep == 8) {
+            this.components[8].isComplete = true;
+            this.components[8].showNextButton = false;
+            this.components[8].newReqButton = true;
         }
     }
 
@@ -302,10 +328,11 @@ export default class OjSignupMain extends LightningElement {
             1: ojAppSignupShowKYCCSA,
             2: ojAppSignupVerifyAccount,
             3: ojAppRequestService,
-            4: ojAppRemoveEftposMultipleMerchants,
-            5: ojAppAddEftposDevices,
-            6: ojAppRemoveEftposDevices,
-            7: ojThankYou
+            4: applicationEftposBiller,
+            5: ojAppRemoveEftposMultipleMerchants,
+            6: ojAppAddEftposDevices,
+            7: ojAppRemoveEftposDevices,
+            8: ojThankYou
         };
         
         // For step 0, check if this is partner service flow
@@ -320,7 +347,7 @@ export default class OjSignupMain extends LightningElement {
         this.spinnerLoading = true;
         let step = this.getNextStep(this.payload.currentStep);
 
-        if (this.payload.currentStep === 7 && step === 2) {
+        if (this.payload.currentStep === 8 && step === 2) {
             await this.resetPayloadState();
         }
 

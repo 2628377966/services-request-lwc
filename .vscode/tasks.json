@@ -1,0 +1,18 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Deploy and Publish Site",
+      "type": "shell",
+      "command": "cmd",
+      "windows": {
+        "command": "scripts\\deploy-and-publish.bat"
+      },
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}

@@ -44,6 +44,16 @@
     color: var(--header-color, black);
 }
 
+.userHeading,
+.title h2,
+.title p,
+.disclaimer-box,
+.slds-text-heading_medium {
+    cursor: default;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
 @media (max-width: 768px) {
     .container {
         width: 80%;

@@ -13,52 +13,6 @@
 }
 
 
-@font-face {
-    font-family: 'Montserrat';
-    src: url('/resource/fonts/Montserrat-Regular.woff2') format('woff2'),
-         url('/resource/fonts/Montserrat-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Montserrat';
-    src: url('/resource/fonts/Montserrat-Medium.woff2') format('woff2'),
-         url('/resource/fonts/Montserrat-Medium.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Montserrat';
-    src: url('/resource/fonts/Montserrat-Bold.woff2') format('woff2'),
-         url('/resource/fonts/Montserrat-Bold.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Montserrat';
-    src: url('/resource/fonts/Montserrat-ExtraBold.woff2') format('woff2'),
-         url('/resource/fonts/Montserrat-ExtraBold.ttf') format('truetype');
-    font-weight: 800;
-    font-style: normal;
-    font-display: swap;
-}
-
-/* Noto Sans Font - For body text */
-@font-face {
-    font-family: 'Noto Sans';
-    src: url('/resource/fonts/NotoSans-Regular.woff2') format('woff2'),
-         url('/resource/fonts/NotoSans-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
 .title h2{
     font-weight: 800;
     font-size: 32px;
@@ -98,7 +52,7 @@
 }
 
 .eway-brand {
-    --lwc-progressBarColorBackgroundFill: #FDBA12;
+    --lwc-progressBarColorBackgroundFill: #25262B;
 }
 
 .progress-bar {
@@ -178,11 +132,11 @@
 
 /* Eway brand icons */
 .eway-icon {
-    color: #FDBA12;
+    color: #25262B;
 }
 
 .eway-icon svg path {
-    fill: #FDBA12;
+    fill: #25262B;
 }
 
 .edit-icon, .delete-icon {
@@ -347,7 +301,7 @@
 
 /* For Eway brand, if needed */
 .eway-tooltip .circle {
-    fill: #FDBA12; /* Eway yellow */
+    fill: #25262B; /* Eway yellow */
 }
 
 .eway-tooltip:hover .circle {
@@ -390,8 +344,8 @@
 
 /* Override for Eway if brandClass is applied to parent */
 .eway-brand .custom-toggle .custom-toggle-on {
-    background-color: #FDBA12;
-    border-color: #FDBA12;
+    background-color: #25262B;
+    border-color: #25262B;
 }
 
 .ezidebit-brand .custom-toggle span {
@@ -400,7 +354,7 @@
 
 
 .eway-brand .custom-toggle span {
-    border-color: #FDBA12;
+    border-color: #25262B;
 }
 
 .userHeading{

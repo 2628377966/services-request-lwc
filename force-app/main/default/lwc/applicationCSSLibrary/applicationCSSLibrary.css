@@ -1,5 +1,5 @@
 :host {
-    --eway-color: #FDBA12;
+    --eway-color: #25262B;
     --eway-border-color: #D1DAE1;
     --ezidebit-color: #58B947;
     --eway-button-color: #25262B;
@@ -21,7 +21,7 @@
 }
 
 .ewaySelected {
-    border: 2px solid #FDBA12;
+    border: 2px solid #25262B;
 }
 
 .ezidebitSelected {

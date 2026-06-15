@@ -33,9 +33,9 @@ export default class OjAppSignupVerifyAccount extends LightningElement {
         this.newPayload = { ...this.payload };
         this.brand = this.payload.Lead?.Brand__c || this.payload?.Account.Brand__c;
         this.leadId = this.payload.Lead?.Id;
-        this.clientId = this.payload.currentState.ClientId;
-        this.businessNumber = this.payload.currentState.BusinessRegistrationNumber;
-        this.requesterEmailAddress = this.payload.currentState.requesterEmailAddress;
+        this.clientId = this.payload.currentState.ClientId ||'111-111-111';
+        this.businessNumber = this.payload.currentState.BusinessRegistrationNumber || '96634076798';
+        this.requesterEmailAddress = this.payload.currentState.requesterEmailAddress || 'liang-lulu@hotmail.com';
         this.supportPhoneNumber = this.payload.Lead?.Support_Phone_Number__c || this.payload.Account?.Support_Phone_Number__c;
         this.showForm = true;
         this.tempIsNewServiceRequest = !!this.payload?.currentState?.isNewServiceRequest;

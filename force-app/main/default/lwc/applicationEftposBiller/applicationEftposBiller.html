@@ -1,7 +1,7 @@
 <template>
     <template if:true={showAddBiller}>
         <div style="height:auto">
-            <div class="slds-size_8-of-12" style="margin: 6px auto;">
+            <div class="slds-size_12-of-12" style="margin: 6px auto;">
                 <lightning-layout multiple-rows="true">
                     <lightning-layout-item size="12" padding="around-small" horizontal-align="left">
                         <div class="title">
@@ -17,7 +17,7 @@
                    </lightning-layout-item>
                 </lightning-layout>
             </div>
-            <div class="slds-size_8-of-12" style="margin: 4px auto;">
+            <div class="slds-size_12-of-12" style="margin: 4px auto;">
                 <lightning-layout multiple-rows="true">
                     <lightning-layout-item size="12" padding="around-small" horizontal-align="left">
                         <template lwc:if={error}>
@@ -26,7 +26,7 @@
                     </lightning-layout-item>
                 </lightning-layout>
             </div>
-            <div class="slds-size_8-of-12" style="margin: 0.25em auto;">
+            <div class="slds-size_12-of-12" style="margin: 0.25em auto;">
                 <lightning-layout multiple-rows="true" class="slds-box slds-theme_shade summary-layout">
                     <lightning-layout-item size="6" padding="around-small">
                         <lightning-input label="First Name" name="FirstName" value={FirstName} required="true" onchange={handleInputChange} class="inputStyle"></lightning-input>
@@ -65,8 +65,8 @@
         </div>
     </template>
     <template if:true={showSummary}>
-        <div style="height: 45vh; overflow-y: auto; margin-bottom:24px;padding-left:5px">
-            <div class="slds-size_8-of-12" style="margin: 6px auto;">
+        <div style="margin-bottom:24px;padding-left:5px">
+            <div class="slds-size_12-of-12" style="margin: 6px auto;">
                 <lightning-layout multiple-rows="true">
                     <lightning-layout-item size="12" padding="around-small" horizontal-align="left">
                         <div class="title">
@@ -83,7 +83,7 @@
                 </lightning-layout>
             </div>
             <template for:each={userPayload} for:item="usr">
-                <div key={usr.id} class="slds-size_8-of-12" style="margin: 0.25em auto;">
+                <div key={usr.id} class="slds-size_12-of-12" style="margin: 0.25em auto;">
                     <!-- View Mode -->
                     <template if:false={usr.isEditing}>
                         <lightning-layout multiple-rows class="slds-box slds-theme_shade summary-layout">
@@ -96,7 +96,7 @@
                                             title="Edit Merchant"
                                             style="cursor: pointer; padding: 0.25rem;">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                <path d="M12.0004 10.1053C13.0006 10.1053 13.9783 9.80893 14.81 9.25374C15.6416 8.69855 16.2898 7.90944 16.6726 6.98619C17.0553 6.06295 17.1555 5.04703 16.9603 4.06691C16.7652 3.0868 16.2836 2.18651 15.5763 1.47988C14.8691 0.773261 13.968 0.292044 12.987 0.0970867C12.006 -0.0978702 10.9892 0.00219064 10.0651 0.384612C9.14103 0.767034 8.35122 1.41464 7.79553 2.24554C7.23984 3.07644 6.94325 4.05331 6.94325 5.05263C6.94325 6.39267 7.47603 7.67783 8.42443 8.62538C9.37283 9.57294 10.6592 10.1053 12.0004 10.1053ZM12.0004 1.51579C12.7005 1.51579 13.385 1.72322 13.9671 2.11186C14.5493 2.50049 15.003 3.05286 15.2709 3.69914C15.5388 4.34541 15.609 5.05655 15.4724 5.74263C15.3358 6.42871 14.9986 7.05892 14.5035 7.55356C14.0085 8.04819 13.3777 8.38504 12.691 8.52151C12.0043 8.65798 11.2925 8.58794 10.6457 8.32025C9.99882 8.05255 9.44596 7.59923 9.05698 7.0176C8.668 6.43596 8.46039 5.75215 8.46039 5.05263C8.46039 4.1146 8.83334 3.215 9.49722 2.55171C10.1611 1.88842 11.0615 1.51579 12.0004 1.51579ZM14.0232 11.3684H9.97753C8.16768 11.3711 6.43273 12.0906 5.15297 13.3692C3.87321 14.6478 3.15307 16.3812 3.15039 18.1895V21.2211C3.15039 21.9581 3.44343 22.6649 3.96505 23.1861C4.48667 23.7072 5.19414 24 5.93182 24H18.069C18.8066 24 19.5141 23.7072 20.0357 23.1861C20.5573 22.6649 20.8504 21.9581 20.8504 21.2211V18.1895C20.8477 16.3812 20.1276 14.6478 18.8478 13.3692C17.5681 12.0906 15.8331 11.3711 14.0232 11.3684ZM19.3333 21.2211C19.3333 21.5561 19.2 21.8774 18.9629 22.1142C18.7258 22.3511 18.4043 22.4842 18.069 22.4842H5.93182C5.59651 22.4842 5.27491 22.3511 5.03781 22.1142C4.80071 21.8774 4.66753 21.5561 4.66753 21.2211V18.1895C4.67021 16.7833 5.23049 15.4354 6.22573 14.441C7.22097 13.4467 8.57006 12.8869 9.97753 12.8842H14.0232C15.4307 12.8869 16.7798 13.4467 17.775 14.441C18.7703 15.4354 19.3306 16.7833 19.3333 18.1895V21.2211Z" fill="#58B947"/>
+                                                <path d="M12.0004 10.1053C13.0006 10.1053 13.9783 9.80893 14.81 9.25374C15.6416 8.69855 16.2898 7.90944 16.6726 6.98619C17.0553 6.06295 17.1555 5.04703 16.9603 4.06691C16.7652 3.0868 16.2836 2.18651 15.5763 1.47988C14.8691 0.773261 13.968 0.292044 12.987 0.0970867C12.006 -0.0978702 10.9892 0.00219064 10.0651 0.384612C9.14103 0.767034 8.35122 1.41464 7.79553 2.24554C7.23984 3.07644 6.94325 4.05331 6.94325 5.05263C6.94325 6.39267 7.47603 7.67783 8.42443 8.62538C9.37283 9.57294 10.6592 10.1053 12.0004 10.1053ZM12.0004 1.51579C12.7005 1.51579 13.385 1.72322 13.9671 2.11186C14.5493 2.50049 15.003 3.05286 15.2709 3.69914C15.5388 4.34541 15.609 5.05655 15.4724 5.74263C15.3358 6.42871 14.9986 7.05892 14.5035 7.55356C14.0085 8.04819 13.3777 8.38504 12.691 8.52151C12.0043 8.65798 11.2925 8.58794 10.6457 8.32025C9.99882 8.05255 9.44596 7.59923 9.05698 7.0176C8.668 6.43596 8.46039 5.75215 8.46039 5.05263C8.46039 4.1146 8.83334 3.215 9.49722 2.55171C10.1611 1.88842 11.0615 1.51579 12.0004 1.51579ZM14.0232 11.3684H9.97753C8.16768 11.3711 6.43273 12.0906 5.15297 13.3692C3.87321 14.6478 3.15307 16.3812 3.15039 18.1895V21.2211C3.15039 21.9581 3.44343 22.6649 3.96505 23.1861C4.48667 23.7072 5.19414 24 5.93182 24H18.069C18.8066 24 19.5141 23.7072 20.0357 23.1861C20.5573 22.6649 20.8504 21.9581 20.8504 21.2211V18.1895C20.8477 16.3812 20.1276 14.6478 18.8478 13.3692C17.5681 12.0906 15.8331 11.3711 14.0232 11.3684ZM19.3333 21.2211C19.3333 21.5561 19.2 21.8774 18.9629 22.1142C18.7258 22.3511 18.4043 22.4842 18.069 22.4842H5.93182C5.59651 22.4842 5.27491 22.3511 5.03781 22.1142C4.80071 21.8774 4.66753 21.5561 4.66753 21.2211V18.1895C4.67021 16.7833 5.23049 15.4354 6.22573 14.441C7.22097 13.4467 8.57006 12.8869 9.97753 12.8842H14.0232C15.4307 12.8869 16.7798 13.4467 17.775 14.441C18.7703 15.4354 19.3306 16.7833 19.3333 18.1895V21.2211Z" fill="#424242"/>
                                             </svg>
                                         </div>
                                         <h2 class="userHeading">{usr.firstName} {usr.lastName}</h2>
@@ -195,7 +195,7 @@
         </div>                
     </template>    
 
-    <div if:true={showAddAnotherUser} class="slds-size_8-of-12" style="margin: 0.25em auto;">
+    <div if:true={showAddAnotherUser} class="slds-size_12-of-12" style="margin: 0.25em auto;">
         <lightning-layout multiple-rows="true" class="slds-box slds-theme_shade summary-layout">
             <lightning-layout-item size="12">
                     <lightning-layout class="slds-size_12-of-12" style="margin: 6px auto;">
@@ -208,7 +208,7 @@
     </div>
 
     <template if:true={showPrefillCheckbox}>
-        <div class="slds-size_8-of-12" style="margin: 0.25em auto;">
+        <div class="slds-size_12-of-12" style="margin: 0.25em auto;">
             <lightning-layout multiple-rows="true" class={brandClass}>
                 <lightning-layout-item size="12" class="inputStyle">
                     <p style="margin-bottom: 1rem;"><strong>{capturePrefillTitle}</strong></p>
@@ -225,7 +225,4 @@
             </lightning-layout>
         </div>
     </template>
-    <template if:true={showFooter}>
-        <c-csaapplication-footer brand-type={brandType} show-previous-button={showPreviousButton} next-button-label={nextButtonLabel} onvalidateform={handleNext} add-biller-link-label={addBillerLinkLabel} onaddanotherbiller={handleAddAnotherBiller} show-add-another-biller ={showAddAnotherBiller} onhandleprevious={handlePreviousButton} is-next-button-disabled={isNextButtonDisabled}></c-csaapplication-footer> 
-    </template> 
 </template>

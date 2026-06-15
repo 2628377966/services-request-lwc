@@ -23,17 +23,11 @@ export default class ApplicationEftposBiller extends LightningElement {
     @api conid;
     addBillerLinkLabel = '';
 
-    showPreviousButton;
-    nextButtonLabel = '';
-    brandClass;
-    isNextButtonDisabled = false;
-
     showAddBiller = false;
     showSummary = false;
     showAddAnotherBiller = false;
     showAddAnotherUser = true;
     showPrefillCheckbox = true;
-    showFooter = true;
     showEditForm = false;
     editIconBrandClass = '';
     btnBrandClass = '';
@@ -58,8 +52,8 @@ export default class ApplicationEftposBiller extends LightningElement {
     @api Phone;
     @api Email;
     @api TradingName;
+    @api payload;
     @track userPayload = [];
-    @track payload;
     @track userToRemove;
     @track removeUserPayload;
     @track loadedOnce = false;
@@ -83,11 +77,24 @@ export default class ApplicationEftposBiller extends LightningElement {
         this.tooltipClass = this.brandType == 'Ezidebit' ? 'tooltip-icon' : 'tooltip-icon eway-tooltip';
         this.toggleClass += this.brandType == 'Ezidebit' ? 'custom-toggle' : 'custom-toggle eway-toggle';
         this.btnCancelBrandClass += this.btnBrandClass;
-        this.showPreviousButton = true;
         this.message = '';
+        this.origin = 'signup';
+        this.mapPayloadToProps();
         await this.getMetadata();
         await this.getEftposUsers();
         await this.getOwnerContactEmail();
+    }
+
+    mapPayloadToProps() {
+        if (this.payload) {
+            console.log('>> > mapPayloadToProps payload' + JSON.stringify(this.payload));
+            this.oppId = this.payload?.currentState?.oppId || this.oppId;
+            this.csaId = this.payload?.currentState?.csaId || this.csaId;
+            this.conid = this.payload?.currentState?.requesterContactId || this.conid;
+            this.acctId = this.payload?.Account?.Id || this.acctId;
+            this.brandType = this.payload?.Account?.Brand__c || this.payload?.Lead?.Brand__c || this.brandType;
+            
+        }
     }
 
     async getMetadata() {
@@ -122,12 +129,14 @@ export default class ApplicationEftposBiller extends LightningElement {
 
     handlePrefillChange(event) {
         this.prefillChecked = event.target.checked;
+        this.dispatchPayload();
     }
 
     handlePrefillToggle(event) {
         const selected = event.target.dataset.value; // 'Yes' or 'No'
         this.prefillOption = selected;
         this.prefillChecked = selected === 'Yes';
+        this.dispatchPayload();
     }
 
     handleInputChange(event) {
@@ -242,55 +251,6 @@ export default class ApplicationEftposBiller extends LightningElement {
         return allValid;
     }
 
-    async handleNext(event) {
-        if (this.oppId) {
-            try {
-                await updatePrefillDetails({ oppId: this.oppId, prefill: this.prefillChecked });
-            } catch (err) {
-                console.log('Failed to update prefill details' + JSON.stringify(err));
-            }
-        }
-        if (this.showSummary) {
-            if (this.origin == 'signup') {
-                this.createLeads();
-                try {
-                    const appUrl = await getOjThankYouPageURL({ oppId: this.oppId, conid: this.conid });
-                    if (appUrl) {
-                        window.location.href = appUrl;
-                    } else {
-                        window.location.href = 'https://www.ezidebit.com/en-au/online-csa-enquiry';
-                    }
-                } catch (error) {
-                    console.error('Error getting thank you page URL', JSON.stringify(error));
-                    window.location.href = 'https://www.ezidebit.com/en-au/online-csa-enquiry';
-                }
-
-                return;
-            }
-            this.pageName = this.nextPageName;
-            let navigateToAddress = this.getUrl();
-            
-            if (this.pageName && this.pageName.toLowerCase() === 'kyc_verifyindividual'.toLowerCase()) {
-                navigateToAddress += '&mode=1';
-            }
-            window.open(navigateToAddress, '_self');
-
-        } else
-            try {
-                if (this.showAddBiller && this.nextButtonLabel == this.multiMidTerminology.AB_Next_Button_Label__c) {
-                    if (await this.validateComponent()) {
-                        this.saveEftposUser();
-                    }
-                }
-            } catch (err) {
-                LightningAlert.open({
-                    message: 'Sorry, something went wrong. Please contact support.',
-                    theme: 'error',
-                    label: 'Error!',
-                });
-            }
-    }
-
     async handleAddMerchantSave(event){
         event.preventDefault();
         let validInputs = await this.validateComponent();
@@ -301,30 +261,34 @@ export default class ApplicationEftposBiller extends LightningElement {
 
     saveEftposUser() {
         this.message = '';
-        this.nextButtonLabel = 'Adding...';
-        this.buildEftposUserPayload();
-        addEftposUser({ eftposUserPayload: JSON.stringify(this.payload) })
+        const eftposUserPayload = this.buildEftposUserPayload();
+        addEftposUser({ eftposUserPayload: JSON.stringify(eftposUserPayload) })
             .then((result) => {
-                // add logic to navigate to summary page
-                this.payload["id"] = result;
+                console.log('>> > saveEftposUser result' + JSON.stringify(result));
+                eftposUserPayload.id = result;
 
                 var idExists = this.userPayload.find(obj => {
                     return obj.id == result;
                 });
 
                 if (idExists === undefined || idExists == null || idExists == '') {
-                    this.userPayload = [...this.userPayload, this.payload];
+                    this.userPayload = [...this.userPayload, eftposUserPayload];
                 }
-                this.nextButtonLabel = 'Confirm';
+                // Stay on the current page (form) after a successful save.
+                // Clear the input fields so the user can add another biller.
                 this.showAddBiller = false;
-                //this.showAddAnotherBiller = false;
-                this.showAddAnotherUser = true;
                 this.showSummary = true;
-                this.isNextButtonDisabled = false;
+                this.showAddAnotherUser = true;
                 this.userPayload = this.userPayload.map(user => ({ ...user, isEditing: false }));
+                this.FirstName = '';
+                this.LastName = '';
+                this.TradingName = '';
+                this.Email = '';
+                this.Phone = '';
+
+                this.dispatchPayload();
             })
             .catch((error) => {
-                this.nextButtonLabel = 'Confirm';
                 console.log('Error in adding eftpos user: ' + JSON.stringify(error));
                 this.error = true;
                 this.message = 'Sorry, something went wrong. Please contact support.';
@@ -332,7 +296,7 @@ export default class ApplicationEftposBiller extends LightningElement {
     }
 
     buildEftposUserPayload() {
-        this.payload = {
+        return {
             "id": '',
             "firstName": this.FirstName,
             "lastName": this.LastName,
@@ -358,7 +322,6 @@ export default class ApplicationEftposBiller extends LightningElement {
         if(this.userPayload.length == 0 || this.userPayload == undefined){
             this.showSummary = false;
             this.showAddBiller = true;
-            this.isNextButtonDisabled = true;
             this.showAddAnotherUser = false;
             this.FirstName = '';
             this.LastName = '';
@@ -366,6 +329,7 @@ export default class ApplicationEftposBiller extends LightningElement {
             this.Email = '';
             this.Phone = '';
         }
+        this.dispatchPayload();
     }
 
     getEftposUserPayload() {
@@ -386,7 +350,6 @@ export default class ApplicationEftposBiller extends LightningElement {
                 refreshApex(this.userPayload);
             })
             .catch((error) => {
-                this.nextButtonLabel = 'Confirm';
                 LightningAlert.open({
                     message: 'Sorry, something went wrong. Please contact support.',
                     theme: 'error',
@@ -404,56 +367,8 @@ export default class ApplicationEftposBiller extends LightningElement {
         this.showAddBiller = true;
         this.showSummary = false;
         this.addBillerLinkLabel = this.multiMidTerminology.AB_Add_Biller_Label__c;
-        //this.showAddAnotherBiller = false;
         this.showAddAnotherUser = false;
-        this.nextButtonLabel = this.multiMidTerminology.AB_Next_Button_Label__c;
-        if (this.userPayload.length === 0) {
-            this.isNextButtonDisabled = true;
-        }
-    }
-
-    async handlePreviousButton(event) {
-        this.pageName = 'kyc_feestructure';
-         if (this.origin == 'signup') {
-             try {
-                    const appUrl = await getOjThankYouPageURL({ oppId: this.oppId, conid: this.conid });
-                    if (appUrl) {
-                        window.location.href = appUrl+'&origin=appbiller';
-                    } else {
-                        window.location.href = 'https://www.ezidebit.com/en-au/online-csa-enquiry';
-                    }
-                } catch (error) {
-                    console.error('Error getting thank you page URL', error);
-                    window.location.href = 'https://www.ezidebit.com/en-au/online-csa-enquiry';
-                }
-
-         } else {
-            window.open(this.navigateToAddress, '_self');
-            //if userPayload has atleast one record showSummary to true otherwise redirect to kyc fee structure page
-            if (this.showAddBiller) {
-                if (this.userPayload.length === 0) {
-                    this.showSummary = false;
-                    this.pageName = 'kyc_feestructure';
-                    let navigateToAddress = this.getUrl();
-                    window.open(navigateToAddress, '_self');
-                } else if (this.userPayload !== undefined || this.userPayload.length > 0) {
-                    this.showSummary = true;
-                    this.nextButtonLabel = 'Confirm';
-                    this.showAddBiller = false;
-                    this.showAddAnotherUser = true;
-                    this.isNextButtonDisabled = false;
-                } else {
-                    this.showSummary = false;
-                    this.pageName = 'kyc_feestructure';
-                    let navigateToAddress = this.getUrl();
-                    window.open(navigateToAddress, '_self');
-                }
-            } else if (this.showSummary) {
-                this.pageName = 'kyc_feestructure';
-                let navigateToAddress = this.getUrl();
-                window.open(navigateToAddress, '_self');
-            }
-        }
+        this.dispatchPayload();
     }
 
     getUrl() {
@@ -469,23 +384,18 @@ export default class ApplicationEftposBiller extends LightningElement {
                 if (this.userPayload.length > 0) {
                     this.showSummary = true;
                     this.userPayload = this.userPayload.map(user => ({ ...user, isEditing: false }));
-                    this.nextButtonLabel = 'Confirm';
                     this.showAddBiller = false;
-                    //this.showAddAnotherBiller = true;
                     this.showAddAnotherUser = true;
-                    this.isNextButtonDisabled = false;
                     this.prefillChecked = this.userPayload[0].prefillChecked || false;
                     this.prefillOption = this.prefillChecked ? 'Yes' : 'No';
                 } else {
                     this.showAddBiller = true;
                     this.showAddAnotherUser = false;
-                    this.nextButtonLabel = this.multiMidTerminology?.AB_Next_Button_Label__c;
-                    this.isNextButtonDisabled = true;
                 }
+                this.dispatchPayload();
             })
             .catch((error) => {
                 console.error("An error occurred:", error.message);
-                this.nextButtonLabel = 'Confirm';
                 LightningAlert.open({
                     message: 'Sorry, something went wrong. Please contact support.',
                     theme: 'error',
@@ -536,18 +446,16 @@ export default class ApplicationEftposBiller extends LightningElement {
             .then((result) => {
                 this.showSummary = true;
                 this.showAddAnotherUser = true;
-                this.nextButtonLabel = 'Confirm';   
-                this.isNextButtonDisabled = false;
                 refreshApex(this.userPayload);
+                this.dispatchPayload();
             })
             .catch((error) => {
-                this.nextButtonLabel = 'Confirm';
                 LightningAlert.open({
                     message: 'Sorry, something went wrong. Please contact support.',
                     theme: 'error',
                     label: 'Error!',
                 });
-            }); 
+            });
     }
 
     handleEditInputChange(event) {
@@ -567,13 +475,27 @@ export default class ApplicationEftposBiller extends LightningElement {
             })
             .catch((error) => {
                 console.error("An error occurred:", error.message);
-                this.nextButtonLabel = 'Confirm';
                 LightningAlert.open({
                     message: 'Sorry, something went wrong. Please contact support.',
                     theme: 'error',
                     label: 'Error!',
                 });
             })
+    }
+
+    dispatchPayload() {
+        const isStepComplete = this.userPayload && this.userPayload.length > 0;
+        this.dispatchEvent(new CustomEvent('newpayload', {
+            detail: {
+                ...this.payload,
+                currentState: {
+                    ...(this.payload?.currentState || {}),
+                    enableStep4NextButton: isStepComplete,
+                    isNotAddMerchant: isStepComplete,
+                    prefillChecked: this.prefillChecked
+                }
+            }
+        }));
     }
 
 }
