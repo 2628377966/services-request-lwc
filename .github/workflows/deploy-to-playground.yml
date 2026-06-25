@@ -25,34 +25,47 @@ jobs:
         run: npm ci
 
       - name: Install Salesforce CLI
-        run: npm install -g @salesforce/cli@latest
-
-      - name: Authenticate with PlayGround org
         run: |
-          echo "Authenticating with Salesforce PlayGround org..."
-          sfdx auth:jwt:grant --clientid ${{ secrets.SALESFORCE_CLIENT_ID }} \
+          echo 'y' | npm install -g @salesforce/cli@latest
+
+      - name: Create JWT key file
+        run: |
+          echo "${{ secrets.SALESFORCE_JWT_KEY }}" > server.key
+          chmod 600 server.key
+
+      - name: Authenticate to PlayGround org
+        run: |
+          echo 'y' | sf org login jwt \
             --username ${{ secrets.SALESFORCE_USERNAME }} \
-            --jwtkeyfile ${{ secrets.SALESFORCE_JWT_KEY }} \
-            --setdefaultdevhubusername --setalias playground-org
+            --jwt-key-file server.key \
+            --client-id ${{ secrets.SALESFORCE_CLIENT_ID }} \
+            --alias PlayGround \
+            --set-default \
+            --instance-url https://login.salesforce.com
 
       - name: Deploy to PlayGround org
         run: |
           echo "Deploying source to PlayGround org..."
-          sfdx force:source:deploy \
-            --sourcepath force-app \
+          sf project deploy start \
+            --source-dir force-app \
+            --target-org PlayGround \
             --wait 10 \
-            --testlevel RunLocalTests \
-            -u playground-org
+            --test-level RunLocalTests \
+            --ignore-conflicts
 
       - name: Post-deployment validation
         run: |
           echo "Running post-deployment validation..."
-          sfdx force:apex:test:run \
-            -u playground-org \
-            -w 10 \
-            -r human \
-            -c \
-            -d test-results || echo "Some tests may have failed, but deployment completed"
+          sf apex run test \
+            --target-org PlayGround \
+            --wait 10 \
+            --result-format human \
+            --code-coverage \
+            --output-dir test-results || echo "Some tests may have failed, but deployment completed"
+
+      - name: Cleanup
+        if: always()
+        run: rm -f server.key
 
       - name: Upload test results
         if: always()
