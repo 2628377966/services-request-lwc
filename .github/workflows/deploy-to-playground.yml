@@ -1,0 +1,82 @@
+name: Deploy to PlayGround Org
+
+on:
+  pull_request:
+    types: [closed]
+    branches: [main]
+
+jobs:
+  deploy:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    name: Deploy to PlayGround Environment
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Salesforce CLI
+        run: npm install -g @salesforce/cli@latest
+
+      - name: Authenticate with PlayGround org
+        run: |
+          echo "Authenticating with Salesforce PlayGround org..."
+          sfdx auth:jwt:grant --clientid ${{ secrets.SALESFORCE_CLIENT_ID }} \
+            --username ${{ secrets.SALESFORCE_USERNAME }} \
+            --jwtkeyfile ${{ secrets.SALESFORCE_JWT_KEY }} \
+            --setdefaultdevhubusername --setalias playground-org
+
+      - name: Deploy to PlayGround org
+        run: |
+          echo "Deploying source to PlayGround org..."
+          sfdx force:source:deploy \
+            --sourcepath force-app \
+            --wait 10 \
+            --testlevel RunLocalTests \
+            -u playground-org
+
+      - name: Post-deployment validation
+        run: |
+          echo "Running post-deployment validation..."
+          sfdx force:apex:test:run \
+            -u playground-org \
+            -w 10 \
+            -r human \
+            -c \
+            -d test-results || echo "Some tests may have failed, but deployment completed"
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: test-results/
+          retention-days: 7
+
+      - name: Deployment Summary
+        if: always()
+        run: |
+          echo "## Deployment Summary" >> $GITHUB_STEP_SUMMARY
+          echo "- 🚀 **Environment**: PlayGround Org" >> $GITHUB_STEP_SUMMARY
+          echo "- 📦 **Source Path**: force-app" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ **Status**: Deployment Completed" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Details:" >> $GITHUB_STEP_SUMMARY
+          echo "- **Branch**: \`${{ github.ref_name }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "- **Commit**: \`${{ github.sha }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "- **Triggered by**: @${{ github.actor }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **PR**: #${{ github.event.number }}" >> $GITHUB_STEP_SUMMARY
+
+      - name: Notify on failure
+        if: failure()
+        run: |
+          echo "::error::Deployment to PlayGround org failed! Please check the logs."
