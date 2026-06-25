@@ -1,0 +1,152 @@
+name: PR Validation
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    name: Validate Pull Request Changes
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install Salesforce CLI
+        run: |
+          echo 'y' | npm install @salesforce/cli --global
+
+      - name: Create JWT key file
+        run: |
+          echo "${{ secrets.SALESFORCE_JWT_KEY }}" > server.key
+          chmod 600 server.key
+
+      - name: Authenticate to PlayGround org
+        run: |
+          echo 'y' | sf org login jwt \
+            --username ${{ secrets.SALESFORCE_USERNAME }} \
+            --jwt-key-file server.key \
+            --client-id ${{ secrets.SALESFORCE_CLIENT_ID }} \
+            --alias PlayGround \
+            --set-default \
+            --instance-url https://login.salesforce.com
+
+      - name: Install Git Delta plugin
+        run: |
+          echo 'y' | sf plugins install sfdx-git-delta
+
+      - name: Create Delta Package
+        run: |
+          mkdir deploypackage
+          sf sgd:source:delta \
+            --to HEAD \
+            --origin main \
+            -o deploypackage
+          echo "=== Package.xml ==="
+          cat deploypackage/package/package.xml || echo "No package.xml found"
+          echo "=== Destructive Changes ==="
+          cat deploypackage/destructiveChanges/destructiveChanges.xml 2>/dev/null || echo "No destructive changes found"
+
+      - name: Extract Tests to Run
+        id: extract-tests
+        run: |
+          pip3 install yq jq
+          # Extract ApexClass tests from package.xml
+          TestsToRun=$(xq . < deploypackage/package/package.xml | jq '.Package.types | if type=="array" then .[] else . end | select(.name=="ApexClass") | .members | if type=="array" then join(" ") else . end' 2>/dev/null || echo "")
+          echo "Auto Extract from the Package.xml: ${TestsToRun//\"/}"
+          
+          # Add additional tests if provided in AdditionalTests variable
+          TheExtraTests="${{ vars.ADDITIONAL_TESTS }}"
+          DefaultTest="$TheExtraTests"
+          
+          if [ "$TheExtraTests" != "" ]; then
+            TheExtraTests="${TheExtraTests//,/ }"
+            if [ -z "$TestsToRun" ]; then
+              TestsToRun="$TheExtraTests"
+            else
+              TestsToRun="${TestsToRun//\"/} $TheExtraTests"
+            fi
+          fi
+          
+          echo "Specified tests: $TestsToRun"
+          echo "spec_tests=$TestsToRun" >> $GITHUB_OUTPUT
+          echo "default_test=$DefaultTest" >> $GITHUB_OUTPUT
+
+      - name: Validate Source Code
+        run: |
+          mkdir metadataPackage
+          sf project convert source \
+            --manifest deploypackage/package/package.xml \
+            --output-dir metadataPackage
+          ls -R metadataPackage
+          
+          set -x
+          if grep -q 'types' deploypackage/package/package.xml; then
+            result=$(sf project deploy start \
+              --target-org PlayGround \
+              --dry-run \
+              --metadata-dir metadataPackage \
+              --json \
+              --test-level RunSpecifiedTests \
+              --tests "${{ steps.extract-tests.outputs.spec_tests }}" \
+              --wait 200)
+            
+            deployStatus=$(echo "$result" | jq -r '.status // empty')
+            if [ "$deployStatus" != "0" ] && [ -n "$deployStatus" ]; then
+              echo "❌ The pull request validation has failed."
+              exit 1
+            fi
+            echo "✅ Validation passed successfully!"
+          else
+            echo "ℹ️ No changes detected in the pull request."
+          fi
+          set +x
+
+      - name: Validate Destructive Changes
+        if: hashFiles('deploypackage/destructiveChanges/destructiveChanges.xml') != ''
+        run: |
+          set -x
+          if grep -q 'types' deploypackage/destructiveChanges/destructiveChanges.xml; then
+            result=$(sf project deploy start \
+              --target-org PlayGround \
+              --dry-run \
+              --manifest deploypackage/destructiveChanges/package.xml \
+              --post-destructive-changes deploypackage/destructiveChanges/destructiveChanges.xml \
+              --ignore-warnings \
+              --json \
+              --test-level RunSpecifiedTests \
+              --tests "${{ steps.extract-tests.outputs.default_test }}" \
+              --wait 200)
+            
+            deployStatus=$(echo "$result" | jq -r '.status // empty')
+            if [ "$deployStatus" != "0" ] && [ -n "$deployStatus" ]; then
+              echo "❌ The destructive changes validation has failed."
+              exit 1
+            fi
+            echo "✅ Destructive changes validation passed!"
+          else
+            echo "ℹ️ No destructive changes detected."
+          fi
+          set +x
+
+      - name: Cleanup
+        if: always()
+        run: rm -f server.key
+
+      - name: Validation Summary
+        if: always()
+        run: |
+          echo "## PR Validation Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- 🔍 **Delta Package**: Created from branch changes" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ **Source Code**: Validated against PlayGround org" >> $GITHUB_STEP_SUMMARY
+          echo "- 🧪 **Tests**: Specified tests executed during validation" >> $GITHUB_STEP_SUMMARY
+          echo "- 🗑️ **Destructive Changes**: Validated if present" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Environment**: PlayGround Org" >> $GITHUB_STEP_SUMMARY
+          echo "**Branch**: \`${{ github.head_ref }}\`" >> $GITHUB_STEP_SUMMARY
