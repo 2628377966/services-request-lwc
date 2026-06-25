@@ -26,6 +26,9 @@ jobs:
           echo "${{ secrets.SALESFORCE_JWT_KEY }}" > server.key
           chmod 600 server.key
 
+      - name: Fetch main branch
+        run: git fetch origin main:main
+
       - name: Authenticate to PlayGround org
         run: |
           echo 'y' | sf org login jwt \
@@ -45,7 +48,7 @@ jobs:
           mkdir deploypackage
           sf sgd:source:delta \
             --to HEAD \
-            --origin main \
+            --from main \
             -o deploypackage
           echo "=== Package.xml ==="
           cat deploypackage/package/package.xml || echo "No package.xml found"
