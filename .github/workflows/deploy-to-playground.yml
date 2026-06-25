@@ -34,8 +34,11 @@ jobs:
           chmod 600 server.key
 
       - name: Authenticate to PlayGround org
+        env:
+          SF_AUTOUPDATE_DISABLE: true
+          SF_TELEMETRY_DISABLE: true
         run: |
-          echo 'y' | sf org login jwt \
+          sf org login jwt \
             --username ${{ secrets.SALESFORCE_USERNAME }} \
             --jwt-key-file server.key \
             --client-id ${{ secrets.SALESFORCE_CLIENT_ID }} \
